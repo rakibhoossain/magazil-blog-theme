@@ -1,0 +1,1 @@
+# magazil-blog-theme

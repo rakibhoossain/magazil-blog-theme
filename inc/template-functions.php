@@ -86,100 +86,32 @@ add_filter( 'comment_form_fields', 'magazil_comment_field_to_bottom' );
 /**
  *  Custom comments list
  */ 
-function astore_comment($comment, $args, $depth) {
-
-?>
-   
-<li <?php comment_class("comment media-comment"); ?> id="comment-<?php comment_ID() ;?>">
-    <div class="media-avatar media-left">
-    <?php echo get_avatar($comment,'70','' ); ?>
-  </div>
-  <div class="media-body">
-      <div class="media-inner">
-          <h4 class="media-heading clearfix">
-             <?php echo get_comment_author_link();?> - <?php comment_date(); ?> <?php edit_comment_link(__('(Edit)','astore'),'  ','') ;?>
-             <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ;?>
-          </h4>
-          
-          <?php if ($comment->comment_approved == '0') : ?>
-                   <em><?php esc_attr_e('Your comment is awaiting moderation.','astore') ;?></em>
-                   <br />
-                <?php endif; ?>
-                
-          <div class="comment-content"><?php comment_text() ;?></div>
+function magazil_comment($comment, $args, $depth) { ?>
+<li <?php comment_class("comment single-comment justify-content-between d-flex"); ?> id="comment-<?php comment_ID() ;?>">
+  <div class="user justify-content-between d-flex">
+    <div class="thumb">
+      <?php echo get_avatar($comment,'60','' ); ?>
+    </div>
+    <div class="comment-desc">
+      <h5 class="comment-author"><?php echo get_comment_author_link();?></h5>
+      <p class="comment-date"><?php comment_date(); ?></p>
+      <div class="comment-content">
+        <?php if ($comment->comment_approved == '0') : ?>
+        <em><?php esc_attr_e('Your comment is awaiting moderation.','magazil') ;?></em>
+        <br />
+       <?php endif; ?>
+       <?php comment_text() ;?>
+       <?php edit_comment_link(__('(Edit)','magazil'),'  ','') ;?>
       </div>
+    </div>
+  </div>
+  <div class="reply-btn">
+    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ;?>
   </div>
 </li>
                                             
 <?php
     }
-
-
-
-class Bootstrap_Comment_Walker extends Walker_Comment {
-    /**
-     * Output a comment in the HTML5 format.
-     *
-     * @since 1.0.0
-     *
-     * @see wp_list_comments()
-     *
-     * @param object $comment the comments list.
-     * @param int    $depth   Depth of comments.
-     * @param array  $args    An array of arguments.
-     */
-    protected function html5_comment( $comment, $depth, $args ) {
-        $tag = ( $args['style'] === 'div' ) ? 'div' : 'li';
-?>      
-        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'has-children media' : ' media' ); ?>>
-            
-
-            <div class="media-body card mt-3 " id="div-comment-<?php comment_ID(); ?>">
-                <div class="card-header hoverable">
-                    <div class="flex-center">
-                        <?php if ( $args['avatar_size'] != 0  ): ?>
-                        <a href="<?php echo get_comment_author_url(); ?>" class="media-object float-left">
-                            <?php echo get_avatar( $comment, $args['avatar_size'],'mm','', array('class'=>"comment_avatar rounded-circle") ); ?>
-                        </a>
-                        <?php endif; ?>
-                        <h4 class="media-heading "><?php echo get_comment_author_link() ?></h4>
-                    </div>
-                    <div class="comment-metadata flex-center">
-                        <a class="hidden-xs-down" href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
-                            <time class=" small btn btn-secondary chip" datetime="<?php comment_time( 'c' ); ?>">
-                                <?php comment_date() ?>,
-                                <?php comment_time() ?>
-                            </time>
-                        </a>
-                        <ul class="list-inline">
-                            <?php edit_comment_link( __( 'Edit' ), '<li class="edit-link list-inline-item btn btn-secondary chip">', '</li>' ); ?>
-                            <?php
-                                comment_reply_link( array_merge( $args, array(
-                                    'add_below' => 'div-comment',
-                                    'depth'     => $depth,
-                                    'max_depth' => $args['max_depth'],
-                                    'before'    => '<li class=" reply-link list-inline-item btn btn-secondary chip">',
-                                    'after'     => '</li>'
-                                ) ) );  
-                            ?>
-                        </ul>
-                    </div><!-- .comment-metadata -->
-                </div>
-                <div class="card-block warning-color">
-                    <?php if ( '0' == $comment->comment_approved ) : ?>
-                    <p class="card-text comment-awaiting-moderation label label-info text-muted small"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
-                    <?php endif; ?>             
-
-                    <div class="comment-content card-text">
-                        <?php comment_text(); ?>
-                    </div><!-- .comment-content -->
-                                
-                <!-- </div> -->
-
-            <!-- </div>      -->
-<?php
-    }   
-}
 
 
 /*

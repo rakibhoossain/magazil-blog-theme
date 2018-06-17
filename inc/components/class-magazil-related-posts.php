@@ -126,11 +126,11 @@ if ( ! class_exists( 'Magazil_Related_Posts' ) ) {
  
 			// Check if related posts should be shown
 			$related_posts = $this->get_related_posts( get_the_ID(), get_option( 'posts_per_page' ) );
-
-			echo'
-            <div class="flexslider post-rel-wrap" id="post-rel-car">
-                <ul class="slides">';
-
+?>
+            <div class="related-post">
+            	<h3><?php esc_attr_e('Related posts', 'magazil'); ?></h3>
+                <ul class="slides" id="related_posts">
+<?php
                 // Loop through related posts
 			while ( $related_posts->have_posts() ) {
 				$related_posts->the_post();
@@ -143,10 +143,9 @@ if ( ! class_exists( 'Magazil_Related_Posts' ) ) {
 
                 $category = get_the_category( $related_posts->post->ID );
 
-				echo '<time class="posts-i-date" datetime="'.get_the_date().'">'.get_the_date().'</time>
-                    <div class="posts-i-info">';
+				echo '<time class="posts-i-date" datetime="'.get_the_date().'">'.get_the_date().'</time><div class="posts-i-info">';
 				if ( $category && !is_wp_error( $category ) ) :
-  					echo '<a href="'.get_category_link($category[0]->cat_ID).'" class="posts-i-ctg">News su ' . $category[0]->cat_name . '</a>';
+  					echo '<a href="'.get_category_link($category[0]->cat_ID).'" class="posts-i-ctg">' . $category[0]->cat_name . '</a>';
                 endif;
                 	echo '
                         <h3 class="posts-i-ttl"><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h3>

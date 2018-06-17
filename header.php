@@ -66,7 +66,7 @@
 							?>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>img/banner-ad.jpg" alt="">
+							<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="">
 						</div>
 					</div>
 				</div>

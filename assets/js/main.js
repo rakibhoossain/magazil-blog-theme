@@ -126,6 +126,28 @@ $(document).ready(function($) {
         }
     });
 
+    $('#related_posts').owlCarousel({
+        items: 3,
+        loop: true,
+        margin: 10,
+        autoplayHoverPause: true,
+        smartSpeed:650,
+        nav: true,
+        navText: ["<span class='lnr lnr-arrow-left'></span>", "<span class='lnr lnr-arrow-right'></span>"],       
+        autoplay:true, 
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 2,
+            },
+            768: {
+                items: 3,
+            }
+        }
+    });
+
     //------- Search Form  js --------//  
 
     $(document).ready(function(){

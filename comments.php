@@ -21,10 +21,19 @@ if ( post_password_required() ) {
 ?>
 
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number(esc_attr__('No comment', 'astore'), esc_attr__('Has one comment', 'astore'), esc_attr__('% comments', 'astore'));?> <?php printf(esc_attr__('to &#8220;%s&#8221;', 'astore'), the_title('', '', false)); ?></h3>
-<div class="upcomment"><?php esc_attr_e('You can ','astore'); ?><a id="leaverepond" href="#comments"><?php esc_attr_e('leave a reply','astore'); ?></a>  <?php esc_attr_e(' or ','astore'); ?> <a href="<?php trackback_url(true); ?>" rel="trackback"><?php esc_attr_e('Trackback','astore'); ?></a> <?php esc_attr_e('this post.','astore'); ?></div>
+	
+	<h2 class="comments-title">
+	<?php
+		printf( // WPCS: XSS OK.
+			esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'magazil' ) ),
+			number_format_i18n( get_comments_number() ),
+			'<span>' . get_the_title() . '</span>'
+		);
+	?>
+	</h2>
+
 	<ol id="thecomments" class="commentlist comments-list">
-	<?php wp_list_comments('type=comment&callback=astore_comment');?>
+	<?php wp_list_comments('type=comment&callback=magazil_comment');?>
 	</ol>
 
 <!-- comments pagenavi Start. -->
@@ -34,7 +43,7 @@ if ( post_password_required() ) {
 		if ($comment_pages) {
 ?>
 		<div id="commentnavi">
-			<span class="pages"><?php esc_attr_e('Comment pages', 'astore'); ?></span>
+			<span class="pages"><?php esc_attr_e('Comment pages', 'magazil'); ?></span>
 			<div id="commentpager">
 				<?php echo $comment_pages; ?>
 				

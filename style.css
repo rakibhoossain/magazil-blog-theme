@@ -628,6 +628,18 @@ a img.aligncenter {
   display: none;
 }
 
+.page_item_has_children:not(.current_page_ancestor):not(.current_page_parent) .side-menu-i:before {
+    content: "\e874";
+}
+
+.current_page_ancestor .side-menu-i:before,
+.current_page_parent .side-menu-i:before {
+    content: "\e873";
+}
+
+.rotate-180{
+  transform: rotate(180deg);
+}
 .page-links ul .page_item_has_children i.fa-chevron-up {
   color: #f6214b;
 }

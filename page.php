@@ -116,24 +116,4 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-
-
-	<div class="page-links">
-		<h2 class="page-links__title"><a href="http://localhost/blog/tutorial/">Tutorial</a></h2>
-		<ul class="min-list">
-			<li class="page_item page-item-2032 page_item_has_children current_page_ancestor current_page_parent"><a href="http://localhost/blog/tutorial/java/">Java</a>
-				<ul class="children">
-					<li class="page_item page-item-2036 page_item_has_children current_page_item"><a href="http://localhost/blog/tutorial/java/polymorphism/">Polymorphism</a>
-						<ul class="children">
-							<li class="page_item page-item-2038"><a href="http://localhost/blog/tutorial/java/polymorphism/skin/">skin</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="page_item page-item-2034"><a href="http://localhost/blog/tutorial/c/">C++</a></li>
-		</ul>
-	</div>
-
-
-
 <?php get_footer();

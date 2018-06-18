@@ -71,7 +71,7 @@ if ( post_password_required() ) {
 <div id="respond" class="respondbg">
 
 <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'astore'),  esc_url(wp_login_url( get_permalink() ))); ?></p>
+<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'magazil'),  esc_url(wp_login_url( get_permalink() ))); ?></p>
 <?php else : ?>
 <?php 
 $commenter = wp_get_current_commenter();
@@ -82,24 +82,24 @@ global $required_text;
 $comments_args = array(
 'class_submit' => 'primary-btn text-uppercase',
          'comment_notes_before' => '<p class="comment-notes">' .
-    esc_attr__( 'Your email address will not be published.', 'astore' ) . ( $req ? $required_text : '' ) .
+    esc_attr__( 'Your email address will not be published.', 'magazil' ) . ( $req ? $required_text : '' ) .
     '</p>',
-        'title_reply'=>esc_attr__('Leave a Reply', 'astore'),
+        'title_reply'=>esc_attr__('Leave a Reply', 'magazil'),
         'comment_notes_after' => '',
         'comment_field' => '<div class="clear"></div><p class="form-allowed-tags"></p>
-<section class="comment-form-comment form-group"><div id="comment-textarea"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Message', 'astore').'"  cols="45" rows="8"  class="textarea-comment form-control" aria-required="true"></textarea></div></section>',
+<section class="comment-form-comment form-group"><div id="comment-textarea"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Message', 'magazil').'"  cols="45" rows="8"  class="textarea-comment form-control" aria-required="true"></textarea></div></section>',
 		'fields' => apply_filters( 'comment_form_default_fields', array(
 
     'author' =>
-      '<div class="row"><section class="comment-form-author form-group col-md-4"><input id="author" class="input-name form-control" name="author" placeholder="'.esc_attr__('Name', 'astore').'"  type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+      '<div class="row"><section class="comment-form-author form-group col-md-4"><input id="author" class="input-name form-control" name="author" placeholder="'.esc_attr__('Name', 'magazil').'"  type="text" value="' . esc_attr( $commenter['comment_author'] ) .
       '" size="30"' . $aria_req . ' /></section>',
 
     'email' =>
-      '<section class="comment-form-email form-group col-md-4"><input id="email" class="input-name form-control" name="email" placeholder="'.esc_attr__('Email', 'astore').'"  type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+      '<section class="comment-form-email form-group col-md-4"><input id="email" class="input-name form-control" name="email" placeholder="'.esc_attr__('Email', 'magazil').'"  type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
       '" size="30"' . $aria_req . ' /></section>',
 
     'url' =>
-      '<section class="comment-form-url form-group col-md-4"><input id="url" class="input-name form-control" placeholder="'.esc_attr__('Website', 'astore').'" name="url"  type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+      '<section class="comment-form-url form-group col-md-4"><input id="url" class="input-name form-control" placeholder="'.esc_attr__('Website', 'magazil').'" name="url"  type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
       '" size="30" /></section></div>'
     ))
 );

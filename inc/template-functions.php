@@ -162,3 +162,45 @@ function front_page_post($image_size = 'top-post-small' , $img_bg = false, $extr
 
     <?php
 }
+
+
+function siblings($link) {
+    global $post;
+    $siblings = get_pages('child_of='.$post->post_parent.'&parent='.$post->post_parent);
+    foreach ($siblings as $key=>$sibling){
+        if ($post->ID == $sibling->ID){
+            $ID = $key;
+        }
+    }
+    $closest = array('before'=>get_permalink($siblings[$ID-1]->ID),'after'=>get_permalink($siblings[$ID+1]->ID));
+
+    if ($link == 'before' || $link == 'after') { echo $closest[$link]; } else { return $closest; }
+}
+
+
+function magazil_page_navigation($pagelist = array()){
+  $pages = array();
+  foreach ($pagelist as $page) {
+   $pages[] += $page->ID;
+ }
+ $current = array_search(get_the_ID(), $pages);
+ $prevID = ( isset($pages[$current-1]) ) ? $pages[$current-1] : '';
+ $nextID = ( isset($pages[$current+1]) ) ? $pages[$current+1] : '';
+?>
+<nav class="child-pagination">
+    <?php if (!empty($prevID)) { ?>
+    <div class="alignleft">
+    <a href="<?php  echo get_permalink($prevID); ?>"
+      title="<?php  echo get_the_title($prevID); ?>" class="previous-page">&lt;&nbsp;&nbsp;Previous</a>
+    </div>
+    <?php }
+    if (!empty($nextID)) { ?>
+    <div class="alignright">
+    <a href="<?php echo get_permalink($nextID); ?>" 
+     title="<?php  echo get_the_title($nextID); ?>" class="next-page">Next&nbsp;&nbsp;&gt;</a>
+    </div>
+    <?php } ?>
+</nav><!-- #pagination -->
+<?php
+
+}

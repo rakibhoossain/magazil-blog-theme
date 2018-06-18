@@ -186,6 +186,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/components/class-magazil-related-posts.php';
 
+
+
+require get_template_directory() . '/inc/components/class-magazil-widget-recent-posts.php';
 /**
  * Customizer additions.
  */

@@ -191,13 +191,13 @@ function magazil_page_navigation($pagelist = array()){
     <?php if (!empty($prevID)) { ?>
     <div class="alignleft">
     <a href="<?php  echo get_permalink($prevID); ?>"
-      title="<?php  echo get_the_title($prevID); ?>" class="previous-page">&lt;&nbsp;&nbsp;Previous</a>
+      title="<?php  echo get_the_title($prevID); ?>" class="previous-page"><?php  esc_attr_e('Previous', 'magazil'); ?></a>
     </div>
     <?php }
     if (!empty($nextID)) { ?>
     <div class="alignright">
     <a href="<?php echo get_permalink($nextID); ?>" 
-     title="<?php  echo get_the_title($nextID); ?>" class="next-page">Next&nbsp;&nbsp;&gt;</a>
+     title="<?php  echo get_the_title($nextID); ?>" class="next-page"><?php  esc_attr_e('Next', 'magazil'); ?></a>
     </div>
     <?php } ?>
 </nav><!-- #pagination -->

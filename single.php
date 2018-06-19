@@ -16,10 +16,8 @@ get_header();
 setPostViews(get_the_ID());
 ?>
 
-
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 		<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
@@ -28,37 +26,33 @@ setPostViews(get_the_ID());
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<div class="single-post-wrap">
-							<?php
-							while ( have_posts() ) :
-								the_post();
+								<?php
+								while ( have_posts() ) :
+									the_post();
 
-								get_template_part( 'template-parts/content', 'single' );
+									get_template_part( 'template-parts/content', 'single' );
 
-								the_post_navigation();
+									the_post_navigation();
 
-								do_action( 'magazil_single_after_article' );
+									do_action( 'magazil_single_after_article' );
 
 								// If comments are open or we have at least one comment, load up the comment template.
-								if ( comments_open() || get_comments_number() ) :
-									comments_template();
-								endif;
+									if ( comments_open() || get_comments_number() ) :
+										comments_template();
+									endif;
 
-							endwhile; // End of the loop.
-							?>
-							</div>
-						<!-- End single-post Area -->
-					</div>
-					<div class="col-lg-4">
+								endwhile; // End of the loop.
+								?>
+							</div><!-- End single-post Area -->
+						</div>
+						<div class="col-lg-4">
 						<?php get_sidebar();?>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- End latest-post Area -->
-	</div>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+			</section>
+		</div><!-- End latest-post Area -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 <?php
 get_footer();

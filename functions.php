@@ -120,6 +120,54 @@ function magazil_widgets_init() {
 		'before_title'  => '<h6 class="title">',
 		'after_title'   => '</h6>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_attr__( 'Footer 1', 'magazil' ),
+		'id'            => 'footer-1',
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_attr__( 'Footer 2', 'magazil' ),
+		'id'            => 'footer-2',
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_attr__( 'Footer 3', 'magazil' ),
+		'id'            => 'footer-3',
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_attr__( 'Footer 4', 'magazil' ),
+		'id'            => 'footer-4',
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_attr__( 'Footer 5', 'magazil' ),
+		'id'            => 'footer-5',
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'magazil_widgets_init' );
 

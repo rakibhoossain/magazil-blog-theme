@@ -9,14 +9,21 @@
 
 get_header();
 ?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+		<div class="site-main-container">
+			<?php magazil_before_post(); ?>
+			<!-- Start latest-post Area -->
+			<section class="latest-post-area pb-120">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-8 post-list">
+							<div class="single-post-wrap">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+					<header class="page-header">
+						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'magazil' ); ?></h1>
+					</header><!-- .page-header -->
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'magazil' ); ?></h1>
-				</header><!-- .page-header -->
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'magazil' ); ?></p>
@@ -51,10 +58,20 @@ get_header();
 					?>
 
 				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+
+								
+							</div><!-- End single-post Area -->
+						</div>
+						<div class="col-lg-4">
+						<?php get_sidebar();?>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div><!-- End latest-post Area -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

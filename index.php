@@ -30,7 +30,7 @@ get_header();
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Latest News</h4>
+
 
 
 								<?php
@@ -41,6 +41,7 @@ get_header();
 									<header>
 										<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 									</header>
+									<div class="row">
 									<?php
 								endif;
 
@@ -53,9 +54,11 @@ get_header();
 									 * If you want to override this in a child theme, then include a file
 									 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 									 */
+echo '<div class="col-lg-6">';
 									get_template_part( 'template-parts/content', get_post_type() );
-
+echo '</div>';
 								endwhile;
+								echo '</div>';
 								the_posts_pagination( array(
 									'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous Page', 'magazil' ) . '</span>',
 									'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'magazil' ) . '</span><i class="fa fa-arrow-right"></i>' ,

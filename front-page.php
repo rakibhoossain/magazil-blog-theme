@@ -22,18 +22,20 @@ get_header();
 			<section class="top-post-area pt-10">
 				<div class="container no-padding">
 					<div class="row small-gutters">
-						<?php 
+						<div class="col-lg">
+						<?php
+						$popular_show = 5; 
 						$popular_post = new WP_Query( array(
-							// 'meta_key' => 'post_views_count',
-							// 'orderby' => 'meta_value meta_value_num',
-							// 'order' => 'ASC',
-							'posts_per_page' => 5
+							'post_type' => 'post',//'page ,post',
+							'meta_key' => 'wpb_post_views_count',
+							'meta_query' => array(array('key' => '_thumbnail_id')) ,
+							'orderby' => 'meta_value_num',
+							'order' => 'DESC',
+							'posts_per_page' => $popular_show
 						) );
 						?>		
 
-						<?php if ( $popular_post->have_posts() ) : $count = (int)0; ?>
-
-						<div class="col-lg">
+						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>		
 							<div class="grid-post">
 
 							<?php
@@ -52,19 +54,16 @@ get_header();
 								}else{
 									front_page_post('top-post-small',true,'top-layout');
 								}
-
 								$count++; 
 								endwhile;
 								$count=0;
 								wp_reset_query();
 								wp_reset_postdata();
-						else :
-
-							get_template_part( 'template-parts/content', 'none' );
-
+							?>
+							</div>
+						<?php
 						endif;?>
 		
-							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
@@ -87,17 +86,17 @@ get_header();
 
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+			<section class="latest-post-area pb-120 pt-50">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
+							<div class="post-area-wrapper">
 								<h4 class="cat-title">Latest News (Change)</h4>
 								<?php 
 									$args = array( 
-									// 'post_type' => 'post',
-									'posts_per_page' => 2);
+									'post_type' => 'post',
+									'posts_per_page' => 10);
 									$loop = new WP_Query( $args );
 								?>
 								<?php
@@ -111,7 +110,9 @@ get_header();
 										 * If you want to override this in a child theme, then include a file
 										 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 										 */
-										get_template_part( 'template-parts/content', get_post_type() );
+										
+										get_template_part( 'template-parts/content', 'blog' );
+
 									endwhile;
 									wp_reset_postdata();
 								endif;
@@ -129,14 +130,17 @@ get_header();
 
 
 							<!-- Start top-post Area -->
-							<section class="post-feature bg-white pd-10 pt-10">
+							<section class="post-feature post-area-wrapper">
 								<div class="container no-padding">
 									<div class="row small-gutters">
+										<div class="col-lg-12 mb-10">
+											<h4 class="cat-title">Latest News (Change)</h4>
+										</div>
 
 								<?php 
 									$args = array( 
 										'post_type' => 'post',
-										'posts_per_page' => 12
+										'posts_per_page' => 5
 									);
 									$loop = new WP_Query( $args );
 								?>		

@@ -73,24 +73,38 @@ if ( ! function_exists( 'magazil_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'magazil' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
-		}
+	}
+endif;
+
+if ( ! function_exists( 'magazil_entry_meta' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function magazil_entry_meta($extra_class = '', $edit_link = true) {
+		// Hide category and tag text for pages.
+?>
+<ul class="meta <?php echo $extra_class; ?>">
+	<li>
+		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
+			<span class="lnr lnr-user"></span><?php echo esc_html( get_the_author() )?>
+		</a>
+	</li>
+	<li>
+		<a href="<?php the_permalink(); ?>">
+			<span class="lnr lnr-calendar-full"></span>
+			<?php printf('%s', esc_html( get_the_date() )); ?>
+		</a>
+	</li>
+
+	<?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ): ?>
+	<li>
+		<?php comments_popup_link( __( '<span class="lnr lnr-bubble"></span>Leave a comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>1 Comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>% Comments', 'magazil' ) ); ?>
+
+	</li>
+<?php endif; ?>
+
+<?php
+if ($edit_link){
 
 		edit_post_link(
 			sprintf(
@@ -105,35 +119,11 @@ if ( ! function_exists( 'magazil_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
-			'</span>'
+			'<li class="edit-link">',
+			'</li>'
 		);
-	}
-endif;
-
-if ( ! function_exists( 'magazil_entry_meta' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function magazil_entry_meta($extra_class = '') {
-		// Hide category and tag text for pages.
+}
 ?>
-<ul class="meta <?php echo $extra_class; ?>">
-										<li>
-											<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
-												<span class="lnr lnr-user"></span><?php echo esc_html( get_the_author() )?>
-											</a>
-										</li>
-										<li>
-											<a href="<?php the_permalink(); ?>">
-												<span class="lnr lnr-calendar-full"></span>
-												<?php printf('%s', esc_html( get_the_date() )); ?>
-											</a>
-										</li>
-										<li>
-											<?php comments_popup_link( __( '<span class="lnr lnr-bubble"></span>Leave a comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>1 Comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>% Comments', 'magazil' ) ); ?>
-
-										</li>
 </ul>
 
 <?php
@@ -174,22 +164,7 @@ if ( ! function_exists( 'magazil_entry_meta' ) ) :
 		// }
 
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'magazil' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+
 	}
 endif;
 
@@ -198,15 +173,33 @@ if ( ! function_exists( 'magazil_post_categories' ) ) :
 	 * Displays categories.
 	 */
 	function magazil_post_categories($multiple = false) {
-		if ($multiple) {
-			echo get_the_category_list();
-		}else{
-			$category = get_the_category( $post->ID );
-			if ( $category && !is_wp_error( $category ) ) :
-				echo '<ul class="post-categories">';
-				echo '<li><a href="'.get_category_link($category[0]->cat_ID).'">' . $category[0]->cat_name . '</a></li>';
-				echo '</ul>';
-			endif;
+		if ( 'post' === get_post_type() ) {
+			if ($multiple) {
+				echo get_the_category_list();
+			}else{
+				$category = get_the_category( $post->ID );
+				if ( $category && !is_wp_error( $category ) ) :
+					echo '<ul class="post-categories">';
+					echo '<li><a href="'.get_category_link($category[0]->cat_ID).'">' . $category[0]->cat_name . '</a></li>';
+					echo '</ul>';
+				endif;
+			}
+		}
+	}
+endif;
+
+if ( ! function_exists( 'magazil_post_tags' ) ) :
+	/**
+	 * Displays categories.
+	 */
+	function magazil_post_tags() {
+		if ( 'post' === get_post_type() ) {
+						/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'magazil' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'magazil' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
 		}
 	}
 endif;

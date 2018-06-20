@@ -21,7 +21,7 @@ setPostViews(get_the_ID());
 		<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+			<section class="latest-post-area pb-120 mt-10">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
@@ -31,7 +31,7 @@ setPostViews(get_the_ID());
 									the_post();
 
 									get_template_part( 'template-parts/content', 'single' );
-
+									magazil_post_tags();
 									the_post_navigation();
 
 									do_action( 'magazil_single_after_article' );

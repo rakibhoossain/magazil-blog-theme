@@ -87,27 +87,41 @@ add_filter( 'comment_form_fields', 'magazil_comment_field_to_bottom' );
  *  Custom comments list
  */ 
 function magazil_comment($comment, $args, $depth) { ?>
-<li <?php comment_class("comment single-comment justify-content-between d-flex"); ?> id="comment-<?php comment_ID() ;?>">
-  <div class="user justify-content-between d-flex">
-    <div class="thumb">
-      <?php echo get_avatar($comment,'60','' ); ?>
+<li <?php comment_class("comment single-comment"); ?> id="comment-<?php comment_ID() ;?>">
+
+
+    
+    <div class="comment-top-area justify-content-between d-flex">
+
+      <div class="user d-flex">
+        <div class="thumb">
+          <?php echo get_avatar($comment,'60','' ); ?>
+        </div>
+        <div class="comment-meta">
+          <h5 class="comment-author"><?php echo get_comment_author_link();?></h5>
+          <h6 class="comment-date"><?php comment_date(); ?></h6>
+          <?php edit_comment_link(__('(Edit)','magazil'),'  ','') ;?>
+        </div>
+      </div>
+
+      <div class="reply-btn">
+        <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ;?>
+      </div>
+
     </div>
+
     <div class="comment-desc">
-      <h5 class="comment-author"><?php echo get_comment_author_link();?></h5>
-      <p class="comment-date"><?php comment_date(); ?></p>
       <div class="comment-content">
         <?php if ($comment->comment_approved == '0') : ?>
-        <em><?php esc_attr_e('Your comment is awaiting moderation.','magazil') ;?></em>
-        <br />
-       <?php endif; ?>
-       <?php comment_text() ;?>
-       <?php edit_comment_link(__('(Edit)','magazil'),'  ','') ;?>
+          <em><?php esc_attr_e('Your comment is awaiting moderation.','magazil') ;?></em>
+          <br />
+        <?php endif; ?>
+        <?php comment_text() ;?>
       </div>
+
+
     </div>
-  </div>
-  <div class="reply-btn">
-    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ;?>
-  </div>
+
 </li>
                                             
 <?php
@@ -118,7 +132,7 @@ function magazil_comment($comment, $args, $depth) { ?>
  * Set post views count using post meta
  */
 function setPostViews($postID) {
-    $countKey = 'post_views_count';
+    $countKey = 'wpb_post_views_count';
     $count = get_post_meta($postID, $countKey, true);
     if($count==''){
         $count = 0;
@@ -163,19 +177,6 @@ function front_page_post($image_size = 'top-post-small' , $img_bg = false, $extr
     <?php
 }
 
-
-function siblings($link) {
-    global $post;
-    $siblings = get_pages('child_of='.$post->post_parent.'&parent='.$post->post_parent);
-    foreach ($siblings as $key=>$sibling){
-        if ($post->ID == $sibling->ID){
-            $ID = $key;
-        }
-    }
-    $closest = array('before'=>get_permalink($siblings[$ID-1]->ID),'after'=>get_permalink($siblings[$ID+1]->ID));
-
-    if ($link == 'before' || $link == 'after') { echo $closest[$link]; } else { return $closest; }
-}
 
 
 function magazil_page_navigation($pagelist = array()){

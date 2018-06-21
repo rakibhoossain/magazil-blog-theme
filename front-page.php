@@ -24,7 +24,7 @@ get_header();
 					<div class="row small-gutters">
 						<div class="col-lg">
 						<?php
-						$popular_show = 5; 
+						$popular_show = 3; 
 						$popular_post = new WP_Query( array(
 							'post_type' => 'post',//'page ,post',
 							'meta_key' => 'wpb_post_views_count',
@@ -36,7 +36,7 @@ get_header();
 						?>		
 
 						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>		
-							<div class="grid-post">
+							<div class="grid-post post-grid-<?php echo $popular_show;?>">
 
 							<?php
 								/* Start the Loop */

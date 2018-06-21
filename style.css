@@ -19,10 +19,32 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
-
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Reset
+# WordPress CSS
+# Elements
+# Forms
+# Navigation
+  ## Links
+  ## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+  ## Posts and pages
+  ## Comments
+# Infinite scroll
+# Media
+  ## Captions
+  ## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Reset
+--------------------------------------------------------------*/
 /*
- * 0.0 Reset
  * Reset CSS by Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
  */
 
@@ -474,9 +496,10 @@ nav li {
     list-style-type: none;
 }
 
-/*
- * 0.1 WordPress CSS
- */
+
+/*--------------------------------------------------------------
+# WordPress CSS
+--------------------------------------------------------------*/
 
 .alignnone {
     margin: 5px 20px 20px 0;
@@ -1098,32 +1121,46 @@ input[type="color"]:focus,
   position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+.post-grid-5 {
   padding-left: 50%;
-  margin: -10px;
+}
+.post-grid-3 {
+  padding-left: 70%;
 }
 
 .post-box-img.top-layout {
   position: relative;
-  flex: 0 0 calc(50% - 15px);
-  /* flex: 0 0 calc(50% - 20px); */
   margin-top: 10px;
-  margin-left: 10px;
   overflow: hidden;
   background-color: #060917;
 }
+.post-grid-3 .post-box-img.bg-img{
+    min-height: 200px;
+}
 
-.post-box-img.top-layout:not(.large):after {
-  content: "";
-  display: block;
-  padding-top: 100%;
+.post-grid-5 .post-box-img.top-layout {
+  flex: 0 0 calc(50% - 10px);
+}
+
+.post-grid-5 .post-box-img.top-layout {
+  margin-left: 10px;
 }
 
 .post-box-img.top-layout.large {
   position: absolute;
   left: 0;
-   width: calc(50% - 20px);
   height: calc(100% - 10px);
 }
+
+.post-grid-5 .post-box-img.top-layout.large{
+  margin-left: 0;
+   width: 50%;
+}
+.post-grid-3 .post-box-img.top-layout.large{
+   width: calc(70% - 10px);
+}
+
 .post-box-img.no-img.top-layout {
     display: inline-flex;
     width: 100%;
@@ -1131,42 +1168,47 @@ input[type="color"]:focus,
 
 
 
-
-
-
 /* // Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 
-.grid-post {
+.post-grid-3,
+.post-grid-5 {
   padding-left: 0;
 }
-
-.post-box-img.top-layout {
-  flex: 0 0 calc(50% - 15px);
+.post-grid-5{
+  margin-right: -10px;
+}
+.post-grid-5 .post-box-img.top-layout {
+  flex: 0 0 calc(50% - 10px);
+  margin-left: 0;
+  margin-right: 10px;
 }
 
-.post-box-img.top-layout:not(.large):after {
+.post-box-img.top-layout:after {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-top: 50%;
 }
 
 .post-box-img.top-layout.large {
   position: relative;
   height: auto;
 }
-.post-box-img.top-layout,
-.post-box-img.top-layout.large{
-  width: calc(50% - 20px);
+.post-grid-5 .post-box-img.top-layout,
+.post-grid-5 .post-box-img.top-layout.large{
+  width: calc(50% - 10px);
 }
-
+.post-grid-3 .post-box-img.top-layout,
+.post-grid-3 .post-box-img.top-layout.large{
+   width: 100%;
+}
 
 }
 
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-.post-box-img.top-layout {
-    flex: 0 0 calc(100% - 20px);
+.post-grid-5 .post-box-img.top-layout {
+    flex: 0 0 calc(100% - 10px);
 }
 }
 

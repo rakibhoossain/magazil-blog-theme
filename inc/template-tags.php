@@ -219,12 +219,14 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 						<div class="col-lg-12">
 							<div class="hero-nav-area">
 								<?php if (is_archive()) {
-									the_archive_title( '<h1 class="text-white">', '</h1>' );
+									the_archive_title( '<h1 class="page-title text-white">', '</h1>' );
 									the_archive_description( '<div class="archive-description">', '</div>' );
 								}else{
-									the_title('<h1 class="text-white">', '</h1>');
-									
-								}magazil_breadcrumbs();
+									echo '<h1 class="page-title text-white">';
+									single_post_title();
+									echo '</h1>';
+								}
+								magazil_breadcrumbs();
 								?>
 							</div>
 						</div>

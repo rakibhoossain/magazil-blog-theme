@@ -24,12 +24,12 @@ get_header();
 			<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+			<section class="blog-post-area pb-120 mt-10">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
+							<div class="post-area-wrapper">
 
 
 

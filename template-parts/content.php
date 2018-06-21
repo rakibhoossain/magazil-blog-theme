@@ -12,7 +12,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php $is_img = 'no-img';
 	if ( has_post_thumbnail() ) {
-		$feat_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'feature-post-large' );
+      	$feat_image_url = esc_url($image_url[0]);
 		$is_img = 'tight';
 	// echo '<div class="post-box-img bg-img" style="background-image:url('. esc_url($feat_image_url).')">';
 		echo '<div class="post-box-img has-img">';	

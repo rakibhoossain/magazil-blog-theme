@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'magazil' ); ?></a>
-		<header>
+		<header class="magazil-header">
 			<div class="header-top">
 				<div class="container">
 					<div class="row">

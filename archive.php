@@ -16,14 +16,12 @@ get_header();
 			<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+			<section class="latest-post-area pb-120 mt-20">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
-								<h4 class="cat-title">Latest News</h4>
-
+							<div class="post-area-wrapper">
 
 								<?php
 								if ( have_posts() ) :
@@ -57,11 +55,6 @@ get_header();
 
 								endif;
 								?>
-
-
-								<div class="load-more">
-									<a href="#" class="primary-btn">Load More Posts</a>
-								</div>
 								
 							</div>
 							<!-- End latest-post Area -->

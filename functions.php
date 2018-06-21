@@ -189,7 +189,7 @@ function magazil_scripts() {
 	
 	
 	wp_enqueue_style( 'magazil-style', get_stylesheet_uri() );
-wp_enqueue_style( 'magazil-main', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '1.0' );
+// wp_enqueue_style( 'magazil-main', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '1.0' );
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'magazil-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script( 'magazil-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true);

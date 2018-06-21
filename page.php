@@ -17,8 +17,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-
-
 	<?php
 		// $theParent = wp_get_post_parent_id(get_the_ID());
 		$ancestors = get_post_ancestors(get_the_ID());
@@ -33,22 +31,11 @@ get_header();
 		if ($theParent or $theChild) { $is_parent_child = true; }
 	?>
 
-    <?php // if ($theParent) { ?>
-<!--         <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php //echo get_permalink($theParent); ?>"><i class="fa fa-home" aria-hidden="true"></i> Back to <?php //echo get_the_title($theParent); ?></a> <span class="metabox__main"><?php //the_title(); ?></span></p>
-    </div> -->
-      <?php // } ?>
-
-
-    
-
-
-
 			<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
-				<div class="container no-padding">
+			<section class="page-content-area pb-120">
+				<div class="container no-padding mt-10">
 					<div class="row">
 
 						<?php if($is_parent_child){ ?>
@@ -65,9 +52,6 @@ get_header();
 										} else {
 											$findChildrenOf = get_the_ID();
 										}
-										// if (wp_get_post_parent_id($theParent)) {
-										// 	$findChildrenOf = wp_get_post_parent_id($theParent);
-										// }
 										wp_list_pages(array(
 											'title_li' => NULL,
 											'child_of' => $findChildrenOf,
@@ -82,9 +66,10 @@ get_header();
 						</div>
 						</div>
 						<?php } ?>
+
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
+							<div class="post-area-wrapper">
 
 								<?php
 								while ( have_posts() ) :
@@ -102,11 +87,13 @@ get_header();
 							</div>
 							<!-- End latest-post Area -->
 						</div>
+
 						<?php if(!$is_parent_child){ ?>
 						<div class="col-lg-4">
 							<?php get_sidebar();?>
 						</div>
 						<?php } ?>
+
 					</div>
 				</div>
 			</section>

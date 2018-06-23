@@ -44,10 +44,7 @@ if ( post_password_required() ) {
 ?>
 		<div id="commentnavi">
 			<span class="pages"><?php esc_attr_e('Comment pages', 'magazil'); ?></span>
-			<div id="commentpager">
-				<?php echo $comment_pages; ?>
-				
-			</div>
+			echo '<div id="commentpager">'.$comment_pages.'</div>';			
 			<div class="fixed"></div>
 		</div>
 <?php

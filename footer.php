@@ -34,17 +34,21 @@
 				<p class="footer-text m-0 col-lg-8 col-md-12">
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
+
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'magazil' ), 'magazil', '<a href="http://rakibhossain.cf/">Rakib Hossain</a>' );
 			?>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 					<div class="col-lg-4 col-md-12 footer-social">
-						<h1>Change</h1>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
+						<?php
+						wp_nav_menu( array(
+							'theme_location'    => 'social',
+							'menu_class'        => 'social-menu-footer',
+							'container'         => false,
+							'depth'          => 1,
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span><i class="fa fa-chain"></i>',
+						) );
+						?>
 					</div>
 				</div>
 			</div>

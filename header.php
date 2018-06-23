@@ -28,12 +28,16 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
-							</ul>
+						<?php
+						wp_nav_menu( array(
+							'theme_location'    => 'social',
+							'menu_class'        => 'social-menu',
+							'container'         => false,
+							'depth'          => 1,
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span><i class="fa fa-chain"></i>',
+						) );
+						?>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
 							<ul>
@@ -44,29 +48,20 @@
 					</div>
 				</div>
 			</div>
-			<!-- <h1 class="text-hide" style="background-image: url('<?php //echo get_template_directory_uri(); ?>/img/logo.png'); width: 50px; height: 50px;">Bootstrap</h1> -->
 			<div class="logo-wrap">
 				<div class="container">
 					<div class="row justify-content-between align-items-center">
 						<div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
-<!-- 							<a href="index.html">
-								<img class="img-fluid" src="img/logo.png" alt="">
-							</a> -->
-							<?php 
-							// the_custom_logo();
-
-							$custom_logo_id = get_theme_mod( 'custom_logo' );
-							$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+						<?php 
 							if ( has_custom_logo() ) {
-							        echo '<img class="img-fluid" src="'. esc_url( $logo[0] ) .'" alt="'.get_bloginfo( 'name' ).'">';
+								the_custom_logo();
 							} else {
-							        echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+								echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
 							}
-
-							?>
+						?>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="">
+							<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="title">
 						</div>
 					</div>
 				</div>
@@ -76,7 +71,7 @@
 					<nav id="nav-menu-container">
 					<?php
 					wp_nav_menu( array(
-						'theme_location'    => 'menu-1',
+						'theme_location'    => 'primary',
 						'menu_class'        => 'nav-menu',
 						'container'         => false,
 					) );
@@ -84,7 +79,7 @@
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
 						<form class="Search">
-							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
+							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">
 							<label for="Search-box" class="Search-box-label">
 								<span class="lnr lnr-magnifier"></span>
 							</label>

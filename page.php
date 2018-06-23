@@ -19,16 +19,23 @@ get_header();
 
 	<?php
 		// $theParent = wp_get_post_parent_id(get_the_ID());
+		$is_parent_child = false;
+		$theParent = false;
+		$row_size = 8;
 		$ancestors = get_post_ancestors(get_the_ID());
+
+		if ($ancestors) {
 		$parent_root=count($ancestors)-1;
 		$theParent = $ancestors[$parent_root];
-		$is_parent_child = false;
+		}
+		
 		$pagelist = array();
 		$theChild = get_pages(array(
 			'child_of' => get_the_ID()
 		));
+
 		//page has child or parent pages
-		if ($theParent or $theChild) { $is_parent_child = true; }
+		if ($theParent or $theChild) { $is_parent_child = true; $row_size = 9;}
 	?>
 
 			<div class="site-main-container">
@@ -39,7 +46,7 @@ get_header();
 					<div class="row">
 
 						<?php if($is_parent_child){ ?>
-						<div class="col-lg-4">
+						<div class="col-lg-3">
 							<div class="sidebars-area">
 							<?php 
 							if($is_parent_child){ ?>
@@ -67,7 +74,7 @@ get_header();
 						</div>
 						<?php } ?>
 
-						<div class="col-lg-8 post-list">
+						<div class="col-lg-<?php echo absint($row_size);?> post-list">	
 							<!-- Start latest-post Area -->
 							<div class="post-area-wrapper">
 

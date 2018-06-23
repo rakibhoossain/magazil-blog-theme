@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php $is_img = 'no-img';
 	if ( has_post_thumbnail() ) {
-		$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'feature-post-large' );
+		$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'feature-post-large' );
       	$feat_image_url = esc_url($image_url[0]);
 		$is_img = 'tight';
 	// echo '<div class="post-box-img bg-img" style="background-image:url('. esc_url($feat_image_url).')">';
@@ -23,7 +23,7 @@
 		echo '<div class="post-box-img no-img">';
 	}?>
 
-	<div class="post-box-details <?php echo $is_img; ?>">
+	<div class="post-box-details <?php echo esc_attr( $is_img ); ?>">
 		<?php magazil_post_categories(); ?>
 		<?php 
 		the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h3 class="entry-title"><h3>', '</h3></a>' );

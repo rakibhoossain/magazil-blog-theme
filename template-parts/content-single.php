@@ -10,7 +10,7 @@
 <div class="feature-img-thumb relative">
 	<div class="overlay overlay-bg"></div>
 	<?php if ( has_post_thumbnail()) {
-		$feat_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		$feat_image_url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 		printf('<img class="img-fluid" src="%1$s" alt="%2$s">' ,esc_url($feat_image_url),get_the_title());
 	}?>
 </div>

@@ -18,18 +18,18 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
 	?>
 
 <p>
-  <label for="<?php echo $this->get_field_id( 'title' ); ?>">
+  <label for="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>">
     <?php _e('Title', 'magazil'); ?>
     :</label>
   <br />
-  <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
+  <input id="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' )); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'list_num' ); ?>">
+  <label for="<?php echo esc_attr( $this->get_field_id( 'list_num' )); ?>">
     <?php _e('Recent Posts List Num', 'magazil'); ?>
     :</label>
   <br />
-  <input id="<?php echo $this->get_field_id( 'list_num' ); ?>" name="<?php echo $this->get_field_name( 'list_num' ); ?>" value="<?php echo absint($instance['list_num']); ?>" />
+  <input id="<?php echo esc_attr( $this->get_field_id( 'list_num' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'list_num' )); ?>" value="<?php echo absint($instance['list_num']); ?>" />
 </p>
 <?php
 
@@ -49,9 +49,9 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
  	    $title    = apply_filters(__('Recent Posts', 'magazil'), esc_attr($instance['title']) );
 		$list_num = absint($instance['list_num']);
 		
-		echo $before_widget;
+		echo ''.$before_widget.'';
 		if($title)
-			echo $before_title . $title . $after_title;
+			echo ''.$before_title . $title . $after_title;
 		
 		$my_query = new WP_Query( 'showposts='.absint($list_num).'&ignore_sticky_posts=1');
 		?>
@@ -60,10 +60,8 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
 <div class="editors-pick-post">
     <?php $first_viewed = true; while ($my_query->have_posts() ) : $my_query->the_post(); ?>
 
-    <?php if ($first_viewed){
+    <?php if ($first_viewed && has_post_thumbnail() ){
 
-$first_viewed=false;
-   if ( has_post_thumbnail() ) {
          $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'astore-widget-post-image');
 		 $source = get_site_url();
 		 if($featured_image[0] !=""){
@@ -91,7 +89,6 @@ $first_viewed=false;
 
 			<?php
 		}
-	}
 
     }else{
    ?>
@@ -119,13 +116,13 @@ $first_viewed=false;
 		<?php
 
     }
-
+	$first_viewed=false;
     endwhile;
     wp_reset_postdata();
     ?>
 </div>
 <?php 
-	echo $after_widget;
+	echo ''.$after_widget;
  	}
  }
  

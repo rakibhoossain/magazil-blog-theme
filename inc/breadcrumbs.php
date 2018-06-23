@@ -226,7 +226,8 @@ class Breadcrumb_Trail {
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
 
-		echo $breadcrumb;
+		// echo $breadcrumb;
+		echo ''.$breadcrumb.'';
 	}
 
 	/* ====== Protected Methods ====== */

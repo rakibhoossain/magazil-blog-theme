@@ -83,7 +83,7 @@ if ( ! function_exists( 'magazil_entry_meta' ) ) :
 	function magazil_entry_meta($extra_class = '', $edit_link = true) {
 		// Hide category and tag text for pages.
 ?>
-<ul class="meta <?php echo $extra_class; ?>">
+<ul class="meta <?php echo esc_attr( $extra_class ); ?>">
 	<li>
 		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
 			<span class="lnr lnr-user"></span><?php echo esc_html( get_the_author() )?>
@@ -177,7 +177,7 @@ if ( ! function_exists( 'magazil_post_categories' ) ) :
 			if ($multiple) {
 				echo get_the_category_list();
 			}else{
-				$category = get_the_category( $post->ID );
+				$category = get_the_category( get_the_ID() );
 				if ( $category && !is_wp_error( $category ) ) :
 					echo '<ul class="post-categories">';
 					echo '<li><a href="'.get_category_link($category[0]->cat_ID).'">' . $category[0]->cat_name . '</a></li>';
@@ -217,7 +217,20 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="hero-nav-area">
+							<div class="hero-nav-area relative">
+							<?php
+							if (has_header_image()) {
+								echo '<div class="header-bg" style="background-image: url(\''.esc_url( get_header_image() ).'\')"></div>';
+							}
+							
+
+
+							?>
+							
+
+							 <?php // if(true) { echo ' has-bg relative" style="background-image: url(\''..'\')"'; } >?>
+
+<div class="header-title relative">
 								<?php if (is_archive()) {
 									the_archive_title( '<h1 class="page-title text-white">', '</h1>' );
 									the_archive_description( '<div class="archive-description">', '</div>' );
@@ -226,14 +239,18 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 									single_post_title();
 									echo '</h1>';
 								}
-								magazil_breadcrumbs();
+								//magazil_breadcrumbs();
 								?>
+</div>
+
+							<?php magazil_breadcrumbs(); ?>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
+								<!-- <h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6> -->
+
+								<?php magazil_breaking_news(); ?>
 							</div>
 						</div>
 					</div>
@@ -277,5 +294,22 @@ if ( ! function_exists( 'magazil_post_thumbnail' ) ) :
 
 		<?php
 		endif; // End is_singular().
+	}
+endif;
+
+
+if ( ! function_exists( 'magazil_breaking_news' ) ) :
+	/**
+	 * Displays breaking news list.
+	 *
+	 * Wraps the breaking news title in an anchor and h6 element.
+	 */
+	function magazil_breaking_news() {
+		$my_query = new WP_Query( 'showposts=6&ignore_sticky_posts=1');
+		while ($my_query->have_posts() ) : $my_query->the_post();?>
+			<h6><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
+		<?php	
+		endwhile;
+    	wp_reset_postdata();
 	}
 endif;

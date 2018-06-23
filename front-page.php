@@ -36,7 +36,7 @@ get_header();
 						?>		
 
 						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>		
-							<div class="grid-post post-grid-<?php echo $popular_show;?>">
+							<div class="grid-post post-grid-<?php echo esc_attr( $popular_show ); ?>">
 
 							<?php
 								/* Start the Loop */
@@ -122,7 +122,7 @@ get_header();
 
 							<!-- Start banner-ads Area -->
 							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
-								<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="">
+								<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="ad">
 							</div>
 							<!-- End banner-ads Area -->
 
@@ -154,7 +154,7 @@ get_header();
 										while ( $loop->have_posts() ) : $loop->the_post(); 
 											$class = ($count == 0)? 'col-lg-12 '.$mt : 'col-lg-6 mt-10';?>
 
-											<div class="<?php echo $class; ?>">
+											<div class="<?php echo esc_attr( $class ); ?>">
 
 											<?php
 											/**

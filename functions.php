@@ -51,7 +51,8 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'magazil' ),
+			'primary' => esc_html__( 'Primary', 'magazil' ),
+			'social' => esc_html__( 'Social Links Menu', 'magazil' ),
 		) );
 
 		/*
@@ -66,14 +67,35 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 			'caption',
 		) );
 
+			/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+			add_theme_support( 'post-formats', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'audio',
+			) );
+
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'magazil_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		// add_theme_support( 'custom-background', apply_filters( 'magazil_custom_background_args', array(
+		// 	'default-color' => 'ffffff',
+		// 	'default-image' => '',
+		// ) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, and column width.
+ 	 */
+		add_editor_style( array( 'assets/css/editor-style.css') );
 
 		/**
 		 * Add support for core custom logo.
@@ -81,8 +103,8 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 30,
+			'width'       => 150,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );

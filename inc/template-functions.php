@@ -148,9 +148,10 @@ function setPostViews($postID) {
 // frontpage post
 
 function front_page_post($image_size = 'top-post-small' , $img_bg = false, $extra_class='') {
+  global $post;
     $is_img = 'no-img';
     if ( has_post_thumbnail() ) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $image_size );
+      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $image_size );
       $image = esc_url($image_url[0]);
       // $image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
@@ -165,7 +166,7 @@ function front_page_post($image_size = 'top-post-small' , $img_bg = false, $extr
     }else{
         echo '<div class="post-box-img no-img '.$extra_class.'">';
     }?>
-        <div class="post-box-details <?php echo $is_img; ?>">
+        <div class="post-box-details <?php echo esc_attr( $is_img ); ?>">
             <?php magazil_post_categories(); ?>
             <?php 
             the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h3 class="entry-title"><h3>', '</h3></a>' );
@@ -204,4 +205,91 @@ function magazil_page_navigation($pagelist = array()){
 </nav><!-- #pagination -->
 <?php
 
+}
+
+
+
+/**
+ * Display Fontawesome icons in social links menu.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  array   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function magazil_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+  // Get supported social icons.
+  $social_icons =  magazil_social_links_icons();
+
+  // Change SVG icon inside social links menu if there is supported URL.
+  if ( 'social' === $args->theme_location ) {
+    foreach ( $social_icons as $attr => $value ) {
+      if ( false !== strpos( $item_output, $attr ) ) {
+
+        $item_output = str_replace( $args->link_after, '</span><i class="fa fa-'.esc_attr( $value ).'"></i>', $item_output );
+      }
+    }
+  }
+
+  return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'magazil_nav_menu_social_icons', 10, 4 );
+
+
+/**
+ * Returns an array of supported social links (URL and icon name).
+ *
+ * @return array $social_links_icons
+ */
+function magazil_social_links_icons() {
+  // Supported social links icons.
+  $social_links_icons = array(
+    'behance.net'     => 'behance',
+    'codepen.io'      => 'codepen',
+    'deviantart.com'  => 'deviantart',
+    'digg.com'        => 'digg',
+    'docker.com'      => 'dockerhub',
+    'dribbble.com'    => 'dribbble',
+    'dropbox.com'     => 'dropbox',
+    'facebook.com'    => 'facebook',
+    'flickr.com'      => 'flickr',
+    'foursquare.com'  => 'foursquare',
+    'plus.google.com' => 'google-plus',
+    'github.com'      => 'github',
+    'instagram.com'   => 'instagram',
+    'linkedin.com'    => 'linkedin',
+    'mailto:'         => 'envelope-o',
+    'medium.com'      => 'medium',
+    'pinterest.com'   => 'pinterest-p',
+    'pscp.tv'         => 'periscope',
+    'getpocket.com'   => 'get-pocket',
+    'reddit.com'      => 'reddit-alien',
+    'skype.com'       => 'skype',
+    'skype:'          => 'skype',
+    'slideshare.net'  => 'slideshare',
+    'snapchat.com'    => 'snapchat-ghost',
+    'soundcloud.com'  => 'soundcloud',
+    'spotify.com'     => 'spotify',
+    'stumbleupon.com' => 'stumbleupon',
+    'tumblr.com'      => 'tumblr',
+    'twitch.tv'       => 'twitch',
+    'twitter.com'     => 'twitter',
+    'vimeo.com'       => 'vimeo',
+    'vine.co'         => 'vine',
+    'vk.com'          => 'vk',
+    'wordpress.org'   => 'wordpress',
+    'wordpress.com'   => 'wordpress',
+    'yelp.com'        => 'yelp',
+    'youtube.com'     => 'youtube',
+  );
+
+  /**
+   * Filter Magazil social links icons.
+   *
+   * @since Magazil 1.0
+   *
+   * @param array $social_links_icons Array of social links icons.
+   */
+  return apply_filters( 'magazil_social_links_icons', $social_links_icons );
 }

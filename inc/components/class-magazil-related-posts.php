@@ -128,7 +128,7 @@ if ( ! class_exists( 'Magazil_Related_Posts' ) ) {
 			$related_posts = $this->get_related_posts( get_the_ID(), get_option( 'posts_per_page' ) );
 ?>
             <div class="related-post">
-            	<h3><?php esc_attr_e('Related posts', 'magazil'); ?></h3>
+            	<h3 class="label-title"><?php esc_attr_e('Related posts', 'magazil'); ?></h3>
                 <ul class="slides" id="related_posts">
 <?php
                 // Loop through related posts

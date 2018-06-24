@@ -1,20 +1,8 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package magazil
- */
 
+//Template Name: Full Wide
 get_header();
 ?>
-
 
 
 	<div id="primary" class="content-area">
@@ -27,11 +15,9 @@ get_header();
 			<section class="blog-post-area pb-120 mt-10">
 				<div class="container no-padding">
 					<div class="row">
-						<div class="col-lg-8 post-list">
+						<div class="col-lg-12 post-list">
 							<!-- Start latest-post Area -->
 							<div class="post-area-wrapper">
-
-
 
 								<?php
 								if ( have_posts() ) :
@@ -41,7 +27,6 @@ get_header();
 									<header>
 										<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 									</header>
-									<div class="row">
 									<?php
 								endif;
 
@@ -54,30 +39,15 @@ get_header();
 									 * If you want to override this in a child theme, then include a file
 									 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 									 */
-									echo '<div class="col-lg-6">';
-									get_template_part( 'template-parts/content', get_post_type() );
-									echo '</div>';
+									the_content();
 								endwhile;
-								echo '</div>';
-								the_posts_pagination( array(
-									'prev_text' => '<i class="fa fa-arrow-left"></i><span class="screen-reader-text">' . __( 'Previous Page', 'magazil' ) . '</span>',
-									'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'magazil' ) . '</span><i class="fa fa-arrow-right"></i>' ,
-									'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'magazil' ) . ' </span>',
-								) );
-
-								else :
-
-									get_template_part( 'template-parts/content', 'none' );
-
 								endif;
 								?>
 								
 							</div>
 							<!-- End latest-post Area -->
 						</div>
-						<div class="col-lg-4">
-							<?php get_sidebar();?>
-						</div>
+
 					</div>
 				</div>
 			</section>

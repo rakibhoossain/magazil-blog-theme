@@ -69,16 +69,7 @@ get_header();
 		
 						</div>
 						<div class="col-lg-12">
-							<div class="news-tracker-wrap">
-								<div class="ticker-wrap">
-									<ul class="ticker">
-										<li class="ticker__item">Letterpress chambray brunch.</li>
-										<li class="ticker__item">Vice mlkshk crucifix beard chillwave meditation hoodie asymmetrical Helvetica.</li>
-										<li class="ticker__item">Ugh PBR&B kale chips Echo Park.</li>
-									</ul>
-								</div>
-
-							</div>
+						<?php get_template_part( 'inc/components/breaking-news' ); // Get Breaking News template ?>
 						</div>
 					</div>
 				</div>

@@ -2253,7 +2253,13 @@ a img.aligncenter {
 .sticky {
 
 }
+.hentry {
+  margin: 0 0 1.5em;
+}
 
+.updated:not(.published) {
+  display: none;
+}
 .gallery-caption {
 
 }
@@ -2673,6 +2679,7 @@ input[type="color"]:focus,
 .post-box-details.no-img .post-categories {
     margin-left: -10px;
 }
+.feature-img-thumb:hover img,
 .post-box-ltrt:hover .feature-img img,
 .post-box-img.has-img:hover img {
     -webkit-transform: scale(1.045);
@@ -2741,24 +2748,7 @@ input[type="color"]:focus,
 
 
 
-/* news ticker */
-.news-tracker-wrap {
-  margin-top: 10px;
-  padding: 12px 15px;
-  background: #fff;
-}
 
-.news-tracker-wrap h6 {
-  font-weight: 500;
-}
-
-.news-tracker-wrap h6 span {
-  color: #f6214b;
-}
-
-.news-tracker-wrap a {
-  color: #222;
-}
 
 .ad-widget-wrap {
   background: #fff !important;
@@ -2877,60 +2867,107 @@ input[type="color"]:focus,
 
 
 
-@-webkit-keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
+
+
+/**
+ * Breaking News
+ * -----------------------------------------------------------------------------
+ */
+
+/* news ticker */
+.news-tracker-wrap {
+  margin-top: 10px;
+  padding: 12px 15px;
+  background: #fff;
 }
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
+
+.news-tracker-wrap h6 {
+  font-weight: 500;
 }
-.ticker-wrap {
-/*   position: fixed;
-  bottom: 0;
-  width: 100%; */
+
+.news-tracker-wrap h6 span {
+  color: #f6214b;
+}
+
+.news-tracker-wrap a {
+  color: #222;
+}
+
+
+
+
+.breaking-news {
+  background: #fff;
+  height: 32px;
+/*   margin: -5px auto 25px; */
   overflow: hidden;
-  height: 4rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding-left: 100%;
-  box-sizing: content-box;
+  position: relative;
+  margin-top: 10px;
 }
-/* .ticker-wrap .ticker {
-  display: inline-block;
-  height: 4rem;
-  line-height: 4rem;
+
+.breaking-news span.breaking-news-title {
+  background: #04091e;
+  color: #fff;
+  display: block;
+  float: left;
+  padding: 5px 10px 0;
+  height: 32px;
+  font-size: 14px;
+}
+
+.breaking-news span.breaking-news-title i {
+  /* display:none; */
+}
+
+.breaking-news ul {
+  float: left;
+}
+
+.breaking-news ul li {
+  display: block
+}
+
+.breaking-news ul a {
+  color: #222;
+  padding: 5px 10px 0;
+  display: block;
   white-space: nowrap;
-  padding-right: 100%;
-  box-sizing: content-box;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-name: ticker;
-  animation-name: ticker;
-  -webkit-animation-duration: 30s;
-  animation-duration: 30s;
-} */
-.ticker-wrap .ticker__item {
-  display: inline-block;
-  padding: 0 2rem;
-  font-size: 2rem;
-  color: white;
+  background: #fff;
 }
+
+.tickercontainer {
+  height: 32px;
+  overflow: hidden;
+}
+
+.tickercontainer .mask {
+  position: relative;
+  top: 9px;
+  overflow: hidden;
+}
+
+ul.newsticker {
+  position: relative;
+  left: 750px;
+  list-style-type: none;
+}
+
+ul.newsticker li {
+  padding: 0;
+  display: inline-block;
+}
+
+ul.newsticker a {
+  white-space: nowrap;
+  padding: 0;
+  margin: 0 50px 0 0;
+}
+
+
+
+
+
+
 
 
 /* related post*/
@@ -3076,8 +3113,14 @@ input[type="color"]:focus,
   background: #fff;
 }
 
+.single-post-wrap .feature-img-thumb {
+  overflow: hidden;
+
+}
+
 .single-post-wrap .feature-img-thumb img {
   width: 100%;
+  transition: all 0.2s ease;
 }
 
 .single-post-wrap .feature-img-thumb .overlay-bg {
@@ -3755,8 +3798,20 @@ p img.alignright, p img.alignleft {margin-top:0;}
   .gallery.gallery-columns-4 figure, .gallery.gallery-columns-5 figure, .gallery.gallery-columns-6 figure, .gallery.gallery-columns-7 figure, .gallery.gallery-columns-8 figure, .gallery.gallery-columns-9 figure {width:100%; margin:0 0 1em 0; float:none;}
 }
 
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
 
-
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
 
 /* =================================== */
 /*  Footer Styles

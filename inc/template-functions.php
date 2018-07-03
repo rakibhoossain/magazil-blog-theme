@@ -152,13 +152,10 @@ function setPostViews($postID) {
  *  parm 3 extra class
  */ 
 function front_page_post($image_size = 'magazil-feature-image' , $img_bg = false, $extra_class='') {
-  global $post;
     $is_img = 'no-img';
     if ( has_post_thumbnail() ) {
       $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $image_size );
       $image = esc_url($image_url[0]);
-      // $image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-
         $is_img = 'tight';
         if ($img_bg) {
           echo '<div class="post-box-img bg-img '.$extra_class.'" style="background-image:url(\''.$image.'\')">';

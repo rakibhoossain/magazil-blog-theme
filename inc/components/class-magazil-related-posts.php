@@ -126,11 +126,12 @@ if ( ! class_exists( 'Magazil_Related_Posts' ) ) {
  
 			// Check if related posts should be shown
 			$related_posts = $this->get_related_posts( get_the_ID(), get_option( 'posts_per_page' ) );
-?>
+			if ( $related_posts->have_posts() ): ?>
+
             <div class="related-post">
             	<h3 class="label-title"><?php esc_attr_e('Related posts', 'magazil'); ?></h3>
                 <ul class="slides" id="related_posts">
-<?php
+			<?php
                 // Loop through related posts
 			while ( $related_posts->have_posts() ) {
 				$related_posts->the_post();
@@ -159,6 +160,8 @@ if ( ! class_exists( 'Magazil_Related_Posts' ) ) {
 
 			wp_reset_query();
 			wp_reset_postdata();
+
+			endif;
 		}
 	}
 }// End if().

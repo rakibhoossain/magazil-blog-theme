@@ -127,45 +127,7 @@ if ($edit_link){
 </ul>
 
 <?php
-		
-		// if ( 'post' === get_post_type() ) {
-		// 	/* translators: used between list items, there is a space after the comma */
-		// 	$categories_list = get_the_category_list( esc_html__( ', ', 'magazil' ) );
-		// 	if ( $categories_list ) {
-		// 		/* translators: 1: list of categories. */
-		// 		printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'magazil' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		// 	}
-
-		// 	/* translators: used between list items, there is a space after the comma */
-		// 	$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'magazil' ) );
-		// 	if ( $tags_list ) {
-		// 		 translators: 1: list of tags. 
-		// 		printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'magazil' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		// 	}
-		// }
-
-		// if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		// 	echo '<span class="comments-link">';
-		// 	comments_popup_link(
-		// 		sprintf(
-		// 			wp_kses(
-		// 				/* translators: %s: post title */
-		// 				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'magazil' ),
-		// 				array(
-		// 					'span' => array(
-		// 						'class' => array(),
-		// 					),
-		// 				)
-		// 			),
-		// 			get_the_title()
-		// 		)
-		// 	);
-		// 	echo '</span>';
-		// }
-
-
-
-	}
+}
 endif;
 
 if ( ! function_exists( 'magazil_post_categories' ) ) :
@@ -222,15 +184,12 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 							if (has_header_image()) {
 								echo '<div class="header-bg" style="background-image: url(\''.esc_url( get_header_image() ).'\')"></div>';
 							}
-							
-
-
 							?>
 							
 
 							 <?php // if(true) { echo ' has-bg relative" style="background-image: url(\''..'\')"'; } >?>
 
-<div class="header-title relative">
+								<div class="header-title relative">
 								<?php if (is_archive()) {
 									the_archive_title( '<h1 class="page-title text-white">', '</h1>' );
 									the_archive_description( '<div class="archive-description">', '</div>' );
@@ -241,17 +200,13 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 								}
 								//magazil_breadcrumbs();
 								?>
-</div>
+								</div>
 
 							<?php magazil_breadcrumbs(); ?>
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<div class="news-tracker-wrap">
-								<!-- <h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6> -->
-
-								<?php magazil_breaking_news(); ?>
-							</div>
+							<?php get_template_part( 'inc/components/breaking-news' ); // Get Breaking News template ?>
 						</div>
 					</div>
 				</div>
@@ -294,22 +249,5 @@ if ( ! function_exists( 'magazil_post_thumbnail' ) ) :
 
 		<?php
 		endif; // End is_singular().
-	}
-endif;
-
-
-if ( ! function_exists( 'magazil_breaking_news' ) ) :
-	/**
-	 * Displays breaking news list.
-	 *
-	 * Wraps the breaking news title in an anchor and h6 element.
-	 */
-	function magazil_breaking_news() {
-		$my_query = new WP_Query( 'showposts=6&ignore_sticky_posts=1');
-		while ($my_query->have_posts() ) : $my_query->the_post();?>
-			<h6><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
-		<?php	
-		endwhile;
-    	wp_reset_postdata();
 	}
 endif;

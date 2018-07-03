@@ -42,11 +42,22 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'top-post-large', 750, 439, true );
-		add_image_size( 'top-post-small', 380, 220, true );
-		add_image_size( 'feature-post-large', 690, 300, true );
-		add_image_size( 'feature-post-small', 335, 180, true );
-		add_image_size( 'feature-image', 263, 180, true );
+		add_image_size( 'magazil-large-top', 750, 439, true );
+		add_image_size( 'magazil-small-top', 380, 220, true );
+
+		add_image_size( 'magazil-large-feature', 690, 300, true );
+		add_image_size( 'magazil-small-feature', 335, 180, true );
+
+		add_image_size( 'magazil-feature-image', 263, 180, true );
+		add_image_size( 'magazil-small-icon', 100, 80, true );
+
+		// add_image_size( 'newsmag-recent-post-big', 560, 416, true );
+		// add_image_size( 'newsmag-post-horizontal', 350, 260, true );
+		// add_image_size( 'newsmag-vertical-post', 255, 195, true );
+		// add_image_size( 'newsmag-post-grid', 360, 270, true );
+		// add_image_size( 'newsmag-post-grid-small', 275, 210, true );
+		// add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
+		// add_image_size( 'newsmag-slider-image', 1920, 600, true );
 		
 
 		// This theme uses wp_nav_menu() in one location.
@@ -133,6 +144,15 @@ add_action( 'after_setup_theme', 'magazil_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function magazil_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Content Area', 'magazil' ),
+		'id'            => 'content-area',
+		'description'   => esc_html__( 'Add widgets to front page.', 'magazil' ),
+		'before_widget' => '<div id="%1$s" class="post-area-wrapper %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="title">',
+		'after_title'   => '</h6>',
+	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'magazil' ),
 		'id'            => 'sidebar-1',
@@ -258,7 +278,12 @@ require get_template_directory() . '/inc/components/class-magazil-related-posts.
 
 
 
-require get_template_directory() . '/inc/components/class-magazil-widget-recent-posts.php';
+require get_template_directory() . '/inc/components/widgets/class-widget-magazil-posts-list-vertical.php';
+require get_template_directory() . '/inc/components/widgets/class-widget-magazil-posts-list-horizontal.php';
+require get_template_directory() . '/inc/components/widgets/class-widget-magazil-post-list-sidebar.php';
+
+
+
 /**
  * Customizer additions.
  */
@@ -270,4 +295,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

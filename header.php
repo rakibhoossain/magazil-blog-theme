@@ -60,9 +60,18 @@
 							}
 						?>
 						</div>
-						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="title">
-						</div>
+
+				<?php
+				$newsmag_show_banner = get_theme_mod( 'magazil_show_banner_on_homepage', true );
+				 if ( $newsmag_show_banner ): ?>
+                    <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding header-banner ads-banner">
+						<?php
+						$banner = get_theme_mod( 'magazil_banner_type', 'image' );
+						get_template_part( 'template-parts/banner/banner', $banner );
+						?>
+                    </div>
+				<?php endif; ?>
+
 					</div>
 				</div>
 			</div>
@@ -77,6 +86,13 @@
 					) );
 					?>
 					</nav><!-- #nav-menu-container -->
+
+	<?php
+		if ( function_exists( 'magazil_woocommerce_header_cart' ) ) {
+			magazil_woocommerce_header_cart();
+		}
+	?>
+					
 					<div class="navbar-right">
 						<form class="Search">
 							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">

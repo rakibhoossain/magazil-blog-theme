@@ -145,9 +145,13 @@ function setPostViews($postID) {
 }
 
 
-// frontpage post
-
-function front_page_post($image_size = 'top-post-small' , $img_bg = false, $extra_class='') {
+/**
+ *  frontpage post layout
+ *  parm 1 image size
+ *  parm 2 image bg
+ *  parm 3 extra class
+ */ 
+function front_page_post($image_size = 'magazil-feature-image' , $img_bg = false, $extra_class='') {
   global $post;
     $is_img = 'no-img';
     if ( has_post_thumbnail() ) {

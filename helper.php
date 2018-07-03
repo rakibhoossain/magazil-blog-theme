@@ -251,3 +251,111 @@ fa fa-yoast
 fa fa-youtube 
 fa fa-youtube-play  
 fa fa-youtube-square
+
+
+
+
+
+
+
+
+
+
+              <!-- Start latest-post Area -->
+              <div class="post-area-wrapper">
+                <h4 class="cat-title">Latest News (Change)</h4>
+                <?php 
+                  $args = array( 
+                  'post_type' => 'post',
+                  'posts_per_page' => 10);
+                  $loop = new WP_Query( $args );
+                ?>
+                <?php
+                if ( $loop->have_posts() ) :
+
+                  /* Start the Loop */
+                  while ( $loop->have_posts() ) :
+                    $loop->the_post();
+                    /*
+                     * Include the Post-Type-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                     */
+                    
+                    get_template_part( 'template-parts/content', 'blog' );
+
+                  endwhile;
+                  wp_reset_postdata();
+                endif;
+                ?>
+              </div>
+              <!-- End latest-post Area -->
+
+              <!-- Start banner-ads Area -->
+              <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/banner-ad.jpg" alt="ad">
+              </div>
+              <!-- End banner-ads Area -->
+
+
+
+
+              <!-- Start top-post Area -->
+              <section class="post-feature post-area-wrapper">
+                <div class="container no-padding">
+                  <div class="row small-gutters">
+                    <div class="col-lg-12 mb-10">
+                      <h4 class="cat-title">Latest News (Change)</h4>
+                    </div>
+
+                <?php 
+                  $args = array( 
+                    'post_type' => 'post',
+                    'posts_per_page' => 5
+                  );
+                  $loop = new WP_Query( $args );
+                ?>    
+
+                <?php 
+                  if ( $loop->have_posts() ) : 
+                    $count=(int)0; $mt='';
+
+
+                    /* Start the Loop */
+                    while ( $loop->have_posts() ) : $loop->the_post(); 
+                      $class = ($count == 0)? 'col-lg-12 '.$mt : 'col-lg-6 mt-10';?>
+
+                      <div class="<?php echo esc_attr( $class ); ?>">
+
+                      <?php
+                      /**
+                       * Run the loop for the search to output the results.
+                       * If you want to overload this in a child theme then include a file
+                       * called content-search.php and that will be used instead.
+                       */
+                      if ($count == 0) {
+                        front_page_post('feature-post-large');
+                      }else{
+                        front_page_post('feature-post-small');
+                      }
+
+                      $count++; 
+                      if ($count == 3) {
+                        $count=0;
+                        $mt='mt-10';
+                      }
+                      ?>
+
+                      </div>
+
+                      <?php
+                    endwhile;
+                    wp_reset_postdata();
+
+                  else :
+                    get_template_part( 'template-parts/content', 'none' );
+                  endif;
+                ?>
+                  </div>
+                </div>
+              </section>

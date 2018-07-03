@@ -1,6 +1,6 @@
 <?php
-if(!class_exists('Magazil_Recent_Posts_Widget')){
- class Magazil_Recent_Posts_Widget extends WP_Widget {
+if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
+ class Widget_Magazil_Posts_List_Sidebar extends WP_Widget {
     
 	public function __construct() {
 		
@@ -62,7 +62,7 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
 
     <?php if ($first_viewed && has_post_thumbnail() ){
 
-         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'astore-widget-post-image');
+         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magazil-small-feature');
 		 $source = get_site_url();
 		 if($featured_image[0] !=""){
 			$thumb = $featured_image[0];
@@ -95,7 +95,7 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
 <div class="single-post d-flex flex-row">
 	<?php
     	   if ( has_post_thumbnail() ) {
-         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'astore-widget-post-image');
+         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magazil-small-icon');
 		 $source = get_site_url();
 		 if($featured_image[0] !=""){
 			$thumb = $featured_image[0]; 
@@ -128,7 +128,9 @@ if(!class_exists('Magazil_Recent_Posts_Widget')){
  
 function magazil_companion_recent_posts(){
 	
-	register_widget('Magazil_Recent_Posts_Widget');
+	register_widget('Widget_Magazil_Posts_List_Sidebar');
+	register_widget('Widget_Magazil_Posts_List_Horizontal');
+	register_widget('Widget_Magazil_Posts_List_Vertical');
 						
 }
 add_action( 'widgets_init', 'magazil_companion_recent_posts' );

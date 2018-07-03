@@ -382,7 +382,7 @@ input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
 
     background: #f6214b;
     padding-left: 30px;
@@ -395,7 +395,7 @@ input[type="submit"] {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     position: relative;
-}
+} */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -1334,6 +1334,46 @@ td, th {
    max-width: 100%;
    height: auto;
 }
+
+
+
+
+.header-banner {
+  text-align: right; }
+  .header-banner .newsmag-adsense {
+    width: 728px;
+    height: 90px;
+    display: block; }
+  .header-banner .newsmag-adsense:before {
+    display: none !important; }
+  .header-banner .newsmag-adsense ins {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent; }
+  @media screen and (max-width: 991px) {
+    .header-banner .newsmag-adsense {
+      width: 720px;
+      height: 90px; }
+    .header-banner .newsmag-adsense:before {
+      content: '991'; } }
+  .header-banner .adsense__loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .header-banner .adsense--loaded .adsense__loading {
+    display: none; }
+  .header-banner .adsense__loading span {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell; }
+
+
+
 .main-menu {
   background: #04091e;
   padding: 15px 20px;
@@ -2528,6 +2568,7 @@ input[type="color"]:focus,
 .post-area-wrapper {
     padding: 20px;
     background: #fff;
+    margin-bottom: 20px;
 }
 .post-box-img{
     position: relative;
@@ -2868,7 +2909,7 @@ input[type="color"]:focus,
   padding-left: 100%;
   box-sizing: content-box;
 }
-.ticker-wrap .ticker {
+/* .ticker-wrap .ticker {
   display: inline-block;
   height: 4rem;
   line-height: 4rem;
@@ -2883,7 +2924,7 @@ input[type="color"]:focus,
   animation-name: ticker;
   -webkit-animation-duration: 30s;
   animation-duration: 30s;
-}
+} */
 .ticker-wrap .ticker__item {
   display: inline-block;
   padding: 0 2rem;

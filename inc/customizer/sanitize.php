@@ -21,4 +21,22 @@ if ( ! function_exists( 'magazil_sanitize_radio_buttons' ) ) {
 		}
 	}
 }
+
+/**
+ * validate int.
+ */
+function magazil_sanitize_int( $input ) {
+$return = absint($input);
+    return $return;
+}
+
+
+/**
+ * Sanitization for textarea field
+ */
+function magazil_sanitize_textarea( $input ) {
+    global $allowedposttags;
+    $output = wp_kses( $input, $allowedposttags );
+    return $output;
+}
 ?>

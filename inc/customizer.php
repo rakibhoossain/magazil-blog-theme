@@ -20,9 +20,6 @@ function magazil_customize_register( $wp_customize ) {
     
     // Load customize callback.
     require_once get_template_directory() . '/inc/customizer/callback.php';
-
-
-
 	
 
 
@@ -89,11 +86,6 @@ function magazil_customize_register( $wp_customize ) {
 			'default'           => '',
 			'sanitize_callback' => 'esc_html'
 		));
-
-
-
-
-
 
 
 		/**
@@ -172,6 +164,210 @@ function magazil_customize_register( $wp_customize ) {
 			)
 		);
 
+
+		//  ===================================
+        //  ====     Home page      ====
+        //  ===================================
+        $wp_customize->add_section('magazil_home_page_controls', array(
+            'title' => __('Home Page Settings', 'violet'),
+            'priority' => 6,
+        ));
+        
+		/**
+		 * Top post limit
+		 */
+		$wp_customize->add_setting( 'magazil_top_post_limit', array(
+			'sanitize_callback' => 'magazil_sanitize_radio_buttons',
+			'default'           => absint(3),
+		));
+
+		/**
+		 * Top post limit
+		 */
+		$wp_customize->add_control(
+			'magazil_top_post_limit',
+			array(
+				'type'        => 'radio',
+				'choices'     => array(
+					'3'   => esc_html__( 'Three', 'magazil' ),
+					'5'   => esc_html__( 'Five', 'magazil' )
+				),
+				'label'       => esc_html__( 'Top post limit', 'magazil' ),
+				'description' => esc_html__( 'Select either three or five', 'magazil' ),
+				'section'     => 'magazil_home_page_controls',
+			)
+		);
+
+		//  ===================================
+        //  ====      Breaking news Settings      ====
+        //  ===================================
+        $wp_customize->add_section('magazil_breaking_news_controls', array(
+            'title' => __('Breaking news Settings', 'violet'),
+            'priority' => 7,
+        ));
+        
+
+		/**
+		 * Display Breaking news
+		 */
+		$wp_customize->add_setting( 'magazil_show_breaking_news',array(
+			'sanitize_callback' => 'magazil_sanitize_checkbox',
+			'default'           => true
+		));
+		
+		/**
+		 * Display Breaking type
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_type', array(
+        	'sanitize_callback' =>  'magazil_sanitize_radio_buttons',
+        	'default'           => 'post'
+        ));
+
+        /**
+		 * Display Breaking tags
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_tags', array(
+        	'sanitize_callback' =>  'magazil_sanitize_textarea',
+        	'default'           => ''
+        ));
+		/**
+		 * Breaking news limit
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_limit', array(
+			'sanitize_callback' => 'magazil_sanitize_int',
+			'default'           => absint(5),
+		));
+
+		/**
+		 * Breaking news effect
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_effect', array(
+        	'sanitize_callback' =>  'magazil_sanitize_radio_buttons',
+        	'default'           => 'fade'
+        ));
+
+		/**
+		 * Breaking news speed
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_speed', array(
+			'sanitize_callback' => 'magazil_sanitize_int',
+			'default'           => absint(750),
+		));
+
+		/**
+		 * Breaking news timeout
+		 */
+		$wp_customize->add_setting( 'magazil_breaking_news_timeout', array(
+			'sanitize_callback' => 'magazil_sanitize_int',
+			'default'           => absint( 3500 ),
+		));
+
+
+
+		/**
+		 * Display Breaking news
+		 */
+		$wp_customize->add_control( new Customizer_Toggle_Control(
+			$wp_customize,
+			'magazil_show_breaking_news',
+			array(
+				'type'    => 'ios',
+				'label'   => esc_html__( 'Enable breaking news', 'magazil' ),
+				'section' => 'magazil_breaking_news_controls',
+			)
+		));
+
+		/**
+		 * Breaking news type
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_type',
+			array(
+				'type'        => 'radio',
+				'choices'     => array(
+					'post'   => esc_html__( 'Post', 'magazil' ),
+					'category'   => esc_html__( 'Categories', 'magazil' ),
+					'tag' => esc_html__( 'Tags', 'magazil' ),
+					'custom' => esc_html__( 'Custom Text', 'magazil' )
+				),
+				'label'       => esc_html__( 'Type of breaking news', 'magazil' ),
+				'description' => esc_html__( 'Select what type of post you want to use',
+					'magazil' ),
+				'section'     => 'magazil_breaking_news_controls',
+			)
+		);
+
+		/**
+		 * Breaking news tags
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_tags',
+			array(
+				'type'        => 'text',
+				'label'           => esc_html__( 'Breaking News Tags:', 'magazil' ),
+				'description'     => esc_html__( 'Enter a tag name, or names separated by comma.', 'magazil' ),
+				'section'         => 'magazil_breaking_news_controls',
+				'settings'        => 'magazil_breaking_news_tags',
+			)
+		);
+		
+		/**
+		 * Breaking news limit
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_limit',
+			array(
+				'label'           => esc_html__( 'Breaking news limit:', 'magazil' ),
+				'description'     => esc_html__( 'How much post do you want to show.', 'magazil' ),
+				'section'         => 'magazil_breaking_news_controls',
+				'settings'        => 'magazil_breaking_news_limit',
+			)
+		);
+
+		/**
+		 * Breaking news effect
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_effect',
+			array(
+				'type'        => 'radio',
+				'choices'     => array(
+					'fade'   => esc_html__( 'Fade', 'magazil' ),
+					'ticker' => esc_html__( 'Ticker', 'magazil' ),
+					'slide' => esc_html__( 'Slide', 'magazil' )
+				),
+				'label'       => esc_html__( 'The effect of breaking news', 'magazil' ),
+				'description' => esc_html__( 'Select what type of effect you want to use',
+					'magazil' ),
+				'section'     => 'magazil_breaking_news_controls',
+			)
+		);
+
+		/**
+		 * Breaking news speed
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_speed',
+			array(
+				'label'           => esc_html__( 'Breaking news speed:', 'magazil' ),
+				'description'     => esc_html__( 'Enter breaking news speed.', 'magazil' ),
+				'section'         => 'magazil_breaking_news_controls',
+				'settings'        => 'magazil_breaking_news_speed',
+			)
+		);
+
+		/**
+		 * Breaking news timeout
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_timeout',
+			array(
+				'label'           => esc_html__( 'Breaking news timeout:', 'magazil' ),
+				'description'     => esc_html__( 'Enter breaking news timeout.', 'magazil' ),
+				'section'         => 'magazil_breaking_news_controls',
+				'settings'        => 'magazil_breaking_news_timeout',
+			)
+		);
 
 
 

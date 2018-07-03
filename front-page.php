@@ -24,14 +24,14 @@ get_header();
 					<div class="row small-gutters">
 						<div class="col-lg">
 						<?php
-						$popular_show = 3; 
+						$popular_show = get_theme_mod( 'magazil_top_post_limit', 3 );
 						$popular_post = new WP_Query( array(
 							'post_type' => 'post',//'page ,post',
 							'meta_key' => 'wpb_post_views_count',
 							'meta_query' => array(array('key' => '_thumbnail_id')) ,
 							'orderby' => 'meta_value_num',
 							'order' => 'DESC',
-							'posts_per_page' => $popular_show
+							'posts_per_page' => absint($popular_show)
 						) );
 
 						

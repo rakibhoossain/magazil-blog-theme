@@ -304,36 +304,7 @@ $(document).ready(function($) {
 
 
 
-// Breaking News
-function createTicker(){
-    var tickerLIs   = jQuery("#breaking-news ul").children();
-    tickerItems     = new Array();
-    tickerLIs.each(function(el) {
-        tickerItems.push( jQuery(this).html() );
-    });
-    i = 0  ;
-    rotateTicker();
-}
-var isInTag = false;
-function typetext() {
-    var $breaking_news = jQuery('#breaking-news ul');
-    if( $breaking_news.length > 0 ){
-        var thisChar = tickerText.substr(c, 1);
-        if( thisChar == '<' ){ isInTag = true; }
-        if( thisChar == '>' ){ isInTag = false; }
-        $breaking_news.html(tickerText.substr(0, c++));
-        if(c < tickerText.length+1)
-            if( isInTag ){
-                typetext();
-            }else{
-                setTimeout("typetext()", 35);
-            }
-        else {
-            c = 1;
-            tickerText = "";
-        }
-    }
-}
+
 
     //------- Google Map  js --------//  
 
@@ -476,10 +447,48 @@ function typetext() {
     // $(document).ready(function() {
     //     $('#mc_embed_signup').find('form').ajaxChimp();
     // });
-
 });
 
 }(jQuery));
+
+
+// Breaking News
+function createTicker(){
+    var tickerLIs   = jQuery("#breaking-news ul").children();
+    tickerItems     = new Array();
+    tickerLIs.each(function(el) {
+        tickerItems.push( jQuery(this).html() );
+    });
+    i = 0  ;
+    rotateTicker();
+}
+var isInTag = false;
+function typetext() {
+    var $breaking_news = jQuery('#breaking-news ul');
+    if( $breaking_news.length > 0 ){
+        var thisChar = tickerText.substr(c, 1);
+        if( thisChar == '<' ){ isInTag = true; }
+        if( thisChar == '>' ){ isInTag = false; }
+        $breaking_news.html(tickerText.substr(0, c++));
+        if(c < tickerText.length+1)
+            if( isInTag ){
+                typetext();
+            }else{
+                setTimeout("typetext()", 35);
+            }
+        else {
+            c = 1;
+            tickerText = "";
+        }
+    }
+}
+
+
+
+
+
+
+
 // youtube custom play button and thumbail script
 
 

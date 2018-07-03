@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php $is_img = 'no-img';
 	if ( has_post_thumbnail() ) {
-		$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'feature-post-large' );
+		$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'magazil-small-feature' );
       	$feat_image_url = esc_url($image_url[0]);
 		$is_img = 'tight';
 	// echo '<div class="post-box-img bg-img" style="background-image:url('. esc_url($feat_image_url).')">';

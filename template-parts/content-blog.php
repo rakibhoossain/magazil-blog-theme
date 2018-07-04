@@ -18,7 +18,7 @@ if(has_post_thumbnail()){
 			<?php magazil_post_categories(); ?>
 		</div>
 		<div class="col-lg-7 post-right">
-			<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h4 class="entry-title"><h4>', '</h4></a>' );
+			<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h4 class="entry-title page-title"><h4>', '</h4></a>' );
 			?>
 			<?php magazil_entry_meta(); ?>
 			<div class="excert">

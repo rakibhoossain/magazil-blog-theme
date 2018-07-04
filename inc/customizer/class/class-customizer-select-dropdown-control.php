@@ -11,7 +11,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
     /**
     * The type of customize control being rendered.
     */
-    public $type = 'multiple-select';
+    public $type = 'multiple';
 
   /**
    * Enqueue scripts/styles.
@@ -42,33 +42,24 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                 return;
               }
                 ?>
-
-
-
-
             <label>
                 <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-                <select <?php $this->link(); ?> class="chosen-select" multiple tabindex="4">
-          <?php
-          foreach ( $this->choices as $value => $label ) {
-            $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
-            echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
-          }
-          ?>
+                <select <?php $this->link(); ?> class="chosen-select" <?php echo $this->type?> tabindex="4">
+                <?php
+                  $selected = '';
+                  foreach ( $this->choices as $value => $label ) {
+                  if (is_array($this->value())){
+                    $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+                  }else{
+                    $selected = selected( $value, $this->value(), false);
+                  }
+                  printf('<option value="%s" %s>%s</option>', esc_attr( $value ), $selected, $label);
+                  }
+                ?>
                 </select>
             </label>
 
-
-
-
-
-
-
-
-
-
-
-                <?php
+          <?php
        }
  }
 ?>

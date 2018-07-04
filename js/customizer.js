@@ -39,4 +39,26 @@
 			}
 		} );
 	} );
+
+
+	wp.customize( 'magazil_phone', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-top-right .site-phone' ).text( to );
+		} );
+	} );
+	wp.customize( 'magazil_email', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-top-right .site-email' ).text( to );
+		} );
+	} );
+
+
+
+
+
+
+
+
+
+
 } )( jQuery );

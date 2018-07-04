@@ -4,7 +4,7 @@ if ($show_breaking_news) {
 
 
 	$query 				= get_theme_mod( 'magazil_breaking_news_type', 'post' );
-
+	$page 				= get_theme_mod( 'magazil_breaking_news_page', 0 );
 	$cat 				= get_theme_mod( 'magazil_breaking_news_category', 0 );
 	$tags 				= get_theme_mod( 'magazil_breaking_news_tags', '' );
 	$breaking_custom 	= '';
@@ -26,7 +26,9 @@ if ($show_breaking_news) {
 
 		<?php
 		if( $query != 'custom' ):
-			if( $query == 'tag' ){
+			if( $query == 'page' ){
+				$args = array('post_type' => 'page', 'post__in' => $page, 'no_found_rows' => 1 );
+			}else if( $query == 'tag' ){
 				$args = array('tag__in' => $tags, 'posts_per_page'=> $number, 'no_found_rows' => 1 );
 			}else if($query == 'category'){
 				$args = array('category__in' => $cat, 'posts_per_page'=> $number, 'no_found_rows' => 1 );

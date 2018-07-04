@@ -16,7 +16,7 @@
 </div>
 <div class="content-wrap">
 	<?php magazil_post_categories(true); ?>
-	<h3><?php the_title(); ?></h3>
+	<h3 class="page-title"><?php the_title(); ?></h3>
 	<?php magazil_entry_meta('pb-20'); ?>
 	<?php
 	the_content( sprintf(

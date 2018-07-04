@@ -41,8 +41,18 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
 							<ul>
-								<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>+440 012 3654 896</span></a></li>
-								<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>support@colorlib.com</span></a></li>
+								<li>
+									<a href="tel:+440 012 3654 896">
+										<span class="lnr lnr-phone-handset"></span>
+										<span class="site-phone"><?php echo get_theme_mod( 'magazil_phone', '+8801776217594' ); ?></span>
+									</a>
+								</li>
+								<li>
+									<a href="mailto:support@colorlib.com">
+										<span class="lnr lnr-envelope"></span>
+										<span  class="site-email"><?php echo get_theme_mod( 'magazil_email', 'serakib@gmail.com' ); ?></span>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -92,16 +102,17 @@
 			magazil_woocommerce_header_cart();
 		}
 	?>
-					<?php 
+					
 
+<?php 
 
-// 					var_dump(get_theme_mod( 'magazil_breaking_news_tags'));
+//$page 				= get_theme_mod( 'magazil_breaking_news_page', 0 );
 
 // $tag = get_theme_mod( 'magazil_breaking_news_tags');
 
-// 				$args = array('tag__in' => $tag);
+			// 	$args = array('post_type' => 'page','post__in' => $page);
 
-// 			$breaking_query = new wp_query( $args  );
+			// $breaking_query = new wp_query( $args  );
 // var_dump($breaking_query);
 
 
@@ -120,7 +131,7 @@
 
 
 
-// var_dump(get_theme_mod( $categories));
+// var_dump($page);
 
 
 
@@ -131,7 +142,25 @@
 					 ?>
 
 					<div class="navbar-right">
-						<form class="Search">
+
+<div id="ajax-search-container">
+	<div class="Search">
+	<input type="text" class="form-control Search-box" name="search" id="search" autocomplete="off" placeholder="Search" onkeyup="fetch()">
+	<label for="Search-box" class="Search-box-label">
+		<span class="lnr lnr-magnifier" id="search-open"></span>
+	</label>
+	<span class="Search-close">
+		<span class="lnr lnr-cross" id="search-close"></span>
+	</span>
+
+<div id="datafetch">Search results will appear here</div>
+
+	</div>
+
+</div>
+
+
+<!-- 						<form class="Search">
 							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">
 							<label for="Search-box" class="Search-box-label">
 								<span class="lnr lnr-magnifier"></span>
@@ -139,7 +168,7 @@
 							<span class="Search-close">
 								<span class="lnr lnr-cross"></span>
 							</span>
-						</form>
+						</form> -->
 					</div>
 				</div>
 			</div>

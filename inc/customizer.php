@@ -17,6 +17,12 @@ function magazil_customize_register( $wp_customize ) {
 
     /** Toggle additions **/
     require_once get_template_directory() . '/inc/customizer/class/class-customizer-toggle-control.php';
+
+    /** Dropdown additions **/
+    require_once get_template_directory() . '/inc/customizer/class/class-customizer-select-dropdown-control.php';
+
+    /** Range slider additions **/
+    require_once get_template_directory() . '/inc/customizer/class/class-customizer-range-control.php';
     
     // Load customize callback.
     require_once get_template_directory() . '/inc/customizer/callback.php';
@@ -46,7 +52,7 @@ function magazil_customize_register( $wp_customize ) {
         //  ====      Banner Settings      ====
         //  ===================================
         $wp_customize->add_section('magazil_banners_controls', array(
-            'title' => __('Banner Settings', 'violet'),
+            'title' => __('Banner settings', 'magazil'),
             'priority' => 5,
         ));
         
@@ -169,7 +175,7 @@ function magazil_customize_register( $wp_customize ) {
         //  ====     Home page      ====
         //  ===================================
         $wp_customize->add_section('magazil_home_page_controls', array(
-            'title' => __('Home Page Settings', 'violet'),
+            'title' => __('Home page settings', 'magazil'),
             'priority' => 6,
         ));
         
@@ -202,7 +208,7 @@ function magazil_customize_register( $wp_customize ) {
         //  ====      Breaking news Settings      ====
         //  ===================================
         $wp_customize->add_section('magazil_breaking_news_controls', array(
-            'title' => __('Breaking news Settings', 'violet'),
+            'title' => __('Breaking news settings', 'magazil'),
             'priority' => 7,
         ));
         
@@ -227,9 +233,23 @@ function magazil_customize_register( $wp_customize ) {
 		 * Display Breaking tags
 		 */
 		$wp_customize->add_setting( 'magazil_breaking_news_tags', array(
-        	'sanitize_callback' =>  'magazil_sanitize_textarea',
-        	'default'           => ''
+        	'sanitize_callback' =>  'magazil_sanitize_array_tags',
+        	// 'default'           => ''
         ));
+
+        $wp_customize->add_setting( 'magazil_breaking_news_category', array(
+        	'sanitize_callback' => 'magazil_sanitize_array_catagory',
+            // 'default'        => 0
+        ) );
+        $wp_customize->add_control( new Customizer_Select_Dropdown_Control( $wp_customize, 'magazil_breaking_news_category', array(
+            'label'   => __('Breaking news category', 'magazil'),
+            'section' => 'magazil_breaking_news_controls',
+            'settings'   => 'magazil_breaking_news_category',
+            'type'     => 'multiple-select',
+            'choices'  => magazil_cat_list()
+        ) ) );
+
+
 		/**
 		 * Breaking news limit
 		 */
@@ -300,17 +320,17 @@ function magazil_customize_register( $wp_customize ) {
 		/**
 		 * Breaking news tags
 		 */
-		$wp_customize->add_control(
-			'magazil_breaking_news_tags',
-			array(
-				'type'        => 'text',
-				'label'           => esc_html__( 'Breaking News Tags:', 'magazil' ),
-				'description'     => esc_html__( 'Enter a tag name, or names separated by comma.', 'magazil' ),
-				'section'         => 'magazil_breaking_news_controls',
-				'settings'        => 'magazil_breaking_news_tags',
-			)
-		);
-		
+        $wp_customize->add_control( new Customizer_Select_Dropdown_Control( $wp_customize, 'magazil_breaking_news_tags', array(
+            'label'   => esc_html__( 'Breaking News Tags:', 'magazil' ),
+            'section' => 'magazil_breaking_news_controls',
+            'settings'   => 'magazil_breaking_news_tags',
+            'type'     => 'multiple-select',
+            'choices'  => magazil_tag_list()
+        ) ) );
+
+
+
+
 		/**
 		 * Breaking news limit
 		 */
@@ -346,15 +366,36 @@ function magazil_customize_register( $wp_customize ) {
 		/**
 		 * Breaking news speed
 		 */
-		$wp_customize->add_control(
-			'magazil_breaking_news_speed',
-			array(
-				'label'           => esc_html__( 'Breaking news speed:', 'magazil' ),
-				'description'     => esc_html__( 'Enter breaking news speed.', 'magazil' ),
-				'section'         => 'magazil_breaking_news_controls',
-				'settings'        => 'magazil_breaking_news_speed',
-			)
-		);
+		// $wp_customize->add_control(
+		// 	'magazil_breaking_news_speed',
+		// 	array(
+		// 		'label'           => esc_html__( 'Breaking news speed:', 'magazil' ),
+		// 		'description'     => esc_html__( 'Enter breaking news speed.', 'magazil' ),
+		// 		'section'         => 'magazil_breaking_news_controls',
+		// 		'settings'        => 'magazil_breaking_news_speed',
+		// 	)
+		// );
+
+
+
+        $wp_customize->add_control( new WP_Customize_Range_Control( $wp_customize, 'magazil_breaking_news_speed', array(
+            'label'           => esc_html__( 'Breaking news speed:', 'magazil' ),
+			'description'     => esc_html__( 'Enter breaking news speed.', 'magazil' ),
+			'section'         => 'magazil_breaking_news_controls',
+			'settings'        => 'magazil_breaking_news_speed',
+			'type'        => 'magazil_range',
+			'input_attrs' => array(
+                'min' => 100,
+                'max' => 4000,
+            ),
+        ) ) );
+
+
+
+
+
+
+
 
 		/**
 		 * Breaking news timeout
@@ -368,7 +409,6 @@ function magazil_customize_register( $wp_customize ) {
 				'settings'        => 'magazil_breaking_news_timeout',
 			)
 		);
-
 
 
 

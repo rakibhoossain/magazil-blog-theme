@@ -92,7 +92,44 @@
 			magazil_woocommerce_header_cart();
 		}
 	?>
-					
+					<?php 
+
+
+// 					var_dump(get_theme_mod( 'magazil_breaking_news_tags'));
+
+// $tag = get_theme_mod( 'magazil_breaking_news_tags');
+
+// 				$args = array('tag__in' => $tag);
+
+// 			$breaking_query = new wp_query( $args  );
+// var_dump($breaking_query);
+
+
+
+	// $paged      = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	//$categories = ( get_theme_mod( 'magazil_breaking_news_category' )[0] !== 0 ? '-' . implode( ',-', get_theme_mod( 'magazil_breaking_news_category' ) ) : '' );
+
+
+	// $args       = array(
+	// 	'post_type'      => array( 'post' ),
+	// 	'cat'            => $categories,
+	// 	'posts_per_page' => '8',
+	// 	'nopaging'       => false,
+	// 	'paged'          => $paged,
+	// );
+
+
+
+// var_dump(get_theme_mod( $categories));
+
+
+
+
+
+
+
+					 ?>
+
 					<div class="navbar-right">
 						<form class="Search">
 							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">

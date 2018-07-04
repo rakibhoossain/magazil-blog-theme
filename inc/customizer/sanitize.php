@@ -39,4 +39,46 @@ function magazil_sanitize_textarea( $input ) {
     $output = wp_kses( $input, $allowedposttags );
     return $output;
 }
+
+
+/**
+ * Validate the options against the existing categories
+ *
+ * @param  string[] $input
+ *
+ * @return string
+ */
+function magazil_sanitize_array_catagory( $input ) {
+  $valid = magazil_cat_list();
+
+  foreach ( $input as $value ) {
+    if ( ! array_key_exists( $value, $valid ) ) {
+      return [];
+    }
+  }
+
+  return $input;
+}
+
+
+
+/**
+ * Validate the options against the existing tags
+ *
+ * @param  string[] $input
+ *
+ * @return string
+ */
+function magazil_sanitize_array_tags( $input ) {
+  $valid = magazil_tag_list();
+
+  foreach ( $input as $value ) {
+    if ( ! array_key_exists( $value, $valid ) ) {
+      return [];
+    }
+  }
+
+  return $input;
+}
+
 ?>

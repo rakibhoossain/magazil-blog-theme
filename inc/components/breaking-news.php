@@ -1,17 +1,12 @@
 <?php 
 	$show_breaking_news			= get_theme_mod( 'magazil_show_breaking_news', true );
-
-
-
-
-
 if ($show_breaking_news) {	
 
 
 	$query 				= get_theme_mod( 'magazil_breaking_news_type', 'post' );
 
-	// $cat 				= get_theme_mod( 'magazil_breaking_news_limit', 5 );
-	$tag 				= get_theme_mod( 'magazil_breaking_news_tags', '' );
+	$cat 				= get_theme_mod( 'magazil_breaking_news_category', 0 );
+	$tags 				= get_theme_mod( 'magazil_breaking_news_tags', '' );
 	$breaking_custom 	= '';
 	// $breaking_custom 	= get_theme_mod( 'magazil_breaking_news_limit', 5 );
 
@@ -32,16 +27,9 @@ if ($show_breaking_news) {
 		<?php
 		if( $query != 'custom' ):
 			if( $query == 'tag' ){
-				$sep  = $fea_tags = '';
-				$tags = explode (',' , $tag );
-				foreach ($tags as $tag){
-					$theTagId = get_term_by( 'name', $tag, 'post_tag' );
-					if( !empty( $fea_tags ) ) $sep = ' , ';
-					$fea_tags .=  $sep . $theTagId->slug;
-				}
-				$args = array('tag' => $fea_tags, 'posts_per_page'=> $number, 'no_found_rows' => 1 );
+				$args = array('tag__in' => $tags, 'posts_per_page'=> $number, 'no_found_rows' => 1 );
 			}else if($query == 'category'){
-				// $args = array('category__in' => $cat, 'posts_per_page'=> $number, 'no_found_rows' => 1 );
+				$args = array('category__in' => $cat, 'posts_per_page'=> $number, 'no_found_rows' => 1 );
 			}else{
 				$args = array('post_type' => 'post', 'posts_per_page'=> $number, 'no_found_rows' => 1 );
 			}

@@ -294,3 +294,36 @@ function magazil_social_links_icons() {
    */
   return apply_filters( 'magazil_social_links_icons', $social_links_icons );
 }
+
+
+
+/**
+ * Get all categories
+ * 
+ * @return array
+ */
+function magazil_cat_list() {
+  $cats    = array();
+  $cats[0] = 'None';
+  foreach ( get_categories() as $categories => $category ) {
+    $cats[ $category->term_id ] = $category->name;
+  }
+
+  return $cats;
+}
+
+
+/**
+ * Get all tags
+ * 
+ * @return array
+ */
+function magazil_tag_list() {
+  $tags    = array();
+  $tags[0] = 'None';
+  foreach ( get_tags() as $tag ) {
+    $tags[ $tag->term_id ] = $tag->name;
+  }
+
+  return $tags;
+}

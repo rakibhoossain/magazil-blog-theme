@@ -359,3 +359,325 @@ fa fa-youtube-square
                   </div>
                 </div>
               </section>
+
+
+
+
+
+<?php
+
+
+
+
+/**
+ * Multiselect option for WP Customizer
+ *
+ * @param $wp_customize
+ */
+add_action( 'customize_register', __NAMESPACE__ . '\\multiselect_customize_register' );
+function multiselect_customize_register( $wp_customize ) {
+  /**
+   * Multiple select customize control class.
+   */
+  class Sinfonia_Customize_Control_Multiple_Select extends \WP_Customize_Control {
+
+    /**
+     * The type of customize control being rendered.
+     */
+    public $type = 'multiple-select';
+
+    /**
+     * Displays the multiple select on the customize screen.
+     */
+    public function render_content() {
+
+      if ( empty( $this->choices ) ) {
+        return;
+      }
+      ?>
+
+
+
+
+                    <label>
+                      <span class="customize-category-select-control"><?php echo esc_html( $this->label ); ?></span>
+                      <select <?php $this->link(); ?> class="magazil-select-multipl" multiple="multiple">
+                           <?php
+                                foreach ( $this->cats as $cat )
+                                {
+                                    printf('<option value="%s" %s>%s</option>', $cat->term_id, selected($this->value(), $cat->term_id, false), $cat->name);
+                                }
+                           ?>
+                      </select>
+                    </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select <?php $this->link(); ?> multiple="multiple" style="height: 100%;">
+          <?php
+          foreach ( $this->choices as $value => $label ) {
+            $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+            echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
+          }
+          ?>
+                </select>
+            </label>
+    <?php }
+  }
+}
+
+
+
+
+
+
+
+/**
+ * Multiselect option for WP Customizer
+ *
+ * @param $wp_customize
+ */
+add_action( 'customize_register', __NAMESPACE__ . '\\multiselect_customize_register' );
+function multiselect_customize_register( $wp_customize ) {
+  /**
+   * Multiple select customize control class.
+   */
+  class Sinfonia_Customize_Control_Multiple_Select extends \WP_Customize_Control {
+
+    /**
+     * The type of customize control being rendered.
+     */
+    public $type = 'multiple-select';
+
+    /**
+     * Displays the multiple select on the customize screen.
+     */
+    public function render_content() {
+
+      if ( empty( $this->choices ) ) {
+        return;
+      }
+      ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select <?php $this->link(); ?> multiple="multiple" style="height: 100%;">
+          <?php
+          foreach ( $this->choices as $value => $label ) {
+            $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+            echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
+          }
+          ?>
+                </select>
+            </label>
+    <?php }
+  }
+}
+
+/**
+ * Get all categories
+ * 
+ * @return array
+ */
+function project_types() {
+  $cats    = array();
+  $cats[0] = 'None';
+  foreach ( get_categories() as $categories => $category ) {
+    $cats[ $category->term_id ] = $category->name;
+  }
+
+  return $cats;
+}
+
+/**
+ * Validate the options against the existing categories
+ *
+ * @param  string[] $input
+ *
+ * @return string
+ */
+function project_types_sanitize( $input ) {
+  $valid = project_types();
+
+  foreach ( $input as $value ) {
+    if ( ! array_key_exists( $value, $valid ) ) {
+      return [];
+    }
+  }
+
+  return $input;
+}
+
+// Credits: https://stackoverflow.com/questions/10936059/how-to-convert-items-in-array-to-a-comma-separated-string-in-php
+
+
+
+
+
+
+
+
+
+/**
+ * Get all categories
+ * 
+ * @return array
+ */
+function project_types() {
+  $cats    = array();
+  $cats[0] = 'None';
+  foreach ( get_categories() as $categories => $category ) {
+    $cats[ $category->term_id ] = $category->name;
+  }
+
+  return $cats;
+}
+
+/**
+ * Validate the options against the existing categories
+ *
+ * @param  string[] $input
+ *
+ * @return string
+ */
+function project_types_sanitize( $input ) {
+  $valid = project_types();
+
+  foreach ( $input as $value ) {
+    if ( ! array_key_exists( $value, $valid ) ) {
+      return [];
+    }
+  }
+
+  return $input;
+}
+
+// Credits: https://stackoverflow.com/questions/10936059/how-to-convert-items-in-array-to-a-comma-separated-string-in-php
+
+
+
+
+
+
+
+
+
+
+
+<?php
+if ( ! class_exists( 'WP_Customize_Control' ) )
+    return NULL;
+/**
+ * A class to create a dropdown for all categories in your wordpress site
+ */
+ class Customizer_category_Dropdown_Control extends WP_Customize_Control
+ {
+    private $cats = false;
+
+    /**
+    * The type of customize control being rendered.
+    */
+    public $type = 'multiple-select';
+
+  /**
+   * Enqueue scripts/styles.
+   *
+   * @since 3.4.0
+   */
+  public function enqueue() {
+    wp_enqueue_script( 'magazil-select2', get_stylesheet_directory_uri() . '/inc/customizer/js/select2.min.js', array( 'jquery' ), rand(), true );
+    wp_enqueue_script( 'magazil-select', get_stylesheet_directory_uri() . '/inc/customizer/js/select.js', array( 'jquery' ), rand(), true );
+    wp_enqueue_style( 'magazil-select2', get_stylesheet_directory_uri() . '/inc/customizer/css/select2.min.css', array(), rand() );
+
+
+  }
+
+
+    public function __construct($manager, $id, $args = array(), $options = array())
+    {
+        $this->cats = get_categories($options);
+        parent::__construct( $manager, $id, $args );
+    }
+    /**
+     * Render the content of the category dropdown
+     *
+     * @return HTML
+     */
+    public function render_content()
+       {
+            if(!empty($this->cats))
+            {
+                ?>
+
+
+
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select <?php $this->link(); ?> multiple="multiple" style="height: 100%;">
+          <?php
+          foreach ( $this->cats as $value => $label ) {
+            $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+            echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
+          }
+          ?>
+                </select>
+            </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+                <?php
+            }
+       }
+ }
+?>
+
+
+
+
+
+
+
+
+            <div class="cs-range-value"><?php echo esc_attr($this->value()); ?></div>
+
+
+
+            <input data-input-type="range" type="range" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+
+
+
+        <label>
+            <?php if ( ! empty( $this->label )) : ?>
+                <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+            <?php endif; ?>
+            <div class="cs-range-value"><?php echo esc_attr($this->value()); ?></div>
+            <input data-input-type="range" type="range" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+            <?php if ( ! empty( $this->description )) : ?>
+                <span class="description customize-control-description"><?php echo $this->description; ?></span>
+            <?php endif; ?>
+        </label>

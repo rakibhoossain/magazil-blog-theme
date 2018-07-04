@@ -442,26 +442,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
 		/**
 		 * Breaking news type
 		 */
-		// $wp_customize->add_control(
-		// 	'magazil_breaking_news_type',
-		// 	array(
-		// 		'type'        => 'radio',
-		// 		'choices'     => array(
-		// 			'post'   => esc_html__( 'Posts', 'magazil' ),
-		// 			'page' => esc_html__( 'Pages', 'magazil' ),
-		// 			'category'   => esc_html__( 'Categories', 'magazil' ),
-		// 			'tag' => esc_html__( 'Tags', 'magazil' )
-		// 		),
-		// 		'label'       => esc_html__( 'Type of breaking news', 'magazil' ),
-		// 		'description' => esc_html__( 'Select what type of post you want to use',
-		// 			'magazil' ),
-		// 		'section'     => 'magazil_breaking_news_controls',
-		// 	)
-		// );
-		
-
-
-
 		$wp_customize->add_control( new Customizer_Select_Dropdown_Control( $wp_customize, 'magazil_breaking_news_type', array(
             'label'       => esc_html__( 'Type of breaking news', 'magazil' ),
 			'description' => esc_html__( 'Select what type of post you want to use', 'magazil' ),
@@ -470,15 +450,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
             'type'     => 'single',
             'choices'  => magazil_breaking_news_type()
         ) ) );
-
-
-
-
-
-
-
-
-
 
 		/**
 		 * Breaking news page
@@ -516,9 +487,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
             'active_callback' => 'breaking_tag_callback',
         ) ) );
 
-
-
-
 		/**
 		 * Breaking news limit
 		 */
@@ -538,22 +506,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
 		/**
 		 * Breaking news effect
 		 */
-		// $wp_customize->add_control(
-		// 	'magazil_breaking_news_effect',
-		// 	array(
-		// 		'type'        => 'radio',
-		// 		'choices'     => array(
-		// 			'fade'   => esc_html__( 'Fade', 'magazil' ),
-		// 			'ticker' => esc_html__( 'Ticker', 'magazil' ),
-		// 			'slide' => esc_html__( 'Slide', 'magazil' )
-		// 		),
-		// 		'label'       => esc_html__( 'The effect of breaking news', 'magazil' ),
-		// 		'description' => esc_html__( 'Select what type of effect you want to use',
-		// 			'magazil' ),
-		// 		'section'     => 'magazil_breaking_news_controls',
-		// 	)
-		// );
-
 
         $wp_customize->add_control( new Customizer_Select_Dropdown_Control( $wp_customize, 'magazil_breaking_news_effect', array(
             'label'       => esc_html__( 'The effect of breaking news', 'magazil' ),
@@ -563,12 +515,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
             'type'     => 'single',
             'choices'  => magazil_jquery_effects(),
         ) ) );
-
-
-
-
-
-
 
 		/**
 		 * Breaking news speed

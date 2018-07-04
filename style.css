@@ -1641,6 +1641,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 400px;
   position: relative;
 }
+
+@media (min-width: 600px) {
+  .Search {
+    display: none;
+  }
+}
+
 #datafetch {
     position: absolute;
     top: 100%;

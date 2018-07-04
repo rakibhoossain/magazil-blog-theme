@@ -395,18 +395,18 @@ add_action( 'wp_footer', 'ajax_fetch' );
 function ajax_fetch() {
 ?>
 <script type="text/javascript">
-function fetch(){
+function fetch(val){
 
     jQuery.ajax({
         url: '<?php echo admin_url('admin-ajax.php'); ?>',
         type: 'post',
-        data: { action: 'data_fetch', keyword: jQuery('#search').val() },
+        data: { action: 'data_fetch', keyword: val },
         success: function(data) {
             jQuery('#datafetch').html( data );
         },
-        beforeSend: function() {
-            jQuery('#datafetch').slideDown().html( '<div class="fa loading fa-spinner fa-spin"></div>' );
-        }
+        // beforeSend: function() {
+        //     jQuery('#datafetch').slideDown().html( '<div class="fa loading fa-spinner fa-spin"></div>' );
+        // }
     });
 
 }

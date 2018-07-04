@@ -97,78 +97,17 @@
 					?>
 					</nav><!-- #nav-menu-container -->
 
-	<?php
-		if ( function_exists( 'magazil_woocommerce_header_cart' ) ) {
-			magazil_woocommerce_header_cart();
-		}
-	?>
-					
-
-<?php 
-
-//$page 				= get_theme_mod( 'magazil_breaking_news_page', 0 );
-
-// $tag = get_theme_mod( 'magazil_breaking_news_tags');
-
-			// 	$args = array('post_type' => 'page','post__in' => $page);
-
-			// $breaking_query = new wp_query( $args  );
-// var_dump($breaking_query);
-
-
-
-	// $paged      = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	//$categories = ( get_theme_mod( 'magazil_breaking_news_category' )[0] !== 0 ? '-' . implode( ',-', get_theme_mod( 'magazil_breaking_news_category' ) ) : '' );
-
-
-	// $args       = array(
-	// 	'post_type'      => array( 'post' ),
-	// 	'cat'            => $categories,
-	// 	'posts_per_page' => '8',
-	// 	'nopaging'       => false,
-	// 	'paged'          => $paged,
-	// );
-
-
-
-// var_dump($page);
-
-
-
-
-
-
-
-					 ?>
-
-					<div class="navbar-right">
-
-<div id="ajax-search-container">
-	<div class="Search">
-	<input type="text" class="form-control Search-box" name="search" id="search" autocomplete="off" placeholder="Search" onkeyup="fetch()">
-	<label for="Search-box" class="Search-box-label">
-		<span class="lnr lnr-magnifier" id="search-open"></span>
-	</label>
-	<span class="Search-close">
-		<span class="lnr lnr-cross" id="search-close"></span>
-	</span>
-
-<div id="datafetch">Search results will appear here</div>
-
-	</div>
-
-</div>
-
-
-<!-- 						<form class="Search">
-							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">
-							<label for="Search-box" class="Search-box-label">
-								<span class="lnr lnr-magnifier"></span>
-							</label>
-							<span class="Search-close">
-								<span class="lnr lnr-cross"></span>
-							</span>
-						</form> -->
+					 <div class="navbar-right">
+					 	<div class="Search">
+					 		<input type="text" class="form-control Search-box" name="search" id="search" autocomplete="off" placeholder="<?php _e( 'Search....', 'magazil' );?>">
+					 		<label for="Search-box" class="Search-box-label" id="search-open">
+					 			<span class="lnr lnr-magnifier"></span>
+					 		</label>
+					 		<span class="Search-close" id="search-close">
+					 			<span class="lnr lnr-cross"></span>
+					 		</span>
+					 		<div id="datafetch"></div>
+					 	</div>
 					</div>
 				</div>
 			</div>

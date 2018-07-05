@@ -58,5 +58,42 @@
 				}
 			});
 		});
+
+
+		wp.customize.control('magazil_banner_type', function (control) {
+			/**
+			 * Run function on setting change of control.
+			 */
+			control.setting.bind(function (value) {
+				switch (value) {
+					/**
+					 * The select was switched to the hide option.
+					 */
+					case 'image':
+						/**
+						 * Deactivate the conditional control.
+						 */
+
+						wp.customize.control('magazil_banner_image').activate();
+						wp.customize.control('magazil_banner_link').activate();
+						wp.customize.control('magazil_banner_adsense_code').deactivate();
+						break;
+					/**
+					 * The select was switched to »show«.
+					 */
+					case 'adsense':
+						/**
+						 * Activate the conditional control.
+						 */
+						wp.customize.control('magazil_banner_adsense_code').activate();
+						wp.customize.control('magazil_banner_image').deactivate();
+						wp.customize.control('magazil_banner_link').deactivate();
+						break;
+				}
+			});
+		});
+
+
+
 	});
 } )( jQuery );

@@ -13,5 +13,5 @@ if ( empty( $code ) ) {
 	<?php
 	echo htmlspecialchars_decode( $code );
 	?>
-	<p class="adsense__loading"><span><?php echo __( 'Loading', 'magazil' ); ?></span></p>
+	<p class="adsense__loading"><span><?php _e( 'Loading', 'magazil' ); ?>&nbsp;<i class="fa add-loading fa-spinner fa-spin"></i></span></p>
 </div>

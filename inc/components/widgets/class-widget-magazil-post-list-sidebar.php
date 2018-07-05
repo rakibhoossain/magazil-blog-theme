@@ -12,7 +12,7 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 		
 	}
  	function form( $instance ) {
- 	    $defaults = array('list_num' => '4', 'title' => __( 'Recent Posts', 'magazil' ));
+ 	    $defaults = array('list_num' => 4, 'title' => __( 'Recent Posts', 'magazil' ));
  		$instance = wp_parse_args( (array) $instance, $defaults );
  	
 	?>

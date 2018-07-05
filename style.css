@@ -2481,6 +2481,7 @@ input[type="color"]:focus,
     outline: none;
 }
 /* Button */
+.contact-submit input[type="submit"],
 .post-password-form input[type="submit"] {
     padding: 10px 17px;
     background: #04091e;
@@ -2488,7 +2489,7 @@ input[type="color"]:focus,
     border: none;
     color: #fff;
 }
-
+.contact-submit input[type="submit"]:hover,
 .post-password-form input[type="submit"]:hover {
     color: #04091e;
     background: #efdedd;
@@ -2555,6 +2556,9 @@ input[type="color"]:focus,
     position: absolute;
     bottom: 25px;
     left: 20px;
+}
+.post-box-img.has-img {
+    max-height: 500px;
 }
 .post-box-img .tags li {
   display: inline-block;

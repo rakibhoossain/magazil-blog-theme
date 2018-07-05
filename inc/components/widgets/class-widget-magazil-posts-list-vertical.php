@@ -26,7 +26,8 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 			'title'            => __( 'Recent posts', 'magazil' ),
 			'show_post'        => 4,
 			'newsmag_category' => 'uncategorized',
-			'order' 		   => 'desc'
+			'order' 		   => 'desc',
+			'ignore_sticky_posts' => true
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );

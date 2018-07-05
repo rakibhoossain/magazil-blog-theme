@@ -31,6 +31,7 @@ get_header();
 							'meta_query' => array(array('key' => '_thumbnail_id')) ,
 							'orderby' => 'meta_value_num',
 							'order' => 'DESC',
+							'ignore_sticky_posts' => true,
 							'posts_per_page' => absint($popular_show)
 						) );
 
@@ -83,12 +84,9 @@ get_header();
 					<div class="row">
 						<div class="col-lg-8 post-list magazil__sticky_sidebar">
 							
-			<?php if ( is_active_sidebar( 'content-area' ) ) { ?>
-				<?php dynamic_sidebar( 'content-area' ); ?>
-			<?php } ?>
-
-
-
+						<?php if ( is_active_sidebar( 'content-area' ) ) { ?>
+							<?php dynamic_sidebar( 'content-area' ); ?>
+						<?php } ?>
 
 						</div>
 						<div class="col-lg-4 magazil__sticky_sidebar">

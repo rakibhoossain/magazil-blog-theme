@@ -10,8 +10,8 @@ class WP_Customize_Range_Control extends WP_Customize_Control
     */
     public function enqueue() {
 
-    wp_enqueue_script( 'magazil-range', get_stylesheet_directory_uri() . '/inc/customizer/js/range.js', array( 'jquery' ), rand(), true );
-    wp_enqueue_style( 'magazil-range', get_stylesheet_directory_uri() . '/inc/customizer/css/range.css', array(), rand() );
+    wp_enqueue_script( 'magazil-range', get_stylesheet_directory_uri() . '/inc/customizer/js/range.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_style( 'magazil-range', get_stylesheet_directory_uri() . '/inc/customizer/css/range.css', array(), '1.0.0' );
 
     }
 

@@ -3185,6 +3185,7 @@ ul.newsticker a {
   margin: 10px 0px;
 }
 
+.post-meta.meta li,
 .single-post-wrap .meta li {
   display: inline-block;
   color: #777777;

@@ -17,7 +17,7 @@
 <div class="content-wrap">
 	<?php magazil_post_categories(true); ?>
 	<h3 class="page-title"><?php the_title(); ?></h3>
-	<?php magazil_entry_meta('pb-20'); ?>
+	<?php magazil_entry_meta('pb-20 post-meta'); ?>
 	<?php
 	the_content( sprintf(
 		wp_kses(

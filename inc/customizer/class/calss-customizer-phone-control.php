@@ -10,13 +10,13 @@ class WP_Customize_Phome_Control extends WP_Customize_Control
     */
     public function enqueue() {
 
-    wp_enqueue_script( 'magazil-intlTelInput', get_stylesheet_directory_uri() . '/inc/customizer/js/intlTelInput.js', array( 'jquery' ), rand(), true );
+    wp_enqueue_script( 'magazil-intlTelInput', get_stylesheet_directory_uri() . '/inc/customizer/js/intlTelInput.js', array( 'jquery' ), '1.0.0', true );
 
-    wp_enqueue_script( 'magazil-phone', get_stylesheet_directory_uri() . '/inc/customizer/js/phone.js', array( 'jquery','magazil-intlTelInput' ), rand(), true );
-    wp_enqueue_style( 'magazil-intlTelInput', get_stylesheet_directory_uri() . '/inc/customizer/css/intlTelInput.css', array(), rand() );
+    wp_enqueue_script( 'magazil-phone', get_stylesheet_directory_uri() . '/inc/customizer/js/phone.js', array( 'jquery','magazil-intlTelInput' ), '1.0.0', true );
+    wp_enqueue_style( 'magazil-intlTelInput', get_stylesheet_directory_uri() . '/inc/customizer/css/intlTelInput.css', array(), '1.0.0' );
 
 
-    wp_enqueue_style( 'magazil-phone', get_stylesheet_directory_uri() . '/inc/customizer/css/phone.css', array(), rand() );
+    wp_enqueue_style( 'magazil-phone', get_stylesheet_directory_uri() . '/inc/customizer/css/phone.css', array(), '1.0.0' );
     }
 
     public function render_content()

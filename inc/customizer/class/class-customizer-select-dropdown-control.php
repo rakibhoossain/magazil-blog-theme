@@ -20,9 +20,9 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
    */
   public function enqueue() {
 
-    wp_enqueue_script( 'magazil-chosen', get_stylesheet_directory_uri() . '/inc/customizer/js/chosen.jquery.min.js', array( 'jquery' ), rand(), true );
-    wp_enqueue_script( 'magazil-select', get_stylesheet_directory_uri() . '/inc/customizer/js/select.js', array( 'jquery','magazil-chosen' ), rand(), true );
-    wp_enqueue_style( 'magazil-chosen', get_stylesheet_directory_uri() . '/inc/customizer/css/chosen.css', array(), rand() );
+    wp_enqueue_script( 'magazil-chosen', get_stylesheet_directory_uri() . '/inc/customizer/js/chosen.jquery.min.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'magazil-select', get_stylesheet_directory_uri() . '/inc/customizer/js/select.js', array( 'jquery','magazil-chosen' ), '1.0.0', true );
+    wp_enqueue_style( 'magazil-chosen', get_stylesheet_directory_uri() . '/inc/customizer/css/chosen.css', array(), '1.0.0' );
   }
 
 

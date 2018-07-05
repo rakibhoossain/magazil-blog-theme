@@ -8,8 +8,8 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
 	 * @since 3.4.0
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/customizer/js/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
-		wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/customizer/css/pure-css-togle-buttons.css', array(), rand() );
+		wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/customizer/js/customizer-toggle-control.js', array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/customizer/css/pure-css-togle-buttons.css', array(), '1.0.0' );
 
 		$css = '
 			.disabled-control-title {

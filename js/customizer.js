@@ -52,6 +52,12 @@
 		} );
 	} );
 
+	// Copyright
+	wp.customize( 'magazil_copyright_text', function( value ) {
+		value.bind( function( to ) {
+			$( '.copyright-text-area .copyright-text' ).html( to );
+		} );
+	} );
 
 
 

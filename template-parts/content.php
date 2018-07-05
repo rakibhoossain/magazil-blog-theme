@@ -9,6 +9,11 @@
 
 ?>
 
+<?php if(is_single()): 
+	get_template_part( 'template-parts/content', 'single' );
+?>
+
+<?php else: ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php $is_img = 'no-img';
 	if ( has_post_thumbnail() ) {
@@ -37,3 +42,4 @@
 	<?php the_excerpt(); ?>
 </div>
 </article><!-- #post-<?php the_ID(); ?> -->
+<?php endif; ?>

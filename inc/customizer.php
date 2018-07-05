@@ -117,10 +117,25 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
             'selector' => '#breaking-news ul'
 ));
 
+// Copyright
+$wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
+            'selector' => '.copyright-text-area .copyright-text'
+));
+
 
 
 
 	}
+
+
+
+    if (class_exists('WP_Customize_Panel')):
+        $wp_customize->add_panel('magazil_panel', array(
+            'priority' => 7,
+            'capability' => 'edit_theme_options',
+            'title' => __('Theme Settings', 'magazil'),
+        	'description' => __( 'Magazil Theme settings', 'magazil' )
+        ));
 
 
 		//  ===================================
@@ -128,6 +143,7 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
         //  ===================================
         $wp_customize->add_section('magazil_header_controls', array(
             'title' => __('Header settings', 'magazil'),
+            'panel' => 'magazil_panel',
             'priority' => 5,
         ));
         
@@ -176,6 +192,7 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
         //  ===================================
         $wp_customize->add_section('magazil_banners_controls', array(
             'title' => __('Banner settings', 'magazil'),
+            'panel' => 'magazil_panel',
             'priority' => 5,
         ));
         
@@ -304,6 +321,7 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
         //  ===================================
         $wp_customize->add_section('magazil_home_page_controls', array(
             'title' => __('Home page settings', 'magazil'),
+            'panel' => 'magazil_panel',
             'priority' => 6,
         ));
         
@@ -338,6 +356,7 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
         //  ===================================
         $wp_customize->add_section('magazil_breaking_news_controls', array(
             'title' => __('Breaking news settings', 'magazil'),
+            'panel' => 'magazil_panel',
             'priority' => 7,
         ));
         
@@ -546,6 +565,47 @@ $wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', 
             ),
         ) ) );
 
+
+        //  ===================================
+        //  ====        Copyright          ====
+        //  ===================================
+        $wp_customize->add_section('magazil_copyright_controls', array(
+            'title' => __('Copyright', 'magazil'),
+            'panel' => 'magazil_panel',
+            'priority' => 8,
+        ));
+
+        /**
+		 * Copyright text
+		 */
+		$wp_customize->add_setting( 'magazil_copyright_text', array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_html',
+			'transport'  => 'postMessage'
+		));
+
+		/**
+		 * Copyright text
+		 */
+		$wp_customize->add_control(
+			'magazil_copyright_text',
+			array(
+				'label'           => esc_html__( 'Copyright text:', 'magazil' ),
+				'description'     => esc_html__( 'Add you copyright information on footer area', 'magazil' ),
+				'section'         => 'magazil_copyright_controls',
+				'settings'        => 'magazil_copyright_text',
+				'type'            => 'textarea'
+			)
+		);
+
+
+    else:
+        $wp_customize->add_section('oh_shit', array(
+            'priority' => 6,
+            'title' => __('Oh Shit!', 'magazil'),
+            'description' => __('WP_Customize_Panel class not exist. Contact with your admin', 'magazil')
+        ));
+    endif;
 
 
 

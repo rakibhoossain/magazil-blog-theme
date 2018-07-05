@@ -30,7 +30,7 @@ setPostViews(get_the_ID());
 								while ( have_posts() ) :
 									the_post();
 
-									get_template_part( 'template-parts/content', 'single' );
+									get_template_part( 'template-parts/content', get_post_format() );
 									magazil_post_tags();
 									the_post_navigation();
 

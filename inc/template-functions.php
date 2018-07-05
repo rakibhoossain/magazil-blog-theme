@@ -304,22 +304,22 @@ function magazil_jquery_effects() {
 
   $effects = array();
 
-  $effects[ 'blind' ]     = esc_html__( 'Blind', 'magazil' ) ;
-  $effects[ 'bounce' ]    = esc_html__( 'Bounce', 'magazil' ) ;
-  $effects[ 'clip' ]      = esc_html__( 'Clip', 'magazil' ) ;
-  $effects[ 'drop' ]      = esc_html__( 'Drop', 'magazil' ) ;
-  $effects[ 'explode' ]   = esc_html__( 'Explode', 'magazil' ) ;
-  $effects[ 'fade' ]      = esc_html__( 'Fade', 'magazil' ) ;
-  $effects[ 'fold' ]      = esc_html__( 'Fold', 'magazil' ) ;
-  $effects[ 'highlight' ] = esc_html__( 'Highlight', 'magazil' ) ;
-  $effects[ 'puff' ]      = esc_html__( 'Puff', 'magazil' ) ;
-  $effects[ 'pulsate' ]   = esc_html__( 'Pulsate', 'magazil' ) ;
-  $effects[ 'scale' ]     = esc_html__( 'Scale', 'magazil' ) ;
-  $effects[ 'shake' ]     = esc_html__( 'Shake', 'magazil' ) ;
-  $effects[ 'size' ]      = esc_html__( 'Size', 'magazil' ) ;
-  $effects[ 'slide' ]     = esc_html__( 'Slide', 'magazil' ) ;
-  $effects[ 'transfer' ]  = esc_html__( 'Transfer', 'magazil' ) ;
-  $effects[ 'ticker' ]    = esc_html__( 'Ticker', 'magazil' ) ;
+  $effects[ 'blind' ]       = esc_html__( 'Blind', 'magazil' ) ;
+  $effects[ 'bounce' ]      = esc_html__( 'Bounce', 'magazil' ) ;
+  $effects[ 'clip' ]        = esc_html__( 'Clip', 'magazil' ) ;
+  $effects[ 'drop' ]        = esc_html__( 'Drop', 'magazil' ) ;
+  $effects[ 'explode' ]     = esc_html__( 'Explode', 'magazil' ) ;
+  $effects[ 'fade' ]        = esc_html__( 'Fade', 'magazil' ) ;
+  $effects[ 'fold' ]        = esc_html__( 'Fold', 'magazil' ) ;
+  $effects[ 'highlight' ]   = esc_html__( 'Highlight', 'magazil' ) ;
+  $effects[ 'puff' ]        = esc_html__( 'Puff', 'magazil' ) ;
+  $effects[ 'pulsate' ]     = esc_html__( 'Pulsate', 'magazil' ) ;
+  $effects[ 'scale' ]       = esc_html__( 'Scale', 'magazil' ) ;
+  $effects[ 'shake' ]       = esc_html__( 'Shake', 'magazil' ) ;
+  $effects[ 'size' ]        = esc_html__( 'Size', 'magazil' ) ;
+  $effects[ 'slide' ]       = esc_html__( 'Slide', 'magazil' ) ;
+  $effects[ 'transfer' ]    = esc_html__( 'Transfer', 'magazil' ) ;
+  $effects[ 'ticker' ]      = esc_html__( 'Ticker', 'magazil' ) ;
 
   return $effects;
 }
@@ -423,7 +423,7 @@ function data_fetch(){
     $the_query = new WP_Query( array( 'posts_per_page' => -1, 's' => esc_attr( $_POST['keyword'] ), array('post','page') ) );
     if( $the_query->have_posts() ) :
         while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title();?></a>
         <?php endwhile;
         wp_reset_postdata();  
     else: ?>

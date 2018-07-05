@@ -22,7 +22,7 @@ if ($show_breaking_news) {
 	
 	<div class="clear"></div>
 	<div id="breaking-news" class="breaking-news">
-		<span class="breaking-news-title"><i class="fa fa-bolt"></i> <span><?php _e( 'Breaking News' , 'tie') ; ?></span></span>
+		<span class="breaking-news-title"><i class="fa fa-bolt"></i> <span><?php _e( 'Breaking News' , 'magazil') ; ?></span></span>
 
 		<?php
 		if( $query != 'custom' ):

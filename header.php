@@ -72,8 +72,8 @@
 						</div>
 
 				<?php
-				$newsmag_show_banner = get_theme_mod( 'magazil_show_banner_on_homepage', true );
-				 if ( $newsmag_show_banner ): ?>
+				$magazil_show_banner = get_theme_mod( 'magazil_show_banner_on_homepage', true );
+				 if ( $magazil_show_banner ): ?>
                     <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding header-banner ads-banner">
 						<?php
 						$banner = get_theme_mod( 'magazil_banner_type', 'image' );

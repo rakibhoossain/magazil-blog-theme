@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<!-- start footer Area -->
-	<footer class="footer-area section-gap">
+	<footer class="footer-area">
 		<div class="container">
 			<div class="row">
 
@@ -34,8 +34,9 @@
 				<p class="footer-text m-0 col-lg-8 col-md-12">
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'magazil' ), 'magazil', '<a href="http://rakibhossain.cf/">Rakib Hossain</a>' );
+				$theme_author = 'Rakib Hossain' ;
+				$theme_author_url = 'https://rakib.ooo';
+				printf( esc_html__( 'Theme: %1$s by %2$s', 'magazil' ), 'magazil', '<a href="'. esc_url($theme_author_url).'">'.esc_html($theme_author).'</a>' );
 			?>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 					<div class="col-lg-4 col-md-12 footer-social">
@@ -51,8 +52,18 @@
 						?>
 					</div>
 				</div>
-			</div>
-		</footer>
+
+				<?php 
+				$magazil_copyright_text = get_theme_mod( 'magazil_copyright_text' );
+				if($magazil_copyright_text):?>
+					<div class="copyright-text-area text-center">
+						<div class="copyright-text">
+							<?php echo htmlspecialchars_decode($magazil_copyright_text); ?>
+						</div>
+					</div>	
+				<?php endif; ?>
+		</div>
+	</footer>
 		<!-- End footer Area -->
 </div><!-- #page -->
 

@@ -1,4 +1,13 @@
 <?php
+/**
+ * Template part for blog post layout
+ *
+ * @package magazil
+ */
+
+?>
+
+<?php
 $has_img='';
 if(has_post_thumbnail()){
 	$has_img='has_img';

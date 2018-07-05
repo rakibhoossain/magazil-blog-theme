@@ -2,19 +2,16 @@
 Theme Name: magazil
 Theme URI: http://underscores.me/
 Author: Rakib Hossain
-Author URI: http://rakibhossain.cf/
-Description: Theme Description
+Author URI: https://rakib.ooo/
+Description: Magazil brings your site to life with modern web technology. With a focus on news sites, it features multiple widget for front page. It supports Breadcrumbs, parent page navigation, and more. Personalize its asymmetrical grid with multiple styles and fit any devices.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: magazil
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, grid-layout, flexible-header, blog, theme-options, footer-widgets
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
-magazil is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
@@ -44,9 +41,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Reset
 --------------------------------------------------------------*/
-/*
- * Reset CSS by Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
- */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     border: 0;
@@ -94,7 +88,7 @@ input,
 select,
 textarea {
     color: #555;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
     line-height: 1.8;
     outline: none;
@@ -131,7 +125,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Oswald', sans-serif;;
+    font-family: "Poppins", sans-serif;
     clear: both;
     font-weight: 400;
     margin: 20px 0 12px;
@@ -205,7 +199,7 @@ tt,
 var,
 samp,
 pre {
-    font-family: monospace, serif;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
     -webkit-hyphens: none;
     -ms-hyphens:     none;
@@ -215,7 +209,7 @@ pre {
 
 pre {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing:         border-box;
+    box-sizing: border-box;
     margin-bottom: 24px;
     max-width: 100%;
     overflow: auto;
@@ -1326,8 +1320,6 @@ td, th {
 }
 
 
-
-
 .header-banner {
   text-align: right; }
   .header-banner .newsmag-adsense {
@@ -1361,8 +1353,6 @@ td, th {
     text-align: center;
     vertical-align: middle;
     display: table-cell; }
-
-
 
 .main-menu {
   background: #04091e;
@@ -2178,9 +2168,6 @@ body {
   }
 }
 
-
-
-
 /*--------------------------------------------------------------
 # WordPress CSS
 --------------------------------------------------------------*/
@@ -2312,88 +2299,7 @@ a img.aligncenter {
     clear: both;
 }
 
-
-
-
-
-/* .page-links ul .current_page_item a{
-  color: #f6214b;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* comments */
-/*
- * 5.3 Comments
- */
-
-
-/* .comment-sec-area h6 {
-  padding: 50px 0px;
-}
-
-.comment-sec-area a {
-  color: #222;
-}
-
-.comment-sec-area .comment-list {
-  padding-bottom: 30px;
-}
-
-.comment-sec-area .comment-list.left-padding {
-  padding-left: 25px;
-}
-
-.comment-sec-area .thumb {
-  margin-right: 20px;
-}
-
-.comment-sec-area .date {
-  font-size: 13px;
-  color: #cccccc;
-}
-
-.comment-sec-area .comment {
-  color: #777777;
-}
-
-.comment-sec-area .btn-reply {
-  background-color: #222;
-  color: #fff;
-  padding: 8px 30px;
-  display: block;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.comment-sec-area .btn-reply:hover {
-  background-color: #f6214b;
-  color: #fff;
-} */
-
-
-
-
-
+/* Comments */
 .comment-form {
   background: #ecf0f1;
   text-align: center;
@@ -2481,12 +2387,6 @@ a img.aligncenter {
   color: #f6214b !important;
 }
 
-
-
-
-
-
-
  ul.comments-list {
   margin-left: 0;
 }
@@ -2529,8 +2429,6 @@ a img.aligncenter {
 .comment-content{
 
 }
-
-    
 
 .form-control,
 select,
@@ -2582,8 +2480,19 @@ input[type="color"]:focus,
     box-shadow: none;
     outline: none;
 }
-
 /* Button */
+.post-password-form input[type="submit"] {
+    padding: 10px 17px;
+    background: #04091e;
+    outline:  none;
+    border: none;
+    color: #fff;
+}
+
+.post-password-form input[type="submit"]:hover {
+    color: #04091e;
+    background: #efdedd;
+}
 .post-categories li{
     display: inline-block;
     margin-bottom: 2px;
@@ -2786,10 +2695,6 @@ input[type="color"]:focus,
     margin-right: 3px;
 }
 
-
-
-
-
 .ad-widget-wrap {
   background: #fff !important;
 }
@@ -2852,7 +2757,6 @@ input[type="color"]:focus,
 }
 
 
-
 /* // Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 
@@ -2905,13 +2809,9 @@ input[type="color"]:focus,
 }
 
 
-
-
-
-
 /**
  * Breaking News
- * -----------------------------------------------------------------------------
+ * --------------
  */
 
 /* news ticker */
@@ -3002,13 +2902,6 @@ ul.newsticker a {
   padding: 0;
   margin: 0 50px 0 0;
 }
-
-
-
-
-
-
-
 
 /* related post*/
 .related-post{
@@ -3139,11 +3032,6 @@ ul.newsticker a {
 .owl-nav .owl-next:hover .lnr {
   color: #f6214b;
 }
-
-
-
-
-
 
 /* =================================== */
 /*  Single Page

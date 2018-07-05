@@ -211,6 +211,8 @@ function magazil_scripts() {
 
 	wp_enqueue_style( 'magazil-linearicons', get_stylesheet_directory_uri() . '/assets/css/linearicons.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '1.0' );
+	wp_enqueue_style( 'magazil-googleFonts', "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" );
+
 	wp_enqueue_style( 'magazil-bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );
@@ -236,8 +238,6 @@ function magazil_scripts() {
 	wp_enqueue_script( 'magazil-ResizeSensor', get_template_directory_uri() . '/assets/js/ResizeSensor.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script( 'magazil-sticky-sidebar', get_template_directory_uri() . '/assets/js/theia-sticky-sidebar.min.js', array('jquery', 'magazil-ResizeSensor'), '1.0.0', true);
 
-
-
 	$active_adsense = get_theme_mod( 'magazil_banner_adsense_code', false );
 	$active_breaking_news			= get_theme_mod( 'magazil_show_breaking_news', true );
 
@@ -249,17 +249,23 @@ function magazil_scripts() {
 		wp_enqueue_script( 'magazil-adsenseloader', get_template_directory_uri() . '/assets/js/jquery.adsenseloader.min.js', array('jquery'), '1.0.0', true);
 	}
 
-
-
 	wp_enqueue_script( 'magazil-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
 
-	wp_enqueue_script( 'magazil-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	//wp_enqueue_script( 'magazil-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'magazil_scripts' );
+
+/**
+* Admin enqueues
+*/
+function magazil_admin_scripts() {
+	wp_enqueue_style( 'magazil-googleFonts', "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" );
+}
+add_action( 'admin_enqueue_scripts', 'magazil_admin_scripts' );
 
 /**
  * Implement the Custom Header feature.

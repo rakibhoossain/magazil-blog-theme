@@ -36,23 +36,6 @@ function magazil_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';	
 
-	// $wp_customize->get_setting( 'magazil_banner_type' )->transport         = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_show_banner_on_homepage' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_banner_image' )->transport = 'postMessage';	
-	// $wp_customize->get_setting( 'magazil_banner_link' )->transport         = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_banner_adsense_code' )->transport  = 'postMessage';
-
-	// $wp_customize->get_setting( 'magazil_top_post_limit' )->transport = 'postMessage';	
-
-	// $wp_customize->get_setting( 'magazil_show_breaking_news' )->transport         = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_type' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_page' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_category' )->transport = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_tags' )->transport = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_effect' )->transport = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_speed' )->transport = 'postMessage';
-	// $wp_customize->get_setting( 'magazil_breaking_news_timeout' )->transport = 'postMessage';
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
@@ -63,64 +46,64 @@ function magazil_customize_register( $wp_customize ) {
 			'render_callback' => 'magazil_customize_partial_blogdescription',
 		) );
 
-// Header top
-$wp_customize->selective_refresh->add_partial( 'magazil_phone', array(
-            'selector' => '.header-top-right .site-phone'
-));$wp_customize->selective_refresh->add_partial( 'magazil_email', array(
-            'selector' => '.header-top-right .site-email'
-));
+		// Header top
+		$wp_customize->selective_refresh->add_partial( 'magazil_phone', array(
+		            'selector' => '.header-top-right .site-phone'
+		));$wp_customize->selective_refresh->add_partial( 'magazil_email', array(
+		            'selector' => '.header-top-right .site-email'
+		));
 
-// Banner ads
-$wp_customize->selective_refresh->add_partial( 'magazil_banner_type', array(
-            'selector' => '.header-banner.ads-banner'
-));$wp_customize->selective_refresh->add_partial( 'magazil_show_banner_on_homepage', array(
-            'selector' => '.header-banner.ads-banner'
-));$wp_customize->selective_refresh->add_partial( 'magazil_banner_image', array(
-            'selector' => '.header-banner.ads-banner a img'
-));$wp_customize->selective_refresh->add_partial( 'magazil_banner_link', array(
-            'selector' => '.header-banner.ads-banner a'
-));$wp_customize->selective_refresh->add_partial( 'magazil_banner_adsense_code', array(
-            'selector' => '.header-banner.ads-banner .magazil-adsense'
-));
+		// Banner ads
+		$wp_customize->selective_refresh->add_partial( 'magazil_banner_type', array(
+		            'selector' => '.header-banner.ads-banner'
+		));$wp_customize->selective_refresh->add_partial( 'magazil_show_banner_on_homepage', array(
+		            'selector' => '.header-banner.ads-banner'
+		));$wp_customize->selective_refresh->add_partial( 'magazil_banner_image', array(
+		            'selector' => '.header-banner.ads-banner a img'
+		));$wp_customize->selective_refresh->add_partial( 'magazil_banner_link', array(
+		            'selector' => '.header-banner.ads-banner a'
+		));$wp_customize->selective_refresh->add_partial( 'magazil_banner_adsense_code', array(
+		            'selector' => '.header-banner.ads-banner .magazil-adsense'
+		));
 
-// Top post limit
-$wp_customize->selective_refresh->add_partial( 'magazil_top_post_limit', array(
-            'selector' => '.top-post-area'
-));
-
-
+		// Top post limit
+		$wp_customize->selective_refresh->add_partial( 'magazil_top_post_limit', array(
+		            'selector' => '.top-post-area'
+		));
 
 
-// Top post Breaking news
-$wp_customize->selective_refresh->add_partial( 'magazil_show_breaking_news', array(
-            'selector' => '#breaking-news'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_type', array(
-            'selector' => '#breaking-news'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_page', array(
-            'selector' => '#breaking-news ul'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_category', array(
-            'selector' => '#breaking-news ul'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_tags', array(
-            'selector' => '#breaking-news ul'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_effect', array(
-            'selector' => '#breaking-news ul'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_speed', array(
-            'selector' => '#breaking-news ul'
-));
-$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', array(
-            'selector' => '#breaking-news ul'
-));
 
-// Copyright
-$wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
-            'selector' => '.copyright-text-area .copyright-text'
-));
+
+		// Top post Breaking news
+		$wp_customize->selective_refresh->add_partial( 'magazil_show_breaking_news', array(
+		            'selector' => '#breaking-news'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_type', array(
+		            'selector' => '#breaking-news'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_page', array(
+		            'selector' => '#breaking-news ul'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_category', array(
+		            'selector' => '#breaking-news ul'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_tags', array(
+		            'selector' => '#breaking-news ul'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_effect', array(
+		            'selector' => '#breaking-news ul'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_speed', array(
+		            'selector' => '#breaking-news ul'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', array(
+		            'selector' => '#breaking-news ul'
+		));
+
+		// Copyright
+		$wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
+		            'selector' => '.copyright-text-area .copyright-text'
+		));
 
 
 
@@ -153,14 +136,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
             'sanitize_callback' => 'magazil_sanitize_textarea',
             'default' => '+8801776217594'
         ));
-        // $wp_customize->add_control('magazil_phone', array(
-        //     'label' => __('Pnone Number: ', 'magazil'),
-        //     'settings' => 'magazil_phone',
-        //     'section' => 'magazil_header_controls',
-        //     'type' => 'text',
-        //     'priority' => 6
-        // ));
-
 
 		$wp_customize->add_control( new WP_Customize_Phome_Control( $wp_customize, 'magazil_phone', array(
             'label' => __('Pnone Number: ', 'magazil'),
@@ -169,9 +144,6 @@ $wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
             'settings'   => 'magazil_phone',
             'type' => 'phone',
         ) ) );
-
-
-
 
         $wp_customize->add_setting('magazil_email', array(
             'capability' => 'edit_theme_options',
@@ -406,6 +378,15 @@ $wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
             'transport'  => 'postMessage'
         ) );
 
+        /**
+		 * Display Breaking custom
+		 */
+        $wp_customize->add_setting( 'magazil_breaking_news_custom', array(
+        	'sanitize_callback' => 'esc_html',
+            // 'default'        => 0,
+            'transport'  => 'postMessage'
+        ) );
+
 
 		/**
 		 * Breaking news limit
@@ -506,6 +487,21 @@ $wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
             'active_callback' => 'breaking_tag_callback',
         ) ) );
 
+        /**
+		 * Breaking news custom
+		 */
+		$wp_customize->add_control(
+			'magazil_breaking_news_custom',
+			array(
+				'label'           => esc_html__( 'Custom text', 'magazil' ),
+				'description'     => esc_html__( 'Custom text to display as breaking news. Must use <li><a> tag to display properly.', 'magazil' ),
+				'section'         => 'magazil_breaking_news_controls',
+				'settings'        => 'magazil_breaking_news_custom',
+				'type'            => 'textarea',
+				'active_callback' => 'breaking_custom_callback'
+			)
+		);
+
 		/**
 		 * Breaking news limit
 		 */
@@ -591,7 +587,7 @@ $wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
 			'magazil_copyright_text',
 			array(
 				'label'           => esc_html__( 'Copyright text:', 'magazil' ),
-				'description'     => esc_html__( 'Add you copyright information on footer area', 'magazil' ),
+				'description'     => esc_html__( 'Add your copyright information on footer area', 'magazil' ),
 				'section'         => 'magazil_copyright_controls',
 				'settings'        => 'magazil_copyright_text',
 				'type'            => 'textarea'

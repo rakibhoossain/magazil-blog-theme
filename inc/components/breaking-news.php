@@ -7,8 +7,7 @@ if ($show_breaking_news) {
 	$page 				= get_theme_mod( 'magazil_breaking_news_page', 0 );
 	$cat 				= get_theme_mod( 'magazil_breaking_news_category', 0 );
 	$tags 				= get_theme_mod( 'magazil_breaking_news_tags', '' );
-	$breaking_custom 	= '';
-	// $breaking_custom 	= get_theme_mod( 'magazil_breaking_news_limit', 5 );
+	$breaking_custom 	= get_theme_mod( 'magazil_breaking_news_custom');
 
 	$number 			= get_theme_mod( 'magazil_breaking_news_limit', 5 );
 
@@ -54,11 +53,9 @@ if ($show_breaking_news) {
 			<?php endif; ?>
 		
 		<?php else: ?>
-			<?php if( is_array( $breaking_custom ) ){ ?>
+			<?php if( !empty($breaking_custom) ){ ?>
 			<ul>
-				<?php foreach ($breaking_custom as $custom_text) {  ?>
-				<li><a href="<?php echo $custom_text['link'] ?>" title="<?php echo $custom_text['text'] ?>"><?php echo $custom_text['text'] ?></a></li>				
-			<?php } ?>
+				<?php echo wp_specialchars_decode($breaking_custom);  ?>	
 			</ul>
 			<?php }	?>
 		<?php endif; ?>
@@ -71,7 +68,7 @@ if ($show_breaking_news) {
 				<?php if( $effect == 'ticker' ): ?>
 				createTicker(); 
 				<?php else: ?>
-				jQuery('#breaking-news ul').innerFade({animationType: '<?php echo $effect ?>', speed: <?php echo $speed ?> , timeout: <?php echo $timeout ?>});
+				jQuery('#breaking-news ul').innerFade({animationType: '<?php echo esc_attr($effect)  ?>', speed: <?php echo esc_attr($speed) ?> , timeout: <?php echo esc_attr($timeout) ?>});
 				<?php endif; ?>
 			});
 			<?php if( $effect == 'ticker' ): ?>                                                 
@@ -80,7 +77,7 @@ if ($show_breaking_news) {
 				tickerText = tickerItems[i];                              
 				c = 0;                                                    
 				typetext();                                               
-				setTimeout( "rotateTicker()", <?php echo $timeout ?> );                     
+				setTimeout( "rotateTicker()", <?php echo esc_attr($timeout) ?> );                     
 				i++;                                                      
 			}                                                           
 			<?php endif; ?>

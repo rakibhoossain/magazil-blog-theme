@@ -336,6 +336,7 @@ function magazil_breaking_news_type() {
   $news[ 'page' ]       = esc_html__( 'Pages', 'magazil' );
   $news[ 'category' ]   = esc_html__( 'Categories', 'magazil' );
   $news[ 'tag' ]        = esc_html__( 'Tags', 'magazil' );
+  $news[ 'custom' ]        = esc_html__( 'Custom', 'magazil' );
 
   return $news;
 }

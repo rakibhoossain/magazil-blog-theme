@@ -59,6 +59,13 @@
 		} );
 	} );
 
+	// Custom breaking news
+	wp.customize( 'magazil_breaking_news_custom', function( value ) {
+		value.bind( function( to ) {
+			$( '#breaking-news ul' ).html( to );
+		} );
+	} );
+
 
 
 

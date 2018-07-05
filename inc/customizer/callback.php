@@ -30,6 +30,13 @@ function breaking_cat_callback( $control ) {
 	return false;
 }
 
+function breaking_custom_callback( $control ) {
+	if ( $control->manager->get_setting( 'magazil_breaking_news_type' )->value() == 'custom' ) {
+		return true;
+	}
+	return false;
+}
+
 function breaking_page_callback( $control ) {
 	if ( $control->manager->get_setting( 'magazil_breaking_news_type' )->value() == 'page' ) {
 		return true;

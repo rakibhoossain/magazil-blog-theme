@@ -21,6 +21,7 @@
 						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
+						wp.customize.control('magazil_breaking_news_custom').deactivate();
 						break;
 					/**
 					 * The select was switched to »show«.
@@ -34,6 +35,7 @@
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
 						wp.customize.control('magazil_breaking_news_limit').deactivate();
+						wp.customize.control('magazil_breaking_news_custom').deactivate();
 						break;
 
 					case 'category':
@@ -44,6 +46,7 @@
 						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').activate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
+						wp.customize.control('magazil_breaking_news_custom').deactivate();
 						break;
 
 					case 'tag':
@@ -54,6 +57,18 @@
 						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').activate();
+						wp.customize.control('magazil_breaking_news_custom').deactivate();
+						break;
+					case 'custom':
+						/**
+						 * Activate the conditional control.
+						 */
+						wp.customize.control('magazil_breaking_news_page').deactivate();
+						wp.customize.control('magazil_breaking_news_page').deactivate();
+						wp.customize.control('magazil_breaking_news_category').deactivate();
+						wp.customize.control('magazil_breaking_news_tags').deactivate();
+						wp.customize.control('magazil_breaking_news_limit').deactivate();
+						wp.customize.control('magazil_breaking_news_custom').activate();
 						break;
 				}
 			});

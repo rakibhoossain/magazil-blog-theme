@@ -58,7 +58,7 @@
 				if($magazil_copyright_text):?>
 					<div class="copyright-text-area text-center">
 						<div class="copyright-text">
-							<?php echo htmlspecialchars_decode($magazil_copyright_text); ?>
+							<?php echo wp_specialchars_decode($magazil_copyright_text); ?>
 						</div>
 					</div>	
 				<?php endif; ?>

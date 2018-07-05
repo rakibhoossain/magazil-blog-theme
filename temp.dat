@@ -1,0 +1,326 @@
+//temporary helper file
+
+feel free to delete
+
+
+//custom-news.js
+
+
+
+// Custom Breaking News Text
+(function($) {
+    'use strict';
+    $(document).ready(function($) {
+        $("#TextAdd").click(function() {
+            var customlink = $('#custom_link').val();
+            var customtext = $('#custom_text').val();
+            if( customtext.length > 0 && customlink.length > 0  ){
+                $('#customList').append(`
+
+                    <li><div class="widget-head">
+                    <a href="'+customlink+'" target="_blank">'+customtext+'</a> 
+                    <input name="tie_options[breaking_custom]['+customnext+'][link]" type="hidden" value="'+customlink+'" /> 
+                    <input name="tie_options[breaking_custom]['+customnext+'][text]" type="hidden" value="'+customtext+'" />
+                    <a class="del-custom-text"></a></div></li>`);
+            }
+            customnext ++ ;
+            $('#custom_link , #custom_text').val('');
+        });     
+    });
+}(jQuery));
+
+
+
+<?php
+class WP_Customize_News_Control extends WP_Customize_Control
+{
+    public $type = 'news';
+  
+    /**
+    * Enqueue scripts/styles.
+    *
+    * @since 3.4.0
+    */
+    public function enqueue() {
+
+    wp_enqueue_script( 'magazil-news-link', get_stylesheet_directory_uri() . '/inc/customizer/js/custom-news.js', array( 'jquery' ), '1.0.0', true );
+    }
+
+    public function render_content()
+    {
+        ?>
+
+
+        <label>
+            <?php if ( ! empty( $this->label )) : ?>
+                <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+            <?php endif; ?>
+
+                        <input id="custom_text" type="text" size="56" style="direction:ltr; text-align:left; width:200px; float:left" name="custom_text" value="" />
+                        <input id="custom_link" type="text" size="56" style="direction:ltr; text-align:left; width:200px; float:left" name="custom_link" value="" />
+                        <input id="TextAdd"  class="button" type="button" value="Add" />
+
+                                    <input name="tie_options[breaking_custom][link][]" type="text" value="<?php echo esc_attr($this->value()); ?>" />
+                                    <input name="tie_options[breaking_custom][text][]" type="text" value="<?php echo esc_attr($this->value()); ?>" />
+
+
+                        <ul id="customList" style="margin-top:15px;">
+                        <?php $breaking_custom = get_theme_mod( 'magazil_breaking_news_custom') ;
+                            $custom_count = 0 ;
+                            if(is_array( $breaking_custom ) && !empty($breaking_custom)){
+                                foreach ($breaking_custom as $custom_text) { $custom_count++; ?>
+                            <li>
+                                <div class="widget-head">
+                                    <a href="<?php echo $custom_text['link'] ?>" target="_blank"><?php echo $custom_text['text'] ?></a>
+
+
+                                    <input name="tie_options[breaking_custom][<?php echo $custom_count ?>][link]" type="text" value="<?php echo $custom_text['link'] ?>" />
+
+                                    <input name="tie_options[breaking_custom][<?php echo $custom_count ?>][text]" type="text" value="<?php echo $custom_text['text'] ?>" />
+
+
+                                    <a class="del-custom-text"></a></div>
+                            </li>
+                                <?php }
+                            }
+                        ?>
+                        </ul>
+
+                        
+
+
+                <input title="<?php echo esc_html($this->label); ?>" type="textarea" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+                <input title="<?php echo esc_html($this->label); ?>" type="textarea" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+
+
+
+            <?php if ( ! empty( $this->description )) : ?>
+                <span class="description customize-control-description"><?php echo $this->description; ?></span>
+            <?php endif; ?>
+        </label>
+
+
+
+
+
+<script>
+    var customnext = <?php echo $custom_count+1 ?> ;
+</script>
+
+
+
+                
+        <?php
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <label>
+            <?php if ( ! empty( $this->label )) : ?>
+                <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+            <?php endif; ?>
+
+                <input class="magazil-phone"  title="<?php echo esc_html($this->label); ?>" type="tel" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+
+            <?php if ( ! empty( $this->description )) : ?>
+                <span class="description customize-control-description"><?php echo $this->description; ?></span>
+            <?php endif; ?>
+        </label>
+
+
+
+
+
+
+
+
+
+<?php
+/*
+Plugin Name: TJN Typography Control Demo
+Author: Tom J Nowell
+Version: 1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+add_action( 'customize_register', 'tjn_customize_register' );
+function tjn_customize_register( $wp_customize ) {
+    if ( ! isset( $wp_customize ) ) {
+        return;
+    }
+    if ( class_exists( 'WP_Customize_Control' ) ) {
+
+        class Toms_Control_Builder extends WP_Customize_Control {
+
+            public $html = array();
+
+            public function build_field_html( $key, $setting ) {
+                $value = '';
+                if ( isset( $this->settings[ $key ] ) )
+                    $value = $this->settings[ $key ]->value();
+                $this->html[] = '<div><input type="text" value="'.$value.'" '.$this->get_link( $key ).' /></div>';
+            }
+
+            public function render_content() {
+                $output =  '<label>' . $this->label .'</label>';
+                echo $output;
+                foreach( $this->settings as $key => $value ) {
+                    $this->build_field_html( $key, $value );
+                }
+                echo implode( '', $this->html );
+            }
+
+        }
+
+        $section = new TJN_Customizer_Section( $wp_customize, 'test', 'Test', 11 );
+        $field = new TJN_Customizer_Field( 'testfield','','Test Control' );
+        $field->add_to_section( $wp_customize, $section );
+    }
+}
+
+
+class TJN_Customizer_Section {
+    public $name='';
+    public $pretty_name='';
+    public function __construct( WP_Customize_Manager $wp_customize, $name, $pretty_name, $priority=25 ) {
+        $this->name = $name;
+        $this->pretty_name = $pretty_name;
+
+        $wp_customize->add_section( $this->getName(), array(
+            'title'          => $pretty_name,
+            'priority'       => $priority,
+            'transport'      => 'refresh'
+        ) );
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+    public function getPrettyName() {
+        return $this->pretty_name;
+    }
+}
+
+class TJN_Customizer_Field {
+
+    private $name;
+    private $default;
+    private $pretty_name;
+
+    public function __construct( $name, $default, $pretty_name ) {
+        $this->name = $name;
+        $this->default = $default;
+        $this->pretty_name = $pretty_name;
+    }
+
+    public function add_to_section( WP_Customize_Manager $wp_customize, TJN_Customizer_Section $section ) {
+
+        $wp_customize->add_setting( $this->name, array(
+            'default'        => $this->default,
+            'type'           => 'theme_mod',
+            'capability'     => 'edit_theme_options'
+        ) );
+        $wp_customize->add_setting( 'moomins', array(
+            'default'        => $this->default,
+            'type'           => 'theme_mod',
+            'capability'     => 'edit_theme_options'
+        ) );
+        $wp_customize->add_setting( 'papa', array(
+            'default'        => $this->default,
+            'type'           => 'theme_mod',
+            'capability'     => 'edit_theme_options'
+        ) );
+
+        $control = new Toms_Control_Builder(
+            $wp_customize, $this->name, array(
+            'label'    => $this->pretty_name,
+            'section'  => $section->getName(),
+            'settings'   => array (
+                $this->name,
+                'moomins',
+                'papa'
+            )
+        ) );
+
+        $wp_customize->add_control( $control );
+    }
+}
+
+/**
+ * Multiple checkbox customize control class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
+class JT_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
+
+    /**
+     * The type of customize control being rendered.
+     *
+     * @since  1.0.0
+     * @access public
+     * @var    string
+     */
+    public $type = 'checkbox-multiple';
+
+    /**
+     * Enqueue scripts/styles.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return void
+     */
+    public function enqueue() {
+        wp_enqueue_script( 'jt-customize-controls', trailingslashit( get_template_directory_uri() ) . 'customize-controls.js', array( 'jquery' ) );
+    }
+
+    /**
+     * Displays the control content.
+     *
+     * @since  1.0.0
+     * @access public
+     * @return void
+     */
+    public function render_content() {
+
+        if ( empty( $this->choices ) )
+            return; ?>
+
+        <?php if ( !empty( $this->label ) ) : ?>
+            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <?php endif; ?>
+
+        <?php if ( !empty( $this->description ) ) : ?>
+            <span class="description customize-control-description"><?php echo $this->description; ?></span>
+        <?php endif; ?>
+
+        <?php $multi_values = !is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value(); ?>
+
+        <ul>
+            <?php foreach ( $this->choices as $value => $label ) : ?>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> /> 
+                        <?php echo esc_html( $label ); ?>
+                    </label>
+                </li>
+
+            <?php endforeach; ?>
+        </ul>
+
+        <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( implode( ',', $multi_values ) ); ?>" />
+    <?php }
+}

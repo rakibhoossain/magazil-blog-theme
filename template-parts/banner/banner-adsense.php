@@ -11,7 +11,7 @@ if ( empty( $code ) ) {
 ?>
 <div class="magazil-adsense">
 	<?php
-	echo htmlspecialchars_decode( $code );
+	echo wp_specialchars_decode( $code );
 	?>
 	<p class="adsense__loading"><span><?php _e( 'Loading', 'magazil' ); ?>&nbsp;<i class="fa add-loading fa-spinner fa-spin"></i></span></p>
 </div>

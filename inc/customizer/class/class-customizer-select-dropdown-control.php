@@ -44,7 +44,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                 ?>
             <label>
                 <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-                <select <?php $this->link(); ?> class="chosen-select" <?php echo $this->type?> tabindex="4">
+                <select <?php $this->link(); ?> class="chosen-select" <?php echo esc_attr($this->type); ?> tabindex="4">
                 <?php
                   $selected = '';
                   foreach ( $this->choices as $value => $label ) {

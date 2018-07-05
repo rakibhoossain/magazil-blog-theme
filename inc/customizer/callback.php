@@ -45,10 +45,10 @@ function breaking_page_callback( $control ) {
 }
 
 function breaking_limit_callback( $control ) {
-	if ( $control->manager->get_setting( 'magazil_breaking_news_type' )->value() == 'page' ) {
+	$limit_val_cb = $control->manager->get_setting( 'magazil_breaking_news_type' )->value();
+	if ( $limit_val_cb == 'page' || $limit_val_cb == 'custom' ) {
 		return false;
 	}
-
 	return true;
 }
 

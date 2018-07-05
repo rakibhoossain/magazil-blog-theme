@@ -34,7 +34,7 @@ class WP_Customize_Phome_Control extends WP_Customize_Control
                 <input class="magazil-phone"  title="<?php echo esc_html($this->label); ?>" type="tel" <?php $this->input_attrs(); ?> value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
 
             <?php if ( ! empty( $this->description )) : ?>
-                <span class="description customize-control-description"><?php echo $this->description; ?></span>
+                <span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
             <?php endif; ?>
         </label>
         <?php

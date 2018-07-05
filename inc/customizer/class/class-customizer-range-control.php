@@ -19,9 +19,6 @@ class WP_Customize_Range_Control extends WP_Customize_Control
     {
         ?>
 
-
-
-
         <label>
             <?php if ( ! empty( $this->label )) : ?>
                 <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
@@ -33,17 +30,10 @@ class WP_Customize_Range_Control extends WP_Customize_Control
                 <span class="range-slider__value"><?php echo esc_attr($this->value()); ?></span>
             </div>
 
-
-
-
-
             <?php if ( ! empty( $this->description )) : ?>
-                <span class="description customize-control-description"><?php echo $this->description; ?></span>
+                <span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
             <?php endif; ?>
         </label>
         <?php
     }
 }
-
-
-

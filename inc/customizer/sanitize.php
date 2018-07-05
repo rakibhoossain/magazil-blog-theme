@@ -52,7 +52,6 @@ function magazil_sanitize_array_breaking_type( $input ) {
     if ( ! array_key_exists( $input, $valid ) ) {
       return;
     }
-
   return $input;
 }
 
@@ -66,13 +65,13 @@ function magazil_sanitize_array_breaking_type( $input ) {
  */
 function magazil_sanitize_array_page( $input ) {
   $valid = magazil_page_list();
-
-  foreach ( $input as $value ) {
-    if ( ! array_key_exists( $value, $valid ) ) {
-      return [];
+  if (is_array($input) && !empty($input)) {
+    foreach ( $input as $value ) {
+      if ( ! array_key_exists( $value, $valid ) ) {
+        return [];
+      }
     }
   }
-
   return $input;
 }
 
@@ -85,13 +84,13 @@ function magazil_sanitize_array_page( $input ) {
  */
 function magazil_sanitize_array_catagory( $input ) {
   $valid = magazil_cat_list();
-
-  foreach ( $input as $value ) {
-    if ( ! array_key_exists( $value, $valid ) ) {
-      return [];
+  if (is_array($input) && !empty($input)) {
+    foreach ( $input as $value ) {
+      if ( ! array_key_exists( $value, $valid ) ) {
+        return [];
+      }
     }
   }
-
   return $input;
 }
 
@@ -106,10 +105,11 @@ function magazil_sanitize_array_catagory( $input ) {
  */
 function magazil_sanitize_array_tags( $input ) {
   $valid = magazil_tag_list();
-
-  foreach ( $input as $value ) {
-    if ( ! array_key_exists( $value, $valid ) ) {
-      return [];
+  if (is_array($input) && !empty($input)) {
+    foreach ( $input as $value ) {
+      if ( ! array_key_exists( $value, $valid ) ) {
+        return [];
+      }
     }
   }
 
@@ -125,13 +125,13 @@ function magazil_sanitize_array_tags( $input ) {
  */
 function magazil_sanitize_array_effects( $input ) {
   $valid = magazil_jquery_effects();
-
-  foreach ( $input as $value ) {
-    if ( ! array_key_exists( $value, $valid ) ) {
-      return [];
+  if (is_array($input) && !empty($input)) {
+    foreach ( $input as $value ) {
+      if ( ! array_key_exists( $value, $valid ) ) {
+        return [];
+      }
     }
   }
-
   return $input;
 }
 

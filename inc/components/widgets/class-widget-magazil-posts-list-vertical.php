@@ -139,7 +139,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		echo $args['before_widget'];
+		echo wp_specialchars_decode($args['before_widget']);
 		$filepath = get_template_directory() . '/inc/components/widgets/layouts/posts_list_vertical.php';
 
 		$posts = $this->get_posts( $instance );
@@ -150,7 +150,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 			esc_html_e( 'Please configure your widget', 'magazil' );
 		}
 
-		echo $args['after_widget'];
+		echo wp_specialchars_decode($args['after_widget']);
 
 	}
 

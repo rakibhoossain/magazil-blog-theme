@@ -49,9 +49,10 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
  	    $title    = apply_filters(__('Recent Posts', 'magazil'), esc_attr($instance['title']) );
 		$list_num = absint($instance['list_num']);
 		
-		echo ''.$before_widget.'';
+		echo wp_specialchars_decode($before_widget);
 		if($title)
-			echo ''.$before_title . $title . $after_title;
+			$widget_title = $before_title . $title . $after_title;
+		echo wp_specialchars_decode($widget_title);
 		
 		$my_query = new WP_Query( 'showposts='.absint($list_num).'&ignore_sticky_posts=1');
 		?>
@@ -122,7 +123,7 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
     ?>
 </div>
 <?php 
-	echo ''.$after_widget;
+	echo wp_specialchars_decode($after_widget);
  	}
  }
  

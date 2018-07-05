@@ -46,7 +46,7 @@ get_header();
 					<div class="row">
 
 						<?php if($is_parent_child){ ?>
-						<div class="col-lg-3">
+						<div class="col-lg-3 magazil__sticky_sidebar">
 							<div class="sidebars-area">
 							<?php 
 							if($is_parent_child){ ?>
@@ -74,7 +74,7 @@ get_header();
 						</div>
 						<?php } ?>
 
-						<div class="col-lg-<?php echo absint($row_size);?> post-list">	
+						<div class="col-lg-<?php echo absint($row_size);?> post-list magazil__sticky_sidebar">	
 							<!-- Start latest-post Area -->
 							<div class="post-area-wrapper">
 
@@ -96,7 +96,7 @@ get_header();
 						</div>
 
 						<?php if(!$is_parent_child){ ?>
-						<div class="col-lg-4">
+						<div class="col-lg-4 magazil__sticky_sidebar">
 							<?php get_sidebar();?>
 						</div>
 						<?php } ?>

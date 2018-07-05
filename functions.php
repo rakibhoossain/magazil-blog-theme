@@ -244,6 +244,11 @@ function magazil_scripts() {
 	wp_enqueue_script( 'magazil-jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script( 'magazil-nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js', array('jquery'), '1.0.0', true);
 	wp_enqueue_script( 'magazil-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
+
+	wp_enqueue_script( 'magazil-ResizeSensor', get_template_directory_uri() . '/assets/js/ResizeSensor.min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-sticky-sidebar', get_template_directory_uri() . '/assets/js/theia-sticky-sidebar.min.js', array('jquery', 'magazil-ResizeSensor'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-sticky-sidebar-test', get_template_directory_uri() . '/assets/js/test.js', array('jquery', 'magazil-sticky-sidebar'), '1.0.0', true);
+
 	wp_enqueue_script( 'magazil-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
 
 	// wp_enqueue_script( 'magazil-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

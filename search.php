@@ -30,7 +30,7 @@ get_header();
 								</h1>
 							</div>
 						</div>
-						<div class="col-lg-8 search-list">
+						<div class="col-lg-8 search-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
 							<div class="single-search-wrap">
 
@@ -63,7 +63,7 @@ get_header();
 							</div>
 							<!-- End latest-post Area -->
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-4 magazil__sticky_sidebar">
 							<?php get_sidebar();?>
 						</div>
 					</div>

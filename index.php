@@ -27,7 +27,7 @@ get_header();
 			<section class="blog-post-area pb-120 mt-10">
 				<div class="container no-padding">
 					<div class="row">
-						<div class="col-lg-8 post-list">
+						<div class="col-lg-8 post-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
 							<div class="post-area-wrapper">
 
@@ -75,7 +75,7 @@ get_header();
 							</div>
 							<!-- End latest-post Area -->
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-4 magazil__sticky_sidebar">
 							<?php get_sidebar();?>
 						</div>
 					</div>

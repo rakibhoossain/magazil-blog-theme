@@ -1,9 +1,7 @@
 (function($) {
     'use strict';
 
-
 $(document).ready(function($) {
-    "use strict";
 
     var window_width = $(window).width(),
         window_height = window.innerHeight,

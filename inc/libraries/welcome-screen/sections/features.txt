@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Features
  */
-$newsmag = wp_get_theme( 'newsmag' );
+$magazil = wp_get_theme( 'magazil' );
 
 $features = array(
 	'post-formats'     => array(
@@ -82,11 +82,11 @@ $features = array(
 						<?php echo $feature['label']; ?>
                     </h3>
                 </td>
-                <td class="newsmag-feature">
-					<?php echo $feature['newsmag']; ?>
+                <td class="magazil-feature">
+					<?php echo $feature['magazil']; ?>
                 </td>
-                <td class="newsmag-pro-feature">
-					<?php echo $feature['newsmag-pro']; ?>
+                <td class="magazil-pro-feature">
+					<?php echo $feature['magazil-pro']; ?>
                 </td>
             </tr>
 		<?php endforeach; ?>
@@ -98,3 +98,11 @@ $features = array(
         </tbody>
     </table>
 </div>
+
+
+
+                <a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=features' ) ); ?>"
+                   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'magazil' ); ?></a>
+                   				case 'features':
+					require_once get_template_directory() . '/inc/libraries/welcome-screen/sections/features.php';
+					break;

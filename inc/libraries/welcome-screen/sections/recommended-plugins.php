@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Recommended Plugins
  */
-global $newsmag_required_actions, $newsmag_recommended_plugins;
+global $magazil_recommended_plugins;
 
 wp_enqueue_style( 'plugin-install' );
 wp_enqueue_script( 'plugin-install' );
@@ -14,7 +14,7 @@ add_thickbox();
 ?>
 
 <div class="feature-section recommended-plugins three-col demo-import-boxed" id="plugin-filter">
-	<?php foreach ( $newsmag_recommended_plugins as $plugin => $prop ) { ?>
+	<?php foreach ( $magazil_recommended_plugins as $plugin => $prop ) { ?>
 		<?php
 		$info   = $this->call_plugin_api( $plugin );
 		$icon   = $this->check_for_icon( $info->icons );
@@ -25,32 +25,32 @@ add_thickbox();
 		switch ( $active['needs'] ) {
 			case 'install':
 				$class = 'install-now button';
-				$label = __( 'Install', 'newsmag' );
+				$label = __( 'Install', 'magazil' );
 				break;
 			case 'activate':
 				$class = 'activate-now button button-primary';
-				$label = __( 'Activate', 'newsmag' );
+				$label = __( 'Activate', 'magazil' );
 				break;
 			case 'deactivate':
 				$class = 'deactivate-now button';
-				$label = __( 'Deactivate', 'newsmag' );
+				$label = __( 'Deactivate', 'magazil' );
 				break;
 		}
 
 		if ( ! empty( $prop['tracking_url'] ) ) {
 			$url   = $prop['tracking_url'];
 			$class = 'button';
-			$label = __( 'Install', 'newsmag' );
+			$label = __( 'Install', 'magazil' );
 		}
 
 		?>
 		<div class="col plugin_box">
 			<?php if ( $prop['recommended'] ): ?>
-				<span class="recommended"><?php _e( 'Recommended', 'newsmag' ); ?></span>
+				<span class="recommended"><?php _e( 'Recommended', 'magazil' ); ?></span>
 			<?php endif; ?>
 			<img src="<?php echo esc_attr( $icon ) ?>" alt="plugin box image">
 			<span
-				class="version"><?php echo __( 'Version:', 'newsmag' ); ?><?php echo esc_html( $info->version ) ?></span>
+				class="version"><?php echo __( 'Version:', 'magazil' ); ?><?php echo esc_html( $info->version ) ?></span>
 			<span
 				class="separator">|</span> <?php echo wp_kses_post( $info->author ) ?>
 			<div

@@ -324,12 +324,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		// Welcome screen
 		if ( is_admin() ) {
-			global $newsmag_required_actions, $newsmag_recommended_plugins;
+			global $magazil_required_actions, $magazil_recommended_plugins;
 			require_once get_template_directory() . '/inc/libraries/notify/class-magazil-notify-system.php';
 
-			$newsmag_recommended_plugins = array(
+			$magazil_recommended_plugins = array(
 				'kiwi-social-share'        => array( 'recommended' => false ),
 				'modula-best-grid-gallery' => array( 'recommended' => true ),
+				'wp-violet' => array( 'recommended' => true ),
 			);
 
 			/*
@@ -340,41 +341,41 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 *
 			 */
-			$newsmag_required_actions = array(
+			$magazil_required_actions = array(
 				array(
-					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
+					"id"          => 'magazil-wp-import-plugin',
 					"title"       => Magazil_Notify_System::wordpress_importer_title(),
 					"description" => Magazil_Notify_System::wordpress_importer_description(),
 					"check"       => Magazil_Notify_System::has_import_plugin( 'wordpress-importer' ),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
-					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
+					"id"          => 'magazil-wp-import-widget-plugin',
 					"title"       => Magazil_Notify_System::widget_importer_exporter_title(),
 					'description' => Magazil_Notify_System::widget_importer_exporter_description(),
 					"check"       => Magazil_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
 				array(
-					"id"          => 'newsmag-req-ac-download-data',
-					"title"       => esc_html__( 'Download theme sample data', 'newsmag' ),
-					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
-					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
-									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
+					"id"          => 'magazil-req-ac-download-data',
+					"title"       => esc_html__( 'Download theme sample data', 'magazil' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'magazil' ),
+					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/magazil-lite-posts.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/magazil-lite-widgets.wie">' . __( 'Widgets', 'magazil' ) . '</a>',
 					"check"       => Magazil_Notify_System::has_content(),
 				),
 				array(
-					"id"    => 'newsmag-req-ac-install-data',
-					"title" => esc_html__( 'Import Sample Data', 'newsmag' ),
-					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
-									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
+					"id"    => 'magazil-req-ac-install-data',
+					"title" => esc_html__( 'Import Sample Data', 'magazil' ),
+					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'magazil' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'magazil' ) . '</a>',
 					"check" => Magazil_Notify_System::has_import_plugins(),
 				),
 				array(
-					"id"          => 'newsmag-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
-					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'newsmag' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'newsmag' ) . '</a>',
+					"id"          => 'magazil-req-ac-static-latest-news',
+					"title"       => esc_html__( 'Set front page to static', 'magazil' ),
+					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'magazil' ),
+					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'magazil' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'magazil' ) . '</a>',
 					"check"       => Magazil_Notify_System::is_not_static_page()
 				)
 			);

@@ -15,19 +15,19 @@ class Magazil_Welcome_Screen {
 		add_action( 'admin_menu', array( $this, 'magazil_welcome_register_menu' ) );
 
 		/* activation notice */
-		add_action( 'load-themes.php', array( $this, 'newsmag_activation_admin_notice' ) );
+		add_action( 'load-themes.php', array( $this, 'magazil_activation_admin_notice' ) );
 
 		/* enqueue script and style for welcome screen */
-		add_action( 'admin_enqueue_scripts', array( $this, 'newsmag_welcome_style_and_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'magazil_welcome_style_and_scripts' ) );
 
 		/* ajax callback for dismissable required actions */
-		add_action( 'wp_ajax_newsmag_dismiss_required_action', array(
+		add_action( 'wp_ajax_magazil_dismiss_required_action', array(
 			$this,
-			'newsmag_dismiss_required_action_callback'
+			'magazil_dismiss_required_action_callback'
 		) );
-		add_action( 'wp_ajax_nopriv_newsmag_dismiss_required_action', array(
+		add_action( 'wp_ajax_nopriv_magazil_dismiss_required_action', array(
 			$this,
-			'newsmag_dismiss_required_action_callback'
+			'magazil_dismiss_required_action_callback'
 		) );
 
 		/**
@@ -79,7 +79,7 @@ class Magazil_Welcome_Screen {
 	 * Adds an admin notice upon successful activation.
 	 *
 	 */
-	public function newsmag_activation_admin_notice() {
+	public function magazil_activation_admin_notice() {
 		global $pagenow;
 
 		if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
@@ -94,9 +94,9 @@ class Magazil_Welcome_Screen {
 	public function magazil_welcome_admin_notice() {
 		?>
 		<div class="updated notice is-dismissible">
-			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Newsmag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'magazil' ), '<a href="' . esc_url( admin_url( 'themes.php?page=magazil-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Magazil! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'magazil' ), '<a href="' . esc_url( admin_url( 'themes.php?page=magazil-welcome' ) ) . '">', '</a>' ); ?></p>
 			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome' ) ); ?>" class="button"
-			      style="text-decoration: none;"><?php _e( 'Get started with Newsmag', 'magazil' ); ?></a></p>
+			      style="text-decoration: none;"><?php _e( 'Get started with Magazil', 'magazil' ); ?></a></p>
 		</div>
 		<?php
 	}
@@ -105,12 +105,12 @@ class Magazil_Welcome_Screen {
 	 * Load welcome screen css and javascript
 	 *
 	 */
-	public function newsmag_welcome_style_and_scripts( $hook_suffix ) {
+	public function magazil_welcome_style_and_scripts( $hook_suffix ) {
 
 		wp_enqueue_style( 'magazil-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome.css' );
 		wp_enqueue_script( 'magazil-welcome-screen', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome.js', array( 'jquery' ), '12123' );
 
-		wp_localize_script( 'magazil-welcome-screen', 'newsmagWelcomeScreenObject', array(
+		wp_localize_script( 'magazil-welcome-screen', 'magazilWelcomeScreenObject', array(
 			'nr_actions_required'      => absint( $this->count_actions() ),
 			'ajaxurl'                  => esc_url( admin_url( 'admin-ajax.php' ) ),
 			'template_directory'       => esc_url( get_template_directory_uri() ),
@@ -119,72 +119,72 @@ class Magazil_Welcome_Screen {
 
 	}
 
-	/**
-	 * Load scripts for customizer page
-	 *
-	 */
-	public function newsmag_welcome_scripts_for_customizer() {
+	// /**
+	//  * Load scripts for customizer page
+	//  *
+	//  */
+	// public function magazil_welcome_scripts_for_customizer() {
 
-		wp_enqueue_style( 'magazil-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome_customizer.css' );
-		wp_enqueue_script( 'magazil-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome_customizer.js', array( 'jquery' ), '20120206', true );
+	// 	wp_enqueue_style( 'magazil-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome_customizer.css' );
+	// 	wp_enqueue_script( 'magazil-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome_customizer.js', array( 'jquery' ), '20120206', true );
 
-		wp_localize_script( 'magazil-welcome-screen-customizer', 'newsmagWelcomeScreenCustomizerObject', array(
-			'nr_actions_required' => absint( $this->count_actions() ),
-			'aboutpage'           => esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions' ) ),
-			'customizerpage'      => esc_url( admin_url( 'customize.php#recommended_actions' ) ),
-			'themeinfo'           => __( 'View Theme Info', 'magazil' ),
-		) );
-	}
+	// 	wp_localize_script( 'magazil-welcome-screen-customizer', 'magazilWelcomeScreenCustomizerObject', array(
+	// 		'nr_actions_required' => absint( $this->count_actions() ),
+	// 		'aboutpage'           => esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions' ) ),
+	// 		'customizerpage'      => esc_url( admin_url( 'customize.php#recommended_actions' ) ),
+	// 		'themeinfo'           => __( 'View Theme Info', 'magazil' ),
+	// 	) );
+	// }
 
 	/**
 	 * Dismiss required actions
 	 *
 	 * @since 1.8.2.4
 	 */
-	public function newsmag_dismiss_required_action_callback() {
+	public function magazil_dismiss_required_action_callback() {
 
-		global $newsmag_required_actions;
+		global $magazil_required_actions;
 
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
 
-		echo $action_id; /* this is needed and it's the id of the dismissable required action */
+		echo esc_attr($action_id); /* this is needed and it's the id of the dismissable required action */
 
 		if ( ! empty( $action_id ) ):
 
 			/* if the option exists, update the record for the specified id */
-			if ( get_option( 'newsmag_show_required_actions' ) ):
+			if ( get_option( 'magazil_show_required_actions' ) ):
 
-				$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
+				$magazil_show_required_actions = get_option( 'magazil_show_required_actions' );
 
 				switch ( $_GET['todo'] ) {
 					case 'add';
-						$newsmag_show_required_actions[ $action_id ] = true;
+						$magazil_show_required_actions[ $action_id ] = true;
 						break;
 					case 'dismiss';
-						$newsmag_show_required_actions[ $action_id ] = false;
+						$magazil_show_required_actions[ $action_id ] = false;
 						break;
 				}
 
-				update_option( 'newsmag_show_required_actions', $newsmag_show_required_actions );
+				update_option( 'magazil_show_required_actions', $magazil_show_required_actions );
 
 			/* create the new option,with false for the specified id */
 			else:
 
-				$newsmag_show_required_actions_new = array();
+				$magazil_required_actions_new = array();
 
-				if ( ! empty( $newsmag_required_actions ) ):
+				if ( ! empty( $magazil_required_actions ) ):
 
-					foreach ( $newsmag_required_actions as $newsmag_required_action ):
+					foreach ( $magazil_required_actions as $magazil_required_action ):
 
-						if ( $newsmag_required_action['id'] == $action_id ):
-							$newsmag_show_required_actions_new[ $newsmag_required_action['id'] ] = false;
+						if ( $magazil_required_action['id'] == $action_id ):
+							$magazil_required_actions_new[ $magazil_required_action['id'] ] = false;
 						else:
-							$newsmag_show_required_actions_new[ $newsmag_required_action['id'] ] = true;
+							$magazil_required_actions_new[ $magazil_required_action['id'] ] = true;
 						endif;
 
 					endforeach;
 
-					update_option( 'newsmag_show_required_actions', $newsmag_show_required_actions_new );
+					update_option( 'magazil_show_required_actions', $magazil_required_actions_new );
 
 				endif;
 
@@ -200,15 +200,17 @@ class Magazil_Welcome_Screen {
 	 *
 	 */
 	public function count_actions() {
-		global $newsmag_required_actions;
+		global $magazil_required_actions;
 
-		$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
-		if ( ! $newsmag_show_required_actions ) {
-			$newsmag_show_required_actions = array();
+		$magazil_show_required_actions = get_option( 'magazil_show_required_actions' );
+		if ( ! $magazil_show_required_actions ) {
+			$magazil_show_required_actions = array();
 		}
 
 		$i = 0;
-		foreach ( $newsmag_required_actions as $action ) {
+
+
+		foreach ( $magazil_required_actions as $action ) {
 			$true      = false;
 			$dismissed = false;
 
@@ -216,7 +218,7 @@ class Magazil_Welcome_Screen {
 				$true = true;
 			}
 
-			if ( ! empty( $newsmag_show_required_actions ) && isset( $newsmag_show_required_actions[ $action['id'] ] ) && ! $newsmag_show_required_actions[ $action['id'] ] ) {
+			if ( ! empty( $magazil_show_required_actions ) && isset( $magazil_show_required_actions[ $action['id'] ] ) && ! $magazil_show_required_actions[ $action['id'] ] ) {
 				$true = false;
 			}
 
@@ -238,7 +240,7 @@ class Magazil_Welcome_Screen {
 	public function call_plugin_api( $slug ) {
 		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
-		if ( false === ( $call_api = get_transient( 'newsmag_plugin_information_transient_' . $slug ) ) ) {
+		if ( false === ( $call_api = get_transient( 'mgazil_plugin_information_transient_' . $slug ) ) ) {
 			$call_api = plugins_api( 'plugin_information', array(
 				'slug'   => $slug,
 				'fields' => array(
@@ -259,7 +261,7 @@ class Magazil_Welcome_Screen {
 					'icons'             => true
 				)
 			) );
-			set_transient( 'newsmag_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
+			set_transient( 'mgazil_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
 		}
 
 		return $call_api;
@@ -368,18 +370,17 @@ class Magazil_Welcome_Screen {
 			<h2 class="nav-tab-wrapper wp-clearfix">
 
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=getting_started' ) ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'magazil' ); ?></a>
+				   class="nav-tab <?php echo esc_attr($active_tab) == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'magazil' ); ?></a>
 
                 <a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions' ) ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'magazil' ); ?>
-                    <?php echo $action_count > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
+				   class="nav-tab <?php echo esc_attr($active_tab) == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'magazil' ); ?>
+                    <?php echo esc_attr($action_count) > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
 
                 <a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=recommended_plugins' ) ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'magazil' ); ?></a>
+				   class="nav-tab <?php echo esc_attr($active_tab) == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'magazil' ); ?></a>
                 <a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=support' ) ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'magazil' ); ?></a>
-                <a href="<?php echo esc_url( admin_url( 'themes.php?page=magazil-welcome&tab=features' ) ); ?>"
-                   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'magazil' ); ?></a>
+				   class="nav-tab <?php echo esc_attr($active_tab) == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'magazil' ); ?></a>
+
 			</h2>
 
 			<?php
@@ -395,9 +396,6 @@ class Magazil_Welcome_Screen {
 					break;
 				case 'support':
 					require_once get_template_directory() . '/inc/libraries/welcome-screen/sections/support.php';
-					break;
-				case 'features':
-					require_once get_template_directory() . '/inc/libraries/welcome-screen/sections/features.php';
 					break;
 				default:
 					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php';

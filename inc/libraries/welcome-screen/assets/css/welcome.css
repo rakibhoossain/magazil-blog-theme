@@ -73,8 +73,8 @@
     margin: 0;
 }
 
-.featured-section .free-pro-table .newsmag-feature,
-.featured-section .free-pro-table .newsmag-pro-feature{
+.featured-section .free-pro-table .magazil-feature,
+.featured-section .free-pro-table .magazil-pro-feature{
     text-align: center;
     width: 15%;
 }
@@ -111,11 +111,11 @@
     color: #a00;
 }
 
-.newsmag-action-required-box:last-of-type {
+.magazil-action-required-box:last-of-type {
     border-bottom: none;
 }
 
-.newsmag-action-required-box {
+.magazil-action-required-box {
     display: block;
     border-left: 3px solid #f8800c;
     padding: 10px 25px 5px;
@@ -125,20 +125,20 @@
     position: relative;
 }
 
-.about-wrap .newsmag-action-required-box h4 {
+.about-wrap .magazil-action-required-box h4 {
     display: block;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.about-wrap .newsmag-action-required-box p {
+.about-wrap .magazil-action-required-box p {
     display: block;
     margin-top: 0;
     width: 100%;
     max-width: 100%;
 }
 
-.about-wrap .newsmag-dismiss-required-action {
+.about-wrap .magazil-dismiss-required-action {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -148,7 +148,7 @@
     cursor: pointer;
 }
 
-.about-wrap .newsmag-required-action-button {
+.about-wrap .magazil-required-action-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -542,41 +542,41 @@
 
 /* Customizer icons */
 
-#available-widgets [class^='newsmag_widget_posts_column-'] .widget-title::before,
-#available-widgets [class*=' newsmag_widget_posts_column-'] .widget-title::before {
+#available-widgets [class^='magazil_widget_posts_column-'] .widget-title::before,
+#available-widgets [class*=' magazil_widget_posts_column-'] .widget-title::before {
   content: url('../img/posts_column.png');
   top: 2px;
 }
 
-#available-widgets [class^='newsmag_widget_posts_list_vertical-'] .widget-title::before,
-#available-widgets [class*=' newsmag_widget_posts_list_vertical-'] .widget-title::before {
+#available-widgets [class^='magazil_widget_posts_list_vertical-'] .widget-title::before,
+#available-widgets [class*=' magazil_widget_posts_list_vertical-'] .widget-title::before {
   content: url('../img/posts_vertical_list.png');
   top: 2px;
 }
 
-#available-widgets [class^='newsmag_widget_posts_list_horizontal-'] .widget-title::before,
-#available-widgets [class*=' newsmag_widget_posts_list_horizontal-'] .widget-title::before {
+#available-widgets [class^='magazil_widget_posts_list_horizontal-'] .widget-title::before,
+#available-widgets [class*=' magazil_widget_posts_list_horizontal-'] .widget-title::before {
   content: url('../img/posts_horizontal.png');
   top: 2px;
 }
 
-#available-widgets [class^='newsmag_widget_posts_grid-'] .widget-title::before,
-#available-widgets [class*=' newsmag_widget_posts_grid-'] .widget-title::before {
+#available-widgets [class^='magazil_widget_posts_grid-'] .widget-title::before,
+#available-widgets [class*=' magazil_widget_posts_grid-'] .widget-title::before {
   content: url('../img/posts_grid.png');
   top: 0;
 }
 
-#available-widgets [class^='newsmag_slider_widget-'] .widget-title::before,
-#available-widgets [class*=' newsmag_slider_widget-'] .widget-title::before {
+#available-widgets [class^='magazil_slider_widget-'] .widget-title::before,
+#available-widgets [class*=' magazil_slider_widget-'] .widget-title::before {
   content: url('../img/posts_slider.png');
   top: 0;
 }
 
-#available-widgets [class^='newsmag_widget_posts_carousel-'] .widget-title::before,
-#available-widgets [class*=' newsmag_widget_posts_carousel-'] .widget-title::before {
+#available-widgets [class^='magazil_widget_posts_carousel-'] .widget-title::before,
+#available-widgets [class*=' magazil_widget_posts_carousel-'] .widget-title::before {
   content: url('../img/posts_carousel.png');
   top: 0;
 }
-#available-widgets-list [class^='newsmag_'], #available-widgets-list [class*=' newsmag_'], #available-widgets-list [class^='newsmag-'], #available-widgets-list [class*=' newsmag-'] {
+#available-widgets-list [class^='magazil_'], #available-widgets-list [class*=' magazil_'], #available-widgets-list [class^='magazil-'], #available-widgets-list [class*=' magazil-'] {
   background: rgba(0, 115, 170, 0.05) !important;
 }

@@ -2512,10 +2512,7 @@ input[type="color"]:focus,
 
 
 
-/* Post box 2 */
-/*----------------------------------
-Blog V2
-----------------------------------*/
+/* Post box */
 .post-area-wrapper {
     padding: 20px;
     background: #fff;
@@ -2535,7 +2532,7 @@ Blog V2
   top: 0;
   left: 0;
   overflow: hidden;
-  z-index: 99;
+  z-index: 9;
 }
 .posts-box-img {
   height: 236px;
@@ -2551,7 +2548,7 @@ Blog V2
   width: 100%;
 }
 .top-layout .post-box-details {
-  z-index: 999;
+  z-index: 19;
 }
 
 .posts-box .posts-box-img,
@@ -2565,7 +2562,7 @@ Blog V2
 .grid-post .top-layout .posts-box-img {
   margin: 0;
 }
-.top-layout:after,
+.top-layout .posts-box-link:after,
 .posts-box-img:after {
   position: absolute;
   content: '';
@@ -2577,7 +2574,7 @@ Blog V2
   background: rgba(0, 0, 0, 0.4);
   transition: background 0.5s;
 }
-.top-layout:hover:after,
+.top-layout:hover .posts-box-link:after,
 .posts-box-img:hover:after {
   background: rgba(0,0,0,0.1);
 }
@@ -2708,6 +2705,8 @@ Blog V2
 .post-box-img .meta li {
   color: #fff;
 }
+
+
 
 @media (max-width: 414px) {
   .posts-box-img .meta li,
@@ -3415,6 +3414,7 @@ input.wpcf7-form-control.wpcf7-submit:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
+.feature-img-thumb:hover img,
 .editors-pick-post .feature-img:hover img {
   -webkit-transform: scale(1.045);
       transform: scale(1.045);
@@ -3551,7 +3551,34 @@ input.wpcf7-form-control.wpcf7-submit:hover {
     font-size: 13px;
     line-height: 20px;
 }
-
+.sidebar-thumb{
+  overflow: hidden;
+}
+.sidebar-thumb img{
+  transition: all 0.5s ease;
+}
+.sidebar-thumb a{
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.sidebar-thumb a:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  transition: all 0.5s ease;
+}
+.sidebar-thumb:hover img{
+  -webkit-transform: scale(1.045);
+      transform: scale(1.045);
+}
+.sidebar-thumb:hover a:after{
+  background: rgba(0,0,0,0.1);
+}
 #sidebar .sidebar-item h5.widget-title {
   color: #333333;
     font-size: 14px;

@@ -102,7 +102,7 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 		 $source = get_site_url();
 		 if($featured_image[0] !=""){
 			$thumb = $featured_image[0];
-			echo '<div class="thumb"> <a href="'.esc_url(get_permalink()).'" ><img src="'.esc_url($thumb).'" class="widget-img xs" alt="'.esc_attr(get_the_title()).'" /></a></div>';
+			echo '<div class="thumb sidebar-thumb"> <a href="'.esc_url(get_permalink()).'" ><img src="'.esc_url($thumb).'" class="widget-img xs" alt="'.esc_attr(get_the_title()).'" /></a></div>';
 			 }
 		}
 

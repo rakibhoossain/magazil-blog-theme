@@ -8,7 +8,7 @@ if ( $posts->have_posts() ): ?>
 			<?php
 			$idObj = get_category_by_slug( $instance['newsmag_category'] );
 			?>
-			<h4 class="cat-title">
+			<h4 class="cat-title  mb-20">
 				<?php
 				if ( ! empty( $instance['title'] ) ) {
 					?>

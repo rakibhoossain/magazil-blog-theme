@@ -8,11 +8,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="posts-box">
         <div class="relative">
-            <?php
-            $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'magazil-small-feature' );
-            ?>
             <a class="posts-box-img" href="<?php echo get_the_permalink(); ?>">
-                <?php printf('<span style="background: url(\''.esc_url($image_url[0]).'\'); ?>)"></span>'); ?>
+            <?php if(has_post_thumbnail()){ 
+                $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'magazil-small-feature' );
+                $image = esc_url($image_url[0]);
+                printf('<span style="background: url(\''.esc_url($image).'\'); ?>)"></span>');
+                }
+            ?>
             </a>
             <div class="posts-meta-details">
                 <?php magazil_post_categories(); ?>

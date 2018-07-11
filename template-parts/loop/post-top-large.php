@@ -18,7 +18,7 @@
 	
   	<div class="post-box-details">
     	<?php magazil_post_categories(); ?>
-    	<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h3 class="entry-title"><h3>', '</h3></a>' );?>
+    	<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h3 class="entry-title page-title">', '</h3></a>' );?>
     	<?php magazil_entry_meta(); ?>
   	</div>
 </div>

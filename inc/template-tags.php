@@ -193,6 +193,10 @@ if ( ! function_exists( 'magazil_before_post' ) ) :
 								<?php if (is_archive()) {
 									the_archive_title( '<h1 class="page-title text-white">', '</h1>' );
 									the_archive_description( '<div class="archive-description">', '</div>' );
+								}else if(is_search()){
+									echo '<h1 class="page-title text-white">';
+									printf( esc_html__( 'Search Results for: %s', 'magazil' ), '<span>' . get_search_query() . '</span>' );
+									echo '</h1>';
 								}else{
 									echo '<h1 class="page-title text-white">';
 									single_post_title();

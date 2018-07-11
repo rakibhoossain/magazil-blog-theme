@@ -2516,7 +2516,6 @@ input[type="color"]:focus,
 .post-area-wrapper {
     padding: 20px;
     background: #fff;
-    margin-bottom: 20px;
 }
 
 .posts-box-img-top,
@@ -2549,6 +2548,7 @@ input[type="color"]:focus,
 }
 .top-layout .post-box-details {
   z-index: 19;
+  width: calc(100% - 25px);
 }
 
 .posts-box .posts-box-img,
@@ -3452,7 +3452,6 @@ input.wpcf7-form-control.wpcf7-submit:hover {
 .editors-pick-post .meta {
   margin: 10px 0px;
 }
-
 .editors-pick-post .meta li {
   display: inline-block;
   color: #777777;
@@ -3460,7 +3459,7 @@ input.wpcf7-form-control.wpcf7-submit:hover {
   font-weight: 300;
   font-size: 12px;
 }
-
+.post-meta li .lnr,
 .editors-pick-post .meta li .lnr {
   margin-right: 10px;
   font-weight: 700;
@@ -3969,6 +3968,7 @@ p img.alignright, p img.alignleft {margin-top:0;}
   margin-top: 20px;
   color: #fff;
 }
+.footer-text:hover a,
 .copyright-text-area h1,
 .copyright-text-area h2,
 .copyright-text-area h3,

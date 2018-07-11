@@ -19,8 +19,6 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-
 			<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
@@ -30,9 +28,6 @@ get_header();
 						<div class="col-lg-8 post-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
 							<div class="posts-list blog-page post-area-wrapper">
-
-
-
 								<?php
 								if ( have_posts() ) :
 
@@ -44,7 +39,6 @@ get_header();
 									<div class="row">
 									<?php
 								endif;
-
 								/* Start the Loop */
 								while ( have_posts() ) :
 									the_post();
@@ -57,18 +51,6 @@ get_header();
 									echo '<div class="col-lg-6 posts2-i">';
 									get_template_part( 'template-parts/content', get_post_type() );
 									echo '</div>';
-
-
-   
-
-
-
-
-
-
-
-
-
 								endwhile;
 								echo '</div>';
 								the_posts_pagination( array(

@@ -107,7 +107,33 @@
 				}
 			});
 		});
-
+		wp.customize.control('magazil_top_post_type', function (control) {
+			/**
+			 * Run function on setting change of control.
+			 */
+			control.setting.bind(function (value) {
+				switch (value) {
+					/**
+					 * The select was switched to the hide option.
+					 */
+					case 'popular':
+						/**
+						 * Deactivate the conditional control.
+						 */
+						wp.customize.control('magazil_top_post_page').deactivate();
+						break;
+					/**
+					 * The select was switched to »show«.
+					 */
+					case 'page':
+						/**
+						 * Activate the conditional control.
+						 */
+						wp.customize.control('magazil_top_post_page').activate();
+						break;
+				}
+			});
+		});
 
 
 	});

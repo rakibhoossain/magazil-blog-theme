@@ -5,6 +5,7 @@
 function magazil_sanitize_checkbox( $input ) {
 	return ( isset( $input ) && true == $input ? true : false );
 }
+
 /**
  *  Sanitize Radio Buttons
  */
@@ -49,6 +50,21 @@ function magazil_sanitize_textarea( $input ) {
  */
 function magazil_sanitize_array_breaking_type( $input ) {
   $valid = magazil_breaking_news_type();
+    if ( ! array_key_exists( $input, $valid ) ) {
+      return;
+    }
+  return $input;
+}
+
+/**
+ * Validate the options against the single page
+ *
+ * @param  string[] $input
+ *
+ * @return string
+ */
+function magazil_sanitize_single_page( $input ) {
+  $valid = magazil_page_list();
     if ( ! array_key_exists( $input, $valid ) ) {
       return;
     }

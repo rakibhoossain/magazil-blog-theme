@@ -128,14 +128,4 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 	echo wp_specialchars_decode($after_widget);
  	}
  }
- 
-function magazil_companion_recent_posts(){
-	
-	register_widget('Widget_Magazil_Posts_List_Sidebar');
-	register_widget('Widget_Magazil_Posts_List_Horizontal');
-	register_widget('Widget_Magazil_Posts_List_Vertical');
-						
-}
-add_action( 'widgets_init', 'magazil_companion_recent_posts' );
- 
 }

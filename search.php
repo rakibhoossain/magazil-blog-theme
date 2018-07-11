@@ -16,20 +16,11 @@ get_header();
 
 
 			<div class="site-main-container">
+			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->
-			<section class="top-post-area mt-10">
+			<section class="top-post-area mt-20 mb-30">
 				<div class="container no-padding">
 					<div class="row">
-						<div class="col-lg-12">
-							<div class="hero-nav-area mb-10">
-								<h1 class="page-title text-white">
-									<?php
-									/* translators: %s: search query. */
-									printf( esc_html__( 'Search Results for: %s', 'magazil' ), '<span>' . get_search_query() . '</span>' );
-									?>
-								</h1>
-							</div>
-						</div>
 						<div class="col-lg-8 search-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
 							<div class="single-search-wrap">

@@ -65,13 +65,4 @@
 			$( '#breaking-news ul' ).html( to );
 		} );
 	} );
-
-
-
-
-
-
-
-
-
 } )( jQuery );

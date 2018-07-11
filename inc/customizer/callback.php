@@ -52,4 +52,11 @@ function breaking_limit_callback( $control ) {
 	return true;
 }
 
+function top_post_page_callback( $control ) {
+	if ( $control->manager->get_setting( 'magazil_top_post_type' )->value() == 'page' ) {
+		return true;
+	}
+	return false;
+}
+
 ?>

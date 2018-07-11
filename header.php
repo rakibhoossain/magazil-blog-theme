@@ -98,6 +98,7 @@
 					</nav><!-- #nav-menu-container -->
 
 					 <div class="navbar-right">
+
 					 	<div class="Search">
 					 		<input type="text" class="form-control Search-box" name="search" id="search" autocomplete="off" placeholder="<?php _e( 'Search....', 'magazil' );?>">
 					 		<label for="Search-box" class="Search-box-label" id="search-open">
@@ -108,6 +109,7 @@
 					 		</span>
 					 		<div id="datafetch"></div>
 					 	</div>
+					 	
 					</div>
 				</div>
 			</div>

@@ -68,7 +68,13 @@ function magazil_customize_register( $wp_customize ) {
 
 		// Top post limit
 		$wp_customize->selective_refresh->add_partial( 'magazil_top_post_limit', array(
-		            'selector' => '.top-post-area'
+		            'selector' => '.top-post-area .post-top-popular'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_top_post_type', array(
+		            'selector' => '.top-post-area .post-top-popular'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_top_post_page', array(
+		            'selector' => '.top-post-area .post-top-popular'
 		));
 
 
@@ -307,6 +313,15 @@ function magazil_customize_register( $wp_customize ) {
 		));
 
 		/**
+		 * Top post type
+		 */
+		$wp_customize->add_setting( 'magazil_top_post_type', array(
+			'sanitize_callback' => 'magazil_sanitize_radio_buttons',
+			'default'           => 'popular',
+			'transport'  => 'postMessage'
+		));
+
+		/**
 		 * Top post limit
 		 */
 		$wp_customize->add_control(
@@ -322,6 +337,44 @@ function magazil_customize_register( $wp_customize ) {
 				'section'     => 'magazil_home_page_controls',
 			)
 		);
+		
+		/**
+		 * Top post type
+		 */
+		$wp_customize->add_control(
+			'magazil_top_post_type',
+			array(
+				'type'        => 'radio',
+				'choices'     => array(
+					'popular'   => esc_html__( 'Popular Post', 'magazil' ),
+					'page'   => esc_html__( 'Page', 'magazil' )
+				),
+				'label'       => esc_html__( 'Top post type', 'magazil' ),
+				'description' => esc_html__( 'What do yo want to show in top post area at front page.', 'magazil' ),
+				'section'     => 'magazil_home_page_controls',
+			)
+		);
+		
+		/**
+		 * Display top post page
+		 */
+		$wp_customize->add_setting( 'magazil_top_post_page', array(
+        	'sanitize_callback' =>  'magazil_sanitize_single_page',
+        	// 'default'           => '',
+        	'transport'  => 'postMessage'
+        ));
+
+		/**
+		 * Display top post page
+		 */
+        $wp_customize->add_control( new Customizer_Select_Dropdown_Control( $wp_customize, 'magazil_top_post_page', array(
+            'label'   => __('Front page top area page', 'magazil'),
+            'section' => 'magazil_home_page_controls',
+            'settings'   => 'magazil_top_post_page',
+            'type'     => 'single',
+            'choices'  => magazil_page_list(),
+            'active_callback' => 'top_post_page_callback',
+        ) ) );
 
 		//  ===================================
         //  ====      Breaking news Settings      ====

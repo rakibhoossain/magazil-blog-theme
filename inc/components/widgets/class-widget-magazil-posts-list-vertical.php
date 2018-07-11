@@ -9,7 +9,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
 
-		parent::__construct( 'newsmag_widget_posts_list_vertical', __( 'Magazil - Posts List Vertical', 'magazil' ), array(
+		parent::__construct( 'newsmag_widget_posts_list_vertical', __( 'Magazil - Vertical Posts List', 'magazil' ), array(
 			'classname'                   => 'newsmag_builder',
 			'description'                 => __( 'Very similar to the blog layout. It\'s a versatile layout that can be displayed side-by-side to the Posts Column widget to create a great content combination.', 'magazil' ),
 			'customize_selective_refresh' => true

@@ -22,51 +22,12 @@ get_header();
 			<section class="top-post-area pt-10">
 				<div class="container no-padding">
 					<div class="row small-gutters">
-						<div class="col-lg">
-						<?php
-						$popular_show = get_theme_mod( 'magazil_top_post_limit', 3 );
-						$popular_post = new WP_Query( array(
-							'post_type' => 'post',//'page ,post',
-							'meta_key' => 'wpb_post_views_count',
-							'meta_query' => array(array('key' => '_thumbnail_id')) ,
-							'orderby' => 'meta_value_num',
-							'order' => 'DESC',
-							'ignore_sticky_posts' => true,
-							'posts_per_page' => absint($popular_show)
-						) );
-						?>		
+						<div class="col-lg post-top-popular">
 
-						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>	
-
-							<div class="grid-post post-grid-<?php echo esc_attr( $popular_show ); ?>">
-
-							<?php
-								/* Start the Loop */
-								while ( $popular_post->have_posts() ) : $popular_post->the_post();?>
-
-								<?php
-								/**
-								 * Run the loop for the search to output the results.
-								 * If you want to overload this in a child theme then include a file
-								 * called content-search.php and that will be used instead.
-								 */
-
-								if ($count == 0) {
-									get_template_part( 'template-parts/loop/post-top', 'large' );
-								}else{
-									get_template_part( 'template-parts/loop/post', 'top' );
-								}
-
-								$count++; 
-								endwhile;
-								$count=0;
-								wp_reset_query();
-								wp_reset_postdata();
-							?>
-							</div>
-						<?php
-						endif;?>
-		
+						<?php 
+							$top_type = get_theme_mod( 'magazil_top_post_type', 'popular' );
+							get_template_part( 'inc/components/posts-top', $top_type ); // Get Breaking News template 
+						?>
 						</div>
 						<div class="col-lg-12">
 						<?php get_template_part( 'inc/components/breaking-news' ); // Get Breaking News template ?>

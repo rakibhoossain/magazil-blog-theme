@@ -71,7 +71,9 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 	<div class="feature-img-wrap relative">
 		<div class="feature-img relative">
 			<div class="overlay overlay-bg"></div>
-			<?php echo '<img src="'.esc_url($thumb).'" class="img-fluid" alt="'.esc_attr(get_the_title()).'" />'; ?>
+			<a href="<?php the_permalink();?>">
+				<?php echo '<img src="'.esc_url($thumb).'" class="img-fluid" alt="'.esc_attr(get_the_title()).'" />'; ?>
+			</a>
 		</div>
 		<?php magazil_post_categories();?>
 	</div>
@@ -99,7 +101,7 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
          $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'magazil-small-icon');
 		 $source = get_site_url();
 		 if($featured_image[0] !=""){
-			$thumb = $featured_image[0]; 
+			$thumb = $featured_image[0];
 			echo '<div class="thumb"> <a href="'.esc_url(get_permalink()).'" ><img src="'.esc_url($thumb).'" class="widget-img xs" alt="'.esc_attr(get_the_title()).'" /></a></div>';
 			 }
 		}

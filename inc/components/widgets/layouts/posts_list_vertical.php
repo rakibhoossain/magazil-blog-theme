@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 if ( $posts->have_posts() ): ?>
 	<div class="container no-padding">
 		<div class="row small-gutters">
-			<div class="col-lg-12 mb-10">
+			<div class="col-lg-12 mb-20">
 				<h4 class="cat-title">
 					<?php
 					$idObj = get_category_by_slug( $instance['newsmag_category'] );
@@ -23,35 +23,27 @@ if ( $posts->have_posts() ): ?>
 					<?php } ?>
 		        </h4>
 			</div>
-
 			<?php
-			$count=(int)0; $mt='';
+			$count=(int)0;
 			while ( $posts->have_posts() ) : $posts->the_post(); 
-				$class = ($count == 0)? 'col-lg-12 '.$mt : 'col-lg-6 mt-10';?>
+			$class = ($count == 0)? 'col-lg-12 large ' : 'col-lg-6 padding';
+			$padding = ($count == 1)? 'lg-pr-10 ' : 'lg-pl-10'; ?>
 
-				<div class="<?php echo esc_attr( $class ); ?>">
+			<div class="<?php echo esc_attr( $class ); ?> <?php echo esc_attr( $padding ); ?>">
 
-					<?php
-					/**
-					* Run the loop for the search to output the results.
-					* If you want to overload this in a child theme then include a file
-					* called content-search.php and that will be used instead.
-					*/
-					if ($count == 0) {
-						front_page_post('magazil-large-feature');
-					}else{
-						front_page_post('magazil-small-feature');
-					}
-
+				<?php if ($count == 0): ?>
+					<?php get_template_part( 'template-parts/loop/post', 'grid' ); ?>
+				<?php else: ?>
+					<?php get_template_part( 'template-parts/loop/post', 'content' ); ?>
+				<?php endif; ?>
+				<?php
 					$count++; 
 					if ($count == 3) {
 						$count=0;
-						$mt='mt-10';
 					}
-					?>
-
-				</div>
-			<?php endwhile; wp_reset_postdata();?>
+				?>
+			</div>
+			<?php endwhile; wp_reset_postdata(); $count=0; ?>
 		</div>
 	</div>
 <?php endif; ?>

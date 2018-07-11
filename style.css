@@ -2281,7 +2281,6 @@ a img.aligncenter {
 
 }
 .hentry {
-  margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
@@ -2512,7 +2511,142 @@ input[type="color"]:focus,
 }
 
 
-/* postbox -1 */
+
+/* Post box 2 */
+/*----------------------------------
+Blog V2
+----------------------------------*/
+.post-area-wrapper {
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.posts-box-img-top,
+.posts-box-img {
+  display: block;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  margin: 0 0 18px;
+}
+.posts-box-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99;
+}
+.posts-box-img {
+  height: 236px;
+}
+.posts-box-img-top {
+  height: 100%;
+  
+}
+.post-box-ltrt .posts-box-img {
+  margin: 0;
+}
+.post-box-img{
+  width: 100%;
+}
+.top-layout .post-box-details {
+  z-index: 999;
+}
+
+.posts-box .posts-box-img,
+.post-box-ltrt .posts-box-img {
+  height: 180px;
+}
+.large .posts-box .posts-box-img {
+  height: 300px;
+}
+
+.grid-post .top-layout .posts-box-img {
+  margin: 0;
+}
+.top-layout:after,
+.posts-box-img:after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.5s;
+}
+.top-layout:hover:after,
+.posts-box-img:hover:after {
+  background: rgba(0,0,0,0.1);
+}
+.posts-box-link,
+.posts-box-img span {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  display: block;
+  -o-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  -ms-transform: scale3d(1,1,1);
+  -o-transform: scale3d(1,1,1);
+  -moz-transform: scale3d(1,1,1);
+  -webkit-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1);
+}
+.top-layout:hover .posts-box-link,
+.posts-box-img-top:hover span,
+.posts-box-img:hover span {
+  -webkit-transform: scale3d(1.05,1.05,1);
+  -moz-transform: scale3d(1.05,1.05,1);
+  -ms-transform: scale3d(1.05,1.05,1);
+  -o-transform: scale3d(1.05,1.05,1);
+  transform: scale3d(1.05,1.05,1);
+}
+.post-box-img .post-box-details,
+.posts-box .posts-meta-details{
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+}
+
+.post-box-content .entry-title{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.post-box-content .meta{
+  margin-bottom: 10px;
+}
+.post-box-content .entry-title:hover{
+  color: #f6214b;
+}
+
+
+.posts-meta-details a,
+.posts-meta-details h4, 
+.posts-meta-details h3{
+  color: #fff;
+}
+.posts-meta-details .post-categories,
+.posts-meta-details .entry-title,
+.posts-meta-details .meta {
+  margin-top: 10px;
+}
+
+@media (min-width: 991px) {
+  .padding.lg-pl-10 {
+    padding-left: 10px;
+  }
+  .padding.lg-pr-10 {
+    padding-right: 10px;
+  }
+}
+
 .cat-title {
   font-size: 14px;
   font-weight: 600;
@@ -2521,45 +2655,8 @@ input[type="color"]:focus,
   padding: 10px 25px; 
 }
 
-.post-area-wrapper {
-    padding: 20px;
-    background: #fff;
-    margin-bottom: 20px;
-}
-.post-box-img{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-.post-box-img.bg-img{
-    min-height: 250px;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.post-box-ltrt .feature-img {
-  overflow: hidden;
-}
-.post-box-ltrt .feature-img img,
-.post-box-img.has-img img {
-    width: 100%;
-    transition: all 0.3s ease 0s;
-}
-.post-box-ltrt .overlay-bg,
-.post-box-img .overlay-bg {
-  background: rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease 0s;
-}
-.post-box-ltrt.has_img .post-categories,
-.post-box-details.tight{
-    position: absolute;
-    bottom: 25px;
-    left: 20px;
-}
-.post-box-img.has-img {
-    max-height: 500px;
-}
+
+.posts-box-img .tags li,
 .post-box-img .tags li {
   display: inline-block;
   background: #f6214b;
@@ -2567,15 +2664,16 @@ input[type="color"]:focus,
   padding: 4px 30px;
   font-weight: 300;
 }
-
+.posts-box-img .tags li a,
 .post-box-img .tags li a {
   color: #fff;
 }
 
+.posts-box-img .tags li:hover a,
 .post-box-img .tags li:hover a {
   color: #f6214b;
 }
-
+.posts-box-img h3,
 .post-box-img h3 {
   color: #fff;
   margin-top: 20px;
@@ -2583,11 +2681,13 @@ input[type="color"]:focus,
 }
 
 @media (max-width: 767px) {
+  .posts-box-img h3,
   .post-box-img h3 {
     font-size: 14px;
     margin-bottom: 5px;
     margin-top: 5px;
   }
+
   .post-box-ltrt .post-categories {
     bottom: 10px;
     left: 15px;
@@ -2597,6 +2697,7 @@ input[type="color"]:focus,
   margin: 10px 0px;
 }
 
+.posts-box .meta li,
 .post-box-ltrt .meta li,
 .post-box-img .meta li {
   display: inline-block;
@@ -2609,11 +2710,13 @@ input[type="color"]:focus,
 }
 
 @media (max-width: 414px) {
+  .posts-box-img .meta li,
   .post-box-ltrt .meta li,
   .post-box-img .meta li {
     font-size: 9px;
   }
 }
+.posts-box .meta li .lnr,
 .post-box-ltrt .meta li .lnr,
 .post-box-img .meta li .lnr {
   margin-right: 10px;
@@ -2624,31 +2727,13 @@ input[type="color"]:focus,
 .post-box-img .meta li .lnr {
   color: #fff;
 }
-.post-box-details.no-img {
-    background: #060917;
-    padding-left: 10px;
-    width: 100%;
-}
-.post-box-details.no-img .post-categories {
-    margin-left: -10px;
-}
-.feature-img-thumb:hover img,
-.post-box-ltrt:hover .feature-img img,
-.post-box-img.has-img:hover img {
-    -webkit-transform: scale(1.045);
-        transform: scale(1.045);
-}
-
-.post-box-ltrt:hover .overlay-bg,
-.post-box-img:hover .overlay-bg {
-  background: rgba(0, 0, 0, 0);
-}
 
 @media (max-width: 991px){
   .post-box-ltrt .post-right {
       margin: 20px 0px;
   }
 }
+
 .entry-meta span,
 .entry-footer span{
   margin-right: 10px;
@@ -2711,6 +2796,8 @@ input[type="color"]:focus,
   padding: 10px;
 }
 
+
+/* Grid post */
 .grid-post {
   position: relative;
   display: flex;
@@ -2728,6 +2815,7 @@ input[type="color"]:focus,
   margin-top: 10px;
   overflow: hidden;
   background-color: #060917;
+  height: 215px;
 }
 .post-grid-3 .post-box-img.bg-img{
     min-height: 200px;

@@ -34,12 +34,10 @@ get_header();
 							'ignore_sticky_posts' => true,
 							'posts_per_page' => absint($popular_show)
 						) );
-
-						
-						
 						?>		
 
-						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>		
+						<?php if ( $popular_post->have_posts() && $popular_post->found_posts >= $popular_show): $count = (int)0; ?>	
+
 							<div class="grid-post post-grid-<?php echo esc_attr( $popular_show ); ?>">
 
 							<?php
@@ -54,10 +52,11 @@ get_header();
 								 */
 
 								if ($count == 0) {
-									front_page_post('magazil-large-top',true,'top-layout large');
+									get_template_part( 'template-parts/loop/post-top', 'large' );
 								}else{
-									front_page_post('magazil-small-top',true,'top-layout');
+									get_template_part( 'template-parts/loop/post', 'top' );
 								}
+
 								$count++; 
 								endwhile;
 								$count=0;

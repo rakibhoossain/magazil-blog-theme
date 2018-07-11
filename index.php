@@ -29,7 +29,7 @@ get_header();
 					<div class="row">
 						<div class="col-lg-8 post-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
-							<div class="post-area-wrapper">
+							<div class="posts-list blog-page post-area-wrapper">
 
 
 
@@ -54,9 +54,21 @@ get_header();
 									 * If you want to override this in a child theme, then include a file
 									 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 									 */
-									echo '<div class="col-lg-6">';
+									echo '<div class="col-lg-6 posts2-i">';
 									get_template_part( 'template-parts/content', get_post_type() );
 									echo '</div>';
+
+
+   
+
+
+
+
+
+
+
+
+
 								endwhile;
 								echo '</div>';
 								the_posts_pagination( array(

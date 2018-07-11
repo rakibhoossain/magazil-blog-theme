@@ -22,7 +22,7 @@ if ( $posts->have_posts() ): ?>
 				<?php } ?>
             </h4>
 		<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
-            <?php get_template_part( 'template-parts/content', 'blog' ); ?>
+            <?php get_template_part( 'template-parts/loop/post', 'horizontal' ); ?>
 		<?php endwhile; wp_reset_postdata();?>
 
 <?php endif; ?>

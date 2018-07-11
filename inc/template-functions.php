@@ -145,41 +145,6 @@ function setPostViews($postID) {
 }
 
 
-/**
- *  frontpage post layout
- *  parm 1 image size
- *  parm 2 image bg
- *  parm 3 extra class
- */ 
-function front_page_post($image_size = 'magazil-feature-image' , $img_bg = false, $extra_class='') {
-    $is_img = 'no-img';
-    if ( has_post_thumbnail() ) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $image_size );
-      $image = esc_url($image_url[0]);
-        $is_img = 'tight';
-        if ($img_bg) {
-          echo '<div class="post-box-img bg-img '.$extra_class.'" style="background-image:url(\''.$image.'\')">';
-        }else{
-          echo '<div class="post-box-img has-img '.$extra_class.'">';
-          printf('<img class="img-fluid" src="%1$s" alt="%2$s">' ,$image,get_the_title());
-        }
-        echo '<div class="overlay overlay-bg"></div>';
-    }else{
-        echo '<div class="post-box-img no-img '.$extra_class.'">';
-    }?>
-        <div class="post-box-details <?php echo esc_attr( $is_img ); ?>">
-            <?php magazil_post_categories(); ?>
-            <?php 
-            the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h3 class="entry-title"><h3>', '</h3></a>' );
-            ?>
-            <?php magazil_entry_meta(); ?>
-        </div>
-    </div>
-
-    <?php
-}
-
-
 
 function magazil_page_navigation($pagelist = array()){
   $pages = array();

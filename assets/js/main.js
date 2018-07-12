@@ -254,7 +254,7 @@ $(document).ready(function($) {
     // Adsense loader
     $(document).ready(function() {
         
-    var selector = $('.newsmag-adsense');
+    var selector = $('.magazil-adsense');
         if ( selector.length ) {
             // jQuery
             selector.adsenseLoader({

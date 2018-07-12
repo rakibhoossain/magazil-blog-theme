@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Class Epsilon_Notify_System
+ * Class Notify_System
  */
 class Notify_System {
 

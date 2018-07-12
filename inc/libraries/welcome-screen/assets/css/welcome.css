@@ -3,16 +3,16 @@
  * ------------------------------------------------------------------------- */
 
 /* New Logo */
-.wp-badge.epsilon-welcome-logo {
+.wp-badge.magazil-welcome-logo {
     color: #fff;
-    background-image: url(../img/macho-themes-logo.svg);
+    background-image: url(../img/rakib-themes-logo.svg);
     background-position: center center;
     background-size: 70%;
     background-repeat: no-repeat;
 }
 
 /* proper positioning of the icons */
-.epsilon-wrap i.dashicons {
+.magazil-wrap i.dashicons {
     margin-right: 15px;
     position: relative;
     top: 3px;

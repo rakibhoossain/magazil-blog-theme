@@ -29,7 +29,7 @@ $count          = $this->count_actions();
 		<p><?php esc_html_e( 'Even if you\'re a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'magazil' ) ?></p>
 		<p>
 			<a target="_blank"
-			   href="<?php echo esc_url( 'http://docs.machothemes.com/' ); ?>"><?php esc_html_e( 'Full documentation', 'magazil' ); ?></a>
+			   href="<?php echo esc_url( 'http://docs.rakib.ooo/' ); ?>"><?php esc_html_e( 'Full documentation', 'magazil' ); ?></a>
 		</p>
 	</div><!--/.col-->
 

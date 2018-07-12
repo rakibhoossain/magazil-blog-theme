@@ -8,7 +8,7 @@ if ( $posts->have_posts() ): ?>
 			<div class="col-lg-12 mb-20">
 				<h4 class="cat-title">
 					<?php
-					$idObj = get_category_by_slug( $instance['newsmag_category'] );
+					$idObj = get_category_by_slug( $instance['magazil_category'] );
 					?>
 					<?php
 					if ( ! empty( $instance['title'] ) ) {

@@ -15,11 +15,26 @@ add_thickbox();
 
 <div class="feature-section recommended-plugins three-col demo-import-boxed" id="plugin-filter">
 	<?php foreach ( $magazil_recommended_plugins as $plugin => $prop ) { ?>
+
+
+
 		<?php
+
+		$plugin_file = ( $prop['file'] )? $prop['file'] : $plugin;
+		$plugin_path_slug = $plugin . '/' . $plugin_file . '.php';
+
 		$info   = $this->call_plugin_api( $plugin );
+
+		if(!empty($info->errors)){
+			echo '<h1>';
+			esc_html_e('Check network connection','magazil');
+			echo '</h1>';
+			return;
+		}
+
 		$icon   = $this->check_for_icon( $info->icons );
-		$active = $this->check_active( $plugin );
-		$url    = $this->create_action_link( $active['needs'], $plugin );
+		$active = $this->check_active( $plugin_path_slug );
+		$url    = $this->create_action_link( $active['needs'], $plugin, $plugin_file );
 		$label  = '';
 
 		switch ( $active['needs'] ) {

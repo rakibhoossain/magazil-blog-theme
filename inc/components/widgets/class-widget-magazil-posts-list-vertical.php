@@ -9,9 +9,9 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
 
-		parent::__construct( 'newsmag_widget_posts_list_vertical', __( 'Magazil - Vertical Posts List', 'magazil' ), array(
-			'classname'                   => 'newsmag_builder',
-			'description'                 => __( 'Very similar to the blog layout. It\'s a versatile layout that can be displayed side-by-side to the Posts Column widget to create a great content combination.', 'magazil' ),
+		parent::__construct( 'magazil_widget_posts_list_vertical', __( 'Magazil - Vertical Posts List', 'magazil' ), array(
+			'classname'                   => 'nmagazil_builder',
+			'description'                 => __( 'Front page vertical post layout.', 'magazil' ),
 			'customize_selective_refresh' => true
 		) );
 	}
@@ -25,7 +25,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'magazil' ),
 			'show_post'        => 4,
-			'newsmag_category' => 'uncategorized',
+			'magazil_category' => 'uncategorized',
 			'order' 		   => 'desc',
 			'ignore_sticky_posts' => true
 		);
@@ -35,29 +35,29 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		?>
         <p>
             <label><?php _e( 'Title', 'magazil' ); ?> :</label>
-            <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+            <input class="widefat" type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
                    id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                    value="<?php echo esc_attr( $instance['title'] ); ?>">
         </p>
 
         <p>
             <label><?php _e( 'Category', 'magazil' ); ?> :</label>
-            <select name="<?php echo esc_attr( $this->get_field_name( 'newsmag_category' ) ); ?>"
-                    id="<?php echo esc_attr( $this->get_field_id( 'newsmag_category' ) ); ?>">
-                <option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
+            <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'magazil_category' ) ); ?>"
+                    id="<?php echo esc_attr( $this->get_field_id( 'magazil_category' ) ); ?>">
+                <option value="" <?php if ( empty( $instance['magazil_category'] ) ) {
 					echo 'selected="selected"';
 				} ?>><?php _e( '&ndash; Select a category &ndash;', 'magazil' ) ?></option>
 				<?php
 				$categories = get_categories( 'hide_empty=0' );
 				foreach ( $categories as $category ) { ?>
                     <option
-                            value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
+                            value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['magazil_category'] ); ?>><?php echo esc_attr( $category->cat_name ); ?></option>
 				<?php } ?>
             </select>
         </p>
         <p>
             <label><?php _e( 'Order', 'magazil' ); ?> :</label>
-            <select name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
+            <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>"
                     id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" class="pull-right">
                 <option value ="desc" <?php echo ($instance['order'] == 'desc') ? 'selected' : '';?> ><?php echo esc_html__( 'Descending', 'magazil' )?></option>
                 <option value ="asc" <?php echo ($instance['order'] == 'asc') ? 'selected' : '';?> ><?php echo esc_html__( 'Ascending', 'magazil' )?></option>
@@ -87,7 +87,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		$instance = array();
 
 		$instance['title']            = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['newsmag_category'] = ( ! empty( $new_instance['newsmag_category'] ) ) ? strip_tags( $new_instance['newsmag_category'] ) : '';
+		$instance['magazil_category'] = ( ! empty( $new_instance['magazil_category'] ) ) ? strip_tags( $new_instance['magazil_category'] ) : '';
 		$instance['show_post']        = ( ! empty( $new_instance['show_post'] ) ) ? absint( $new_instance['show_post'] ) : '';
 		$instance['order']            = ( ! empty( $new_instance['order'] ) ) ? strip_tags( $new_instance['order'] ) : '';
 
@@ -104,7 +104,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 
-		$idObj = get_category_by_slug( $args['newsmag_category'] );
+		$idObj = get_category_by_slug( $args['magazil_category'] );
 		$atts  = array(
 			'posts_per_page' => $args['show_post']
 		);
@@ -134,7 +134,7 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'magazil' ),
 			'show_post'        => 4,
-			'newsmag_category' => '',
+			'magazil_category' => '',
 			'order'            => 'desc'
 		);
 

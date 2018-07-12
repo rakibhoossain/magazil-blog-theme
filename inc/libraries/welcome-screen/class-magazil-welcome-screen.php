@@ -272,15 +272,13 @@ class Magazil_Welcome_Screen {
 	 *
 	 * @return array
 	 */
-	public function check_active( $slug ) {
-		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
+	
+	public function check_active( $slug) {
+		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-			$needs = is_plugin_active( $slug . '/' . $slug . '.php' ) ? 'deactivate' : 'activate';
-
-			return array( 'status' => is_plugin_active( $slug . '/' . $slug . '.php' ), 'needs' => $needs );
+			$needs = is_plugin_active( $slug ) ? 'deactivate' : 'activate';
+			return array( 'status' => is_plugin_active( $slug ), 'needs' => $needs );
 		}
-
 		return array( 'status' => false, 'needs' => 'install' );
 	}
 
@@ -309,7 +307,7 @@ class Magazil_Welcome_Screen {
 	 *
 	 * @return string
 	 */
-	public function create_action_link( $state, $slug ) {
+	public function create_action_link( $state, $slug ,$plugin) {
 		switch ( $state ) {
 			case 'install':
 				return wp_nonce_url(
@@ -326,19 +324,19 @@ class Magazil_Welcome_Screen {
 			case 'deactivate':
 				return add_query_arg( array(
 					                      'action'        => 'deactivate',
-					                      'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+					                      'plugin'        => rawurlencode( $slug . '/' . $plugin . '.php' ),
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
-					                      '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
+					                      '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $plugin . '.php' ),
 				                      ), network_admin_url( 'plugins.php' ) );
 				break;
 			case 'activate':
 				return add_query_arg( array(
 					                      'action'        => 'activate',
-					                      'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+					                      'plugin'        => rawurlencode( $slug . '/' . $plugin . '.php' ),
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
-					                      '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
+					                      '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $plugin . '.php' ),
 				                      ), network_admin_url( 'plugins.php' ) );
 				break;
 		}
@@ -360,12 +358,12 @@ class Magazil_Welcome_Screen {
 
 		?>
 
-		<div class="wrap about-wrap epsilon-wrap">
+		<div class="wrap about-wrap magazil-wrap">
 
 			<h1><?php printf( __( 'Welcome to %1$s! - %2$s', 'magazil' ), esc_html( $magazil['Name'] ), esc_html( $magazil['Version'] ) ); ?></h1>
 			<div class="about-text"><?php echo esc_html( $magazil['Description'] ); ?></div>
 
-			<div class="wp-badge epsilon-welcome-logo"></div>
+			<div class="wp-badge magazil-welcome-logo"></div>
 
 			<h2 class="nav-tab-wrapper wp-clearfix">
 

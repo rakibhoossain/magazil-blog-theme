@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once get_template_directory() . '/inc/libraries/notify/class-notify-system.php';
 /**
- * Class Epsilon_Notify_System
+ * Class Magazil_Notify_System
  */
 class Magazil_Notify_System extends Notify_System {
 	/**

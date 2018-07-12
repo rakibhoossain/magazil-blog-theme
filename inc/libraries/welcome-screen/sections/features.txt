@@ -92,7 +92,7 @@ $features = array(
 		<?php endforeach; ?>
         <tr>
             <td></td>
-            <td colspan="2" class="text-right"><a href="https://www.machothemes.com/theme/newsmag-pro/?utm_source=worg&utm_medium=about-page&utm_campaign=upsell" target="_blank"
+            <td colspan="2" class="text-right"><a href="https://www.rakib.ooo/theme/newsmag-pro/?utm_source=worg&utm_medium=about-page&utm_campaign=upsell" target="_blank"
                                class="button button-primary button-hero"><span class="dashicons dashicons-cart"></span> Get Newsmag Pro!</a></td>
         </tr>
         </tbody>

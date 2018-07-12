@@ -6,7 +6,7 @@ if ( ! defined( 'WPINC' ) ) {
 <?php 
 if ( $posts->have_posts() ): ?>
 			<?php
-			$idObj = get_category_by_slug( $instance['newsmag_category'] );
+			$idObj = get_category_by_slug( $instance['magazil_category'] );
 			?>
 			<h4 class="cat-title  mb-20">
 				<?php

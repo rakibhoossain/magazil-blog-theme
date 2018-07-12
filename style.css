@@ -1322,22 +1322,22 @@ td, th {
 
 .header-banner {
   text-align: right; }
-  .header-banner .newsmag-adsense {
+  .header-banner .magazil-adsense {
     width: 728px;
     height: 90px;
     display: block; }
-  .header-banner .newsmag-adsense:before {
+  .header-banner .magazil-adsense:before {
     display: none !important; }
-  .header-banner .newsmag-adsense ins {
+  .header-banner .magazil-adsense ins {
     width: 100%;
     height: 100%;
     display: block;
     background: transparent; }
   @media screen and (max-width: 991px) {
-    .header-banner .newsmag-adsense {
+    .header-banner .magazil-adsense {
       width: 720px;
       height: 90px; }
-    .header-banner .newsmag-adsense:before {
+    .header-banner .magazil-adsense:before {
       content: '991'; } }
   .header-banner .adsense__loading {
     width: 100%;

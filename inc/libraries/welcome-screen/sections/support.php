@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
                 <i><?php esc_html_e( 'We offer excellent support through our advanced ticketing system. Make sure to register your purchase before contacting support!', 'magazil' ) ?></i>
             </p>
             <p><a target="_blank" class="button button-primary"
-                  href="<?php echo esc_url( 'https://www.machothemes.com/support/' ); ?>"><?php esc_html_e( 'Contact Support', 'magazil' ); ?></a>
+                  href="<?php echo esc_url( 'https://www.rakib.ooo/contact/' ); ?>"><?php esc_html_e( 'Contact Support', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
 
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'http://docs.machothemes.com/' ); ?>"><?php esc_html_e( 'See our full documentation', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'http://docs.rakib.ooo/' ); ?>"><?php esc_html_e( 'See our full documentation', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
     </div>
@@ -33,18 +33,18 @@ if ( ! defined( 'WPINC' ) ) {
                 <i><?php esc_html_e( 'Take a look at why website speed is crucial and ways you can speed up WordPress so that you can confidently say you hold your own amongst the billions of web pages!', 'magazil' ) ?></i>
             </p>
             <p><a target="_blank"
-                  href="<?php echo esc_url( 'https://www.machothemes.com/blog/how-to-speed-up-wordpress/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                  href="<?php echo esc_url( 'https://www.rakib.ooo/blog/how-to-speed-up-wordpress/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
 
         <div class="col">
             <h3><i class="dashicons dashicons-shield"></i><?php esc_html_e( 'Best security plugins', 'magazil' ); ?></h3>
             <p>
-                <i><?php esc_html_e( 'Thinking that the best WordPress security plugins aren’t going to come cheap, not to mention free? Luckily, that’s not the case.', 'magazil' ) ?></i>
+                <i><?php esc_html_e( 'Thinking that the best WordPress security plugins are not going to come cheap, not to mention free? Luckily, that is not the case.', 'magazil' ) ?></i>
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'https://www.machothemes.com/blog/best-wordpress-security-plugins/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'https://www.rakib.ooo/blog/best-wordpress-security-plugins/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
 
@@ -55,7 +55,7 @@ if ( ! defined( 'WPINC' ) ) {
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'https://www.machothemes.com/blog/cheap-wordpress-hosting/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'https://www.rakib.ooo/blog/cheap-wordpress-hosting/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
     </div>

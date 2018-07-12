@@ -328,9 +328,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			require_once get_template_directory() . '/inc/libraries/notify/class-magazil-notify-system.php';
 
 			$magazil_recommended_plugins = array(
-				'kiwi-social-share'        => array( 'recommended' => false ),
-				'modula-best-grid-gallery' => array( 'recommended' => true ),
-				'wp-violet' => array( 'recommended' => true ),
+				'kiwi-social-share'        => array( 'file' => '', 'recommended' => false ),
+				'modula-best-grid-gallery' => array( 'file' => 'Modula', 'recommended' => true ),
+				'wp-violet' => array( 'file' => '', 'recommended' => true ),
 			);
 
 			/*
@@ -360,8 +360,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					"id"          => 'magazil-req-ac-download-data',
 					"title"       => esc_html__( 'Download theme sample data', 'magazil' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'magazil' ),
-					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/magazil-lite-posts.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
-									   <a target="_blank"  href="https://www.machothemes.com/sample-data/magazil-lite-widgets.wie">' . __( 'Widgets', 'magazil' ) . '</a>',
+					"help"        => '<a target="_blank"  href="https://www.machothemes.ooo/sample-data/magazil-lite-posts.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
+									   <a target="_blank"  href="https://www.rakib.ooo/sample-data/magazil-lite-widgets.wie">' . __( 'Widgets', 'magazil' ) . '</a>',
 					"check"       => Magazil_Notify_System::has_content(),
 				),
 				array(
@@ -374,7 +374,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 				array(
 					"id"          => 'magazil-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'magazil' ),
-					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'magazil' ),
+					"description" => esc_html__( 'If you just installed Magazil, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'magazil' ),
 					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'magazil' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'magazil' ) . '</a>',
 					"check"       => Magazil_Notify_System::is_not_static_page()
 				)

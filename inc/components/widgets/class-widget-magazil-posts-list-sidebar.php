@@ -3,33 +3,48 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
  class Widget_Magazil_Posts_List_Sidebar extends WP_Widget {
     
 	public function __construct() {
+		add_action( 'admin_init', array( $this, 'enqueue' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'customize_preview_init', array( $this, 'enqueue' ) );
 		
 		parent::__construct(
 			'magazil_recent_posts', // Base ID
 			__( 'Magazil: Recent Posts', 'magazil' ), // Name
-			array( 'description' => __( 'Recent Posts.', 'magazil' ), ) // Args
+			array( 'description' => __( 'Sidebar area Recent Posts.', 'magazil' ), ) // Args
 		);
 		
 	}
+
+	public function enqueue() {
+		wp_enqueue_script( 'jquery-ui' );
+		wp_enqueue_script( 'jquery-ui-slider' );
+	}	
+	
  	function form( $instance ) {
  	    $defaults = array('list_num' => 4, 'title' => __( 'Recent Posts', 'magazil' ));
  		$instance = wp_parse_args( (array) $instance, $defaults );
  	
 	?>
-
 <p>
   <label for="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>">
     <?php _e('Title', 'magazil'); ?>
     :</label>
   <br />
-  <input id="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' )); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
+  <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' )); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 </p>
 <p>
-  <label for="<?php echo esc_attr( $this->get_field_id( 'list_num' )); ?>">
-    <?php _e('Recent Posts List Num', 'magazil'); ?>
-    :</label>
-  <br />
-  <input id="<?php echo esc_attr( $this->get_field_id( 'list_num' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'list_num' )); ?>" value="<?php echo absint($instance['list_num']); ?>" />
+	<label class="block" for="input_<?php echo esc_attr( $this->get_field_id( 'list_num' ) ); ?>">
+	    <span class="customize-control-title">
+	       <?php _e( 'Posts to Show', 'magazil' ); ?> :
+	    </span>
+	</label>
+	<div class="slider-container">
+	    <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'list_num' ) ); ?>" class="rl-slider"
+	           id="input_<?php echo esc_attr( $this->get_field_id( 'list_num' ) ); ?>"
+	           value="<?php echo esc_attr( $instance['list_num'] ); ?>"/>
+	    <div id="slider_<?php echo esc_attr( $this->get_field_id( 'list_num' ) ) ?>" data-attr-min="4"
+	         data-attr-max="12" data-attr-step="4" class="ss-slider"></div>
+	</div>
 </p>
 <?php
 

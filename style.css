@@ -1450,9 +1450,13 @@ td, th {
 .language-menu li:hover > ul{
   display: block;
 }
-.language-menu ul.sub-menu li a:hover{
-  color: #000;
+.language-menu ul.sub-menu li:hover a{
+  color: #fff;
 }
+.language-menu ul.sub-menu li:hover{
+  background: #04091e;
+}
+
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
   padding-right: 30px;

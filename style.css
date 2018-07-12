@@ -1,6 +1,6 @@
 /*!
 Theme Name: magazil
-Theme URI: http://underscores.me/
+Theme URI: http://wptester.cf/
 Author: Rakib Hossain
 Author URI: https://rakib.ooo/
 Description: Magazil brings your site to life with modern web technology. With a focus on news sites, it features multiple widget for front page. It supports Breadcrumbs, parent page navigation, and more. Personalize its asymmetrical grid with multiple styles and fit any devices.
@@ -1227,7 +1227,8 @@ td, th {
   padding: 15px 0px;
 }
 
-.header-top .header-top-left ul li, .header-top .header-top-right ul li {
+.header-top .header-top-left ul li,
+.header-top .header-top-right .mo-contact li {
   display: inline-block;
 }
 
@@ -1251,10 +1252,11 @@ td, th {
 }
 
 .header-top .header-top-right {
-  text-align: right;
+  display: inline-flex;
+  justify-content: flex-end;
 }
 
-.header-top .header-top-right li {
+.header-top .header-top-right .mo-contact li {
   margin-left: 20px;
 }
 
@@ -1277,13 +1279,13 @@ td, th {
 }
 
 @media (max-width: 767px) {
-  .header-top .header-top-right li a .lnr {
+  .header-top .header-top-right .mo-contact li a .lnr {
     display: block;
   }
 }
 
 @media (max-width: 767px) {
-  .header-top .header-top-right li a span {
+  .header-top .header-top-right .mo-contact li a span {
     display: none;
   }
 }
@@ -1379,12 +1381,14 @@ td, th {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Nav Menu Essentials */
-.nav-menu, .nav-menu * {
+.language-menu,
+.language-menu *,
+.nav-menu,
+.nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 .nav-menu ul {
   position: absolute;
   display: none;
@@ -1423,6 +1427,32 @@ td, th {
   border-bottom: none;
 }
 
+.language-menu{
+  position: relative;
+  padding-left: 20px;
+}
+.language-menu ul li{
+  margin-top: 3px;
+  border-bottom: 1px solid #ededed63;
+}
+.language-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.9);
+}
+.language-menu ul.sub-menu li a{
+  padding: 3px 10px;
+  color: #04091e;
+}
+.language-menu li:hover > ul{
+  display: block;
+}
+.language-menu ul.sub-menu li a:hover{
+  color: #000;
+}
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
   padding-right: 30px;
@@ -1619,12 +1649,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   position: relative;
 }
 
-@media (min-width: 600px) {
-  .Search {
-    display: none;
-  }
-}
-
 #datafetch {
     position: absolute;
     top: 100%;
@@ -1703,8 +1727,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 554px) {
+
+.Search {
+  width: 200px;
+}
   .Search-box {
-    width: 50%;
+    width: 80%;
     float: right;
     margin-right: 80px;
   }
@@ -1781,7 +1809,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 80px;
 }
 
-
+@media (max-width: 400px) {
+  .Search {
+    display: none;
+    z-index: -999;
+    opacity: 0;
+  }
+}
 /* next prev */
 .child-pagination,
 .posts-navigation,

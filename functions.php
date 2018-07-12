@@ -53,8 +53,9 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'magazil' ),
+			'primary' => esc_html__( 'Primary Menu', 'magazil' ),
 			'social' => esc_html__( 'Social Links Menu', 'magazil' ),
+			'language' => esc_html__( 'Language Links Menu', 'magazil' ),
 		) );
 
 		/*
@@ -140,15 +141,6 @@ function magazil_widgets_init() {
 		'id'            => 'content-area',
 		'description'   => esc_html__( 'Add widgets to front page.', 'magazil' ),
 		'before_widget' => '<div id="%1$s" class="post-area-wrapper %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="title">',
-		'after_title'   => '</h6>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Frontpage Top Area', 'magazil' ),
-		'id'            => 'top-area',
-		'description'   => esc_html__( 'Add widgets to front page top area.', 'magazil' ),
-		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h6 class="title">',
 		'after_title'   => '</h6>',
@@ -260,7 +252,7 @@ function magazil_scripts() {
 
 	wp_enqueue_script( 'magazil-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
 
-	//wp_enqueue_script( 'magazil-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'magazil-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -296,7 +288,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/components/class-magazil-related-posts.php';
 
-
+/**
+ * Widgets
+ */
 require get_template_directory() . '/inc/components/widgets/widgets.php';
 
 
@@ -305,6 +299,11 @@ require get_template_directory() . '/inc/components/widgets/widgets.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+/**
+ * Welcome additions.
+ */
+require get_template_directory() . '/inc/components/welcome.php';
+
 
 /**
  * Load Jetpack compatibility file.
@@ -312,74 +311,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-
-
-
-
-
-
-
-
-		// Welcome screen
-		if ( is_admin() ) {
-			global $magazil_required_actions, $magazil_recommended_plugins;
-			require_once get_template_directory() . '/inc/libraries/notify/class-magazil-notify-system.php';
-
-			$magazil_recommended_plugins = array(
-				'enlighter'        => array( 'file' => 'Enlighter', 'recommended' => false ),
-				'gmap-embed' => array( 'file' => 'srm_gmap_embed', 'recommended' => true ),
-				'contact-form-7' => array( 'file' => 'wp-contact-form-7', 'recommended' => true ),
-			);
-
-			/*
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
-			 */
-			$magazil_required_actions = array(
-				array(
-					"id"          => 'magazil-wp-import-plugin',
-					"title"       => Magazil_Notify_System::wordpress_importer_title(),
-					"description" => Magazil_Notify_System::wordpress_importer_description(),
-					"check"       => Magazil_Notify_System::has_import_plugin( 'wordpress-importer' ),
-					"plugin_slug" => 'wordpress-importer'
-				),
-				array(
-					"id"          => 'magazil-wp-import-widget-plugin',
-					"title"       => Magazil_Notify_System::widget_importer_exporter_title(),
-					'description' => Magazil_Notify_System::widget_importer_exporter_description(),
-					"check"       => Magazil_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
-					"plugin_slug" => 'widget-importer-exporter'
-				),
-				array(
-					"id"          => 'magazil-req-ac-download-data',
-					"title"       => esc_html__( 'Download theme sample data', 'magazil' ),
-					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'magazil' ),
-					"help"        => '<a target="_blank"  href="https://raw.githubusercontent.com/WPTRT/theme-unit-test/master/themeunittestdata.wordpress.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
-									   <a target="_blank"  href="https://github.com/WPTRT/theme-unit-test">' . __( 'Widgets', 'magazil' ) . '</a>',
-					"check"       => Magazil_Notify_System::has_content(),
-				),
-				array(
-					"id"    => 'magazil-req-ac-install-data',
-					"title" => esc_html__( 'Import Sample Data', 'magazil' ),
-					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'magazil' ) . '</a> 
-									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'magazil' ) . '</a>',
-					"check" => Magazil_Notify_System::has_import_plugins(),
-				),
-				array(
-					"id"          => 'magazil-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'magazil' ),
-					"description" => esc_html__( 'If you just installed Magazil, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'magazil' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'magazil' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=magazil-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'magazil' ) . '</a>',
-					"check"       => Magazil_Notify_System::is_not_static_page()
-				)
-			);
-
-			require_once get_template_directory() . '/inc/libraries/welcome-screen/class-magazil-welcome-screen.php';
-			new Magazil_Welcome_Screen();
-		}

@@ -40,7 +40,7 @@
 						?>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
-							<ul>
+							<ul class="mo-contact">
 								<li>
 									<a href="tel:+440 012 3654 896">
 										<span class="lnr lnr-phone-handset"></span>
@@ -54,6 +54,14 @@
 									</a>
 								</li>
 							</ul>
+						<?php
+						wp_nav_menu( array(
+							'theme_location'    => 'language',
+							'menu_class'        => 'language-menu',
+							'container'         => false,
+							'depth'          => 2,
+						) );
+						?>
 						</div>
 					</div>
 				</div>

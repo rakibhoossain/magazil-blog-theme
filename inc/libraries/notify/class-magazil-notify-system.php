@@ -12,7 +12,7 @@ class Magazil_Notify_System extends Notify_System {
 	 * @return bool
 	 */
 	public static function has_widgets() {
-		if ( ! is_active_sidebar( 'homepage-slider' ) && ! is_active_sidebar( 'content-area' ) ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'content-area' ) ) {
 			return false;
 		}
 
@@ -22,7 +22,7 @@ class Magazil_Notify_System extends Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function newmsag_has_posts() {
+	public static function magazil_has_posts() {
 		$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
 		$query = get_posts( $args );
 
@@ -39,7 +39,7 @@ class Magazil_Notify_System extends Notify_System {
 	public static function has_content() {
 		$check = array(
 			'widgets' => self::has_widgets(),
-			'posts'   => self::newmsag_has_posts(),
+			'posts'   => self::magazil_has_posts(),
 		);
 
 		if ( $check['widgets'] && $check['posts'] ) {

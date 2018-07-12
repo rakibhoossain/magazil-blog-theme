@@ -328,9 +328,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 			require_once get_template_directory() . '/inc/libraries/notify/class-magazil-notify-system.php';
 
 			$magazil_recommended_plugins = array(
-				'kiwi-social-share'        => array( 'file' => '', 'recommended' => false ),
-				'modula-best-grid-gallery' => array( 'file' => 'Modula', 'recommended' => true ),
-				'wp-violet' => array( 'file' => '', 'recommended' => true ),
+				'enlighter'        => array( 'file' => 'Enlighter', 'recommended' => false ),
+				'gmap-embed' => array( 'file' => 'srm_gmap_embed', 'recommended' => true ),
+				'contact-form-7' => array( 'file' => 'wp-contact-form-7', 'recommended' => true ),
 			);
 
 			/*
@@ -360,8 +360,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 					"id"          => 'magazil-req-ac-download-data',
 					"title"       => esc_html__( 'Download theme sample data', 'magazil' ),
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'magazil' ),
-					"help"        => '<a target="_blank"  href="https://www.machothemes.ooo/sample-data/magazil-lite-posts.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
-									   <a target="_blank"  href="https://www.rakib.ooo/sample-data/magazil-lite-widgets.wie">' . __( 'Widgets', 'magazil' ) . '</a>',
+					"help"        => '<a target="_blank"  href="https://raw.githubusercontent.com/WPTRT/theme-unit-test/master/themeunittestdata.wordpress.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
+									   <a target="_blank"  href="https://github.com/WPTRT/theme-unit-test">' . __( 'Widgets', 'magazil' ) . '</a>',
 					"check"       => Magazil_Notify_System::has_content(),
 				),
 				array(

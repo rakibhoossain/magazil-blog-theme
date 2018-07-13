@@ -3076,7 +3076,21 @@ input.search-submit:hover{
 .page-content input.search-submit {
     padding: 0 20px;
 }
-
+.goog-te-gadget-simple .goog-te-menu-value span,
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: #fff!important;
+}
+.goog-te-gadget-simple {
+    background-color: transparent!important;
+    border: none!important;
+    margin-left: 10px;
+}
+.goog-te-gadget-simple .goog-te-menu-value span {
+    border: none!important;
+}
+.goog-te-gadget img {
+    display: none!important;
+}
 /*--------------------------------------------------------------
 ## Contact
 --------------------------------------------------------------*/

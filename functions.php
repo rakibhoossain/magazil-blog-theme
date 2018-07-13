@@ -55,7 +55,6 @@ if ( ! function_exists( 'magazil_setup' ) ) :
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'magazil' ),
 			'social' => esc_html__( 'Social Links Menu', 'magazil' ),
-			'language' => esc_html__( 'Language Links Menu', 'magazil' ),
 		) );
 
 		/*

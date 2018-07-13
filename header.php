@@ -54,14 +54,7 @@
 									</a>
 								</li>
 							</ul>
-						<?php
-						wp_nav_menu( array(
-							'theme_location'    => 'language',
-							'menu_class'        => 'language-menu',
-							'container'         => false,
-							'depth'          => 2,
-						) );
-						?>
+						<?php if ( function_exists( 'mltlngg_display_switcher' ) ) mltlngg_display_switcher(); ?>
 						</div>
 					</div>
 				</div>

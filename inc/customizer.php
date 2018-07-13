@@ -144,7 +144,7 @@ function magazil_customize_register( $wp_customize ) {
         ));
 
 		$wp_customize->add_control( new WP_Customize_Phome_Control( $wp_customize, 'magazil_phone', array(
-            'label' => __('Pnone Number: ', 'magazil'),
+            'label' => __('Phone Number: ', 'magazil'),
             'settings' => 'magazil_phone',
             'section' => 'magazil_header_controls',
             'settings'   => 'magazil_phone',
@@ -350,7 +350,7 @@ function magazil_customize_register( $wp_customize ) {
 					'page'   => esc_html__( 'Page', 'magazil' )
 				),
 				'label'       => esc_html__( 'Top post type', 'magazil' ),
-				'description' => esc_html__( 'What do yo want to show in top post area at front page.', 'magazil' ),
+				'description' => esc_html__( 'What do you want to show in top post area at front page.', 'magazil' ),
 				'section'     => 'magazil_home_page_controls',
 			)
 		);

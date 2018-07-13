@@ -6,7 +6,7 @@
 
 		$magazil_recommended_plugins = array(
 			'enlighter'        => array( 'file' => 'Enlighter', 'recommended' => false ),
-			'wpglobus'        => array( 'file' => '', 'recommended' => false ),
+			'multilanguage'        => array( 'file' => '', 'recommended' => false ),
 			'gmap-embed' => array( 'file' => 'srm_gmap_embed', 'recommended' => true ),
 			'contact-form-7' => array( 'file' => 'wp-contact-form-7', 'recommended' => true ),
 		);

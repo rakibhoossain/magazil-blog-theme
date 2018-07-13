@@ -1,16 +1,14 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: magazil\n"
 "POT-Creation-Date: 2018-07-13 00:35+0600\n"
-"PO-Revision-Date: 2018-07-13 00:33+0600\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2018-07-13 14:18+0600\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -18,176 +16,181 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: bn_BD\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:24
+#, fuzzy
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "ওহ! পৃষ্ঠাটি পাওয়া যায় নাই।"
 
 #: 404.php:29
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"মনে হচ্ছে এই অবস্থানে কিছুই পাওয়া যায়নি। হয়তো নীচের লিঙ্কে একটি চেষ্টা করুন বা "
+"একটি অনুসন্ধান?"
 
 #: 404.php:38
 msgid "Most Used Categories"
-msgstr ""
+msgstr "সর্বাধিক ব্যবহৃত বিভাগ"
 
 #. translators: %1$s: smiley
 #: 404.php:54
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "মাসিক নথিপত্রতে দেখার চেষ্টা কর। %1$s"
 
 #: comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s টি মন্তব্য &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s টি মন্তব্য  &ldquo;%2$s&rdquo;"
 
 #: comments.php:46
 msgid "Comment pages"
-msgstr ""
+msgstr "মন্তব্য পৃষ্ঠা"
 
 #: comments.php:71
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "মন্তব্য করার জন্য আপনাকে অবশ্যই <a href=\"%s\">লগইন</a> করতে হবে।"
 
 #: comments.php:82
 msgid "Your email address will not be published."
-msgstr ""
+msgstr "আপনার ইমেইল প্রকাশিত হবে না।"
 
 #: comments.php:84
 msgid "Leave a Reply"
-msgstr ""
+msgstr "মন্তব্য করুন"
 
 #: comments.php:87
 msgid "Message"
-msgstr ""
+msgstr "বার্তা"
 
 #: comments.php:91
 msgid "Name"
-msgstr ""
+msgstr "নাম"
 
 #: comments.php:95
 msgid "Email"
-msgstr ""
+msgstr "ইমেইল"
 
 #: comments.php:99
 msgid "Website"
-msgstr ""
+msgstr "ওয়েবসাইট"
 
 #: footer.php:39
 #, php-format
 msgid "Theme: %1$s by %2$s"
-msgstr ""
+msgstr "থিম %1$s %2$s এর তৈরি"
 
 #: functions.php:56
 msgid "Primary Menu"
-msgstr ""
+msgstr "প্রধান নেভিগেশন"
 
 #: functions.php:57
 msgid "Social Links Menu"
-msgstr ""
+msgstr "সোশ্যাল লিংকের নেভিগেশন"
 
 #: functions.php:58
 msgid "Language Links Menu"
-msgstr ""
+msgstr "ল্যাংগুয়েজ লিংকের নেভিগেশন"
 
 #: functions.php:140
 msgid "Content Area"
-msgstr ""
+msgstr "কনটেন্ট অংশ"
 
 #: functions.php:142
 msgid "Add widgets to front page."
-msgstr ""
+msgstr "সামনে পৃষ্ঠায় উইজেট যোগ করুন।"
 
 #: functions.php:149
 msgid "Sidebar"
-msgstr ""
+msgstr "সাইডবার"
 
 #: functions.php:151
 msgid "Add widgets here to sidebar."
-msgstr ""
+msgstr "সাইডবারে এখানে উইজেট যুক্ত করুন।"
 
 #: functions.php:158
 msgid "Footer 1"
-msgstr ""
+msgstr "পাদলেখ ১"
 
 #: functions.php:160 functions.php:170 functions.php:180 functions.php:190
 #: functions.php:199
 msgid "Add widgets here to appear in your footer."
-msgstr ""
+msgstr "আপনার পাদলেখ প্রদর্শিত এখানে উইজেট যুক্ত করুন।"
 
 #: functions.php:168
 msgid "Footer 2"
-msgstr ""
+msgstr "পাদলেখ ২"
 
 #: functions.php:178
 msgid "Footer 3"
-msgstr ""
+msgstr "পাদলেখ ৩"
 
 #: functions.php:188
 msgid "Footer 4"
-msgstr ""
+msgstr "পাদলেখ ৪"
 
 #: functions.php:197
 msgid "Footer 5"
-msgstr ""
+msgstr "পাদলেখ ৫"
 
 #: header.php:25
 msgid "Skip to content"
-msgstr ""
+msgstr "এড়িয়ে যাও কন্টেন্ট"
 
 #: header.php:111
 msgid "Search...."
-msgstr ""
+msgstr "অনুসন্ধান ...."
 
 #: inc/breadcrumbs.php:245
 msgid "Browse:"
-msgstr ""
+msgstr "ব্রাউজ করুন:"
 
 #: inc/breadcrumbs.php:246
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
-msgstr ""
+msgstr "ব্রেডক্রাম্ব"
 
 #: inc/breadcrumbs.php:247
 msgid "Home"
-msgstr ""
+msgstr "বাড়ি"
 
 #: inc/breadcrumbs.php:248
 msgid "404 Not Found"
-msgstr ""
+msgstr "৪০৪ পাওয়া যায়নি"
 
 #: inc/breadcrumbs.php:249
 msgid "Archives"
-msgstr ""
+msgstr "নথিপত্র"
 
 #: inc/breadcrumbs.php:251
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
-msgstr ""
+msgstr "অনুসন্ধান ফলাফল &#8220;%s&#8221;"
 
 #: inc/breadcrumbs.php:253
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "পৃষ্ঠা %s"
 
 #: inc/breadcrumbs.php:255
 #, php-format
 msgid "Minute %s"
-msgstr ""
+msgstr "মিনিট %s"
 
 #: inc/breadcrumbs.php:257
 #, php-format
 msgid "Week %s"
-msgstr ""
+msgstr "সপ্তাহ %s"
 
 #: inc/breadcrumbs.php:709
 msgctxt "minute and hour archives time format"
@@ -227,43 +230,43 @@ msgstr ""
 
 #: inc/components/breaking-news.php:24
 msgid "Breaking News"
-msgstr ""
+msgstr "সদ্যপ্রাপ্ত সংবাদ"
 
 #: inc/components/class-magazil-related-posts.php:132
 msgid "Related posts"
-msgstr ""
+msgstr "সম্পর্কিত পোস্ট"
 
 #: inc/components/welcome.php:39
 msgid "Download theme sample data"
-msgstr ""
+msgstr "থিম নমুনা ডেটা ডাউনলোড করুন"
 
 #: inc/components/welcome.php:40
 msgid "Head over to our website and download the sample content data."
-msgstr ""
+msgstr "আমাদের ওয়েবসাইটে হেড করুন এবং নমুনা সামগ্রীর ডেটা ডাউনলোড করুন।"
 
 #: inc/components/welcome.php:41 inc/template-functions.php:300
 msgid "Posts"
-msgstr ""
+msgstr "পোস্ট"
 
 #: inc/components/welcome.php:42
 msgid "Widgets"
-msgstr ""
+msgstr "উইজেট"
 
 #: inc/components/welcome.php:47
 msgid "Import Sample Data"
-msgstr ""
+msgstr "নমুনা ডেটা আমদানি করুন"
 
 #: inc/components/welcome.php:48
 msgid "Import Posts"
-msgstr ""
+msgstr "পোস্ট আমদানি করুন"
 
 #: inc/components/welcome.php:49
 msgid "Import Widgets"
-msgstr ""
+msgstr "উইজেটগুলি আমদানি করুন"
 
 #: inc/components/welcome.php:54
 msgid "Set front page to static"
-msgstr ""
+msgstr "সামনে পৃষ্ঠা স্ট্যাটিক সেট করুন"
 
 #: inc/components/welcome.php:55
 msgid ""
@@ -271,340 +274,349 @@ msgid ""
 "you need to go to Settings -> Reading , Front page displays and select "
 "\"Static Page\"."
 msgstr ""
+"আপনি যদি শুধু Magazil ইনস্টল করেন, এবং সামনে পৃষ্ঠা ডেমো দেখতে সক্ষম না হন, তাহলে "
+"আপনাকে সেটিংস -> পড়া, সামনে পৃষ্ঠা প্রদর্শন এবং \"স্ট্যাটিক পৃষ্ঠা\" নির্বাচন করতে "
+"হবে।"
 
 #: inc/components/welcome.php:56
 msgid "Set manually"
-msgstr ""
+msgstr "ম্যানুয়ালি সেট করুন"
 
 #: inc/components/welcome.php:56
 msgid "Set automatically"
-msgstr ""
+msgstr "স্বয়ংক্রিয়ভাবে সেট করুন"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:13
 msgid "Magazil - Horizontal Posts List"
-msgstr ""
+msgstr "Magazil - অনুভূমিক পোস্ট তালিকা"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:15
 msgid "Front page horizontal post layout"
-msgstr ""
+msgstr "সামনে পৃষ্ঠা অনুভূমিক পোস্ট বিন্যাস"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:27
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:132
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:26
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:135
 msgid "Recent posts"
-msgstr ""
+msgstr "সাম্প্রতিক পোস্ট"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:38
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:30
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:37
 msgid "Title"
-msgstr ""
+msgstr "শিরনাম"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:45
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:44
 msgid "Category"
-msgstr ""
+msgstr "বিভাগ"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:50
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:49
 msgid "&ndash; Select a category &ndash;"
-msgstr ""
+msgstr "একটি বিভাগ নির্বাচন করুন"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:60
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:59
 msgid "Order"
-msgstr ""
+msgstr "ক্রম"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:63
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:62
 msgid "Descending"
-msgstr ""
+msgstr "নিম্নক্রম"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:64
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:63
 msgid "Ascending"
-msgstr ""
+msgstr "ঊর্ধ্বগামী"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:65
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:64
 msgid "Random"
-msgstr ""
+msgstr "এলোমেলো"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:70
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:38
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:71
 msgid "Posts to Show"
-msgstr ""
+msgstr "শো পোস্ট"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:149
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:151
 msgid "Please configure your widget"
-msgstr ""
+msgstr "আপনার উইজেটটি কনফিগার করুন"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:12
 msgid "Magazil: Recent Posts"
-msgstr ""
+msgstr "Magazil: সাম্প্রতিক পোস্ট"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:13
 msgid "Sidebar area Recent Posts."
-msgstr ""
+msgstr "সাইডবার এলাকা সাম্প্রতিক পোস্ট।"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:24
 #: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:64
 msgid "Recent Posts"
-msgstr ""
+msgstr " সাম্প্রতিক পোস্ট"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:12
 msgid "Magazil - Vertical Posts List"
-msgstr ""
+msgstr "Magazil - উল্লম্ব পোস্ট তালিকা"
 
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:14
 msgid "Front page vertical post layout."
-msgstr ""
+msgstr "সামনে পৃষ্ঠা উল্লম্ব পোস্ট বিন্যাস।"
 
 #: inc/customizer.php:125
 msgid "Theme Settings"
-msgstr ""
+msgstr "থিম সেটিং"
 
 #: inc/customizer.php:126
 msgid "Magazil Theme settings"
-msgstr ""
+msgstr "Magazil থিম সেটিং"
 
 #: inc/customizer.php:134
 msgid "Header settings"
-msgstr ""
+msgstr "শিরোলেখ সেটিংস"
 
 #: inc/customizer.php:147
 msgid "Phone Number: "
-msgstr ""
+msgstr "ফোন নম্বর:"
 
 #: inc/customizer.php:161
 msgid "Email: "
-msgstr ""
+msgstr "ইমেইল:"
 
 #: inc/customizer.php:172
 msgid "Banner settings"
-msgstr ""
+msgstr "ব্যানার সেটিংস"
 
 #: inc/customizer.php:228
 msgid "Enable banner"
-msgstr ""
+msgstr "ব্যানার একটিভ করুন "
 
 #: inc/customizer.php:241
 msgid "Image"
-msgstr ""
+msgstr "প্রতিমা"
 
 #: inc/customizer.php:242
 msgid "AdSense"
-msgstr ""
+msgstr "অ্যাডসেন্স"
 
 #: inc/customizer.php:244
 msgid "The type of the banner"
-msgstr ""
+msgstr "ব্যানার ধরন"
 
 #: inc/customizer.php:245
 msgid ""
 "Select what type of banner you want to use: normal image or adsense script"
 msgstr ""
+"আপনি কি ধরনের ব্যানার ব্যবহার করতে চান নির্বাচন করুন: সাধারণ চিত্র বা অ্যাডসেন্স "
+"স্ক্রিপ্ট"
 
 #: inc/customizer.php:259
 msgid "Banner Image:"
-msgstr ""
+msgstr "ব্যানার চিত্র:"
 
 #: inc/customizer.php:260
 msgid "Recommended size: 728 x 90"
-msgstr ""
+msgstr "প্রস্তাবিত আকার: ৭২৮ x ৯০"
 
 #: inc/customizer.php:273
 msgid "Banner Link:"
-msgstr ""
+msgstr "ব্যানার লিংক:"
 
 #: inc/customizer.php:274
 msgid "Add the link for banner image."
-msgstr ""
+msgstr "ব্যানার ইমেজের জন্য লিঙ্ক যোগ করুন।"
 
 #: inc/customizer.php:287
 msgid "AdSense Code:"
-msgstr ""
+msgstr "অ্যাডসেন্স স্ক্রিপ্ট:"
 
 #: inc/customizer.php:288
 msgid ""
 "Add the code you retrieved from your AdSense account. You only need to "
 "insert the <ins> tag."
 msgstr ""
+"আপনার অ্যাডসেন্স অ্যাকাউন্ট থেকে প্রাপ্ত কোড যোগ করুন আপনি শুধুমাত্র <ins> ট্যাগ "
+"সন্নিবেশ করা প্রয়োজন"
 
 #: inc/customizer.php:301
 msgid "Home page settings"
-msgstr ""
+msgstr "হোম পেজ সেটিংস"
 
 #: inc/customizer.php:332
 msgid "Three"
-msgstr ""
+msgstr "তিন"
 
 #: inc/customizer.php:333
 msgid "Five"
-msgstr ""
+msgstr "পাঁচ"
 
 #: inc/customizer.php:335
 msgid "Top post limit"
-msgstr ""
+msgstr "শীর্ষ পোস্ট সীমা"
 
 #: inc/customizer.php:336
 msgid "Select either three or five"
-msgstr ""
+msgstr "তিন বা পাঁচটি নির্বাচন করুন"
 
 #: inc/customizer.php:349
 msgid "Popular Post"
-msgstr ""
+msgstr "জনপ্রিয় পোস্ট"
 
 #: inc/customizer.php:350 index.php:59
 msgid "Page"
-msgstr ""
+msgstr "পৃষ্ঠা"
 
 #: inc/customizer.php:352
 msgid "Top post type"
-msgstr ""
+msgstr "শীর্ষ পোস্ট টাইপ"
 
 #: inc/customizer.php:353
 msgid "What do you want to show in top post area at front page."
-msgstr ""
+msgstr "আপনি সামনে পৃষ্ঠার শীর্ষ পোস্ট এলাকায় প্রদর্শন করতে চান কি।"
 
 #: inc/customizer.php:371
 msgid "Front page top area page"
-msgstr ""
+msgstr "সম্মুখ পৃষ্ঠা শীর্ষ এলাকা পৃষ্ঠা"
 
 #: inc/customizer.php:383
 msgid "Breaking news settings"
-msgstr ""
+msgstr "ব্রেকিং নিউজ সেটিংস"
 
 #: inc/customizer.php:490
 msgid "Enable breaking news"
-msgstr ""
+msgstr "ব্রেকিং নিউজ সক্ষম করুন"
 
 #: inc/customizer.php:499
 msgid "Type of breaking news"
-msgstr ""
+msgstr "ব্রেকিং নিউজ এর প্রকার"
 
 #: inc/customizer.php:500
 msgid "Select what type of post you want to use"
-msgstr ""
+msgstr "আপনি কোন পোস্টটি ব্যবহার করতে চান তা নির্বাচন করুন"
 
 #: inc/customizer.php:511
 msgid "Breaking news pages"
-msgstr ""
+msgstr "ব্রেকিং নিউজ পৃষ্ঠাগুলি"
 
 #: inc/customizer.php:523
 msgid "Breaking news category"
-msgstr ""
+msgstr "ব্রেকিং নিউজ ক্যাটাগরি"
 
 #: inc/customizer.php:535
 msgid "Breaking News Tags:"
-msgstr ""
+msgstr "ব্রেকিং নিউজ ট্যাগ:"
 
 #: inc/customizer.php:549
 msgid "Custom text"
-msgstr ""
+msgstr "কাস্টম ভাবে "
 
 #: inc/customizer.php:550
 msgid ""
 "Custom text to display as breaking news. Must use <li><a> tag to display "
 "properly."
 msgstr ""
+"ব্রেকিং নিউজ হিসাবে প্রদর্শিত কাস্টম পাঠ্য সঠিকভাবে প্রদর্শন করতে <li> <a> ট্যাগ "
+"ব্যবহার করতে হবে।"
 
 #: inc/customizer.php:562
 msgid "Breaking news limit:"
-msgstr ""
+msgstr "ব্রেকিং নিউজ সীমা:"
 
 #: inc/customizer.php:563
 msgid "How much post do you want to show."
-msgstr ""
+msgstr "কত পোস্ট আপনি প্রদর্শন করতে চান।"
 
 #: inc/customizer.php:579
 msgid "The effect of breaking news"
-msgstr ""
+msgstr "ব্রেকিং নিউজ এর প্রভাব"
 
 #: inc/customizer.php:580
 msgid "Select what type of effect you want to use"
-msgstr ""
+msgstr "আপনি কি ধরনের প্রভাব ব্যবহার করতে চান নির্বাচন করুন"
 
 #: inc/customizer.php:591
 msgid "Breaking news speed:"
-msgstr ""
+msgstr "ব্রেকিং নিউজ স্পিড:"
 
 #: inc/customizer.php:592
 msgid "Select breaking news speed."
-msgstr ""
+msgstr "ব্রেকিং নিউজ স্পিড নির্বাচন করুন"
 
 #: inc/customizer.php:606
 msgid "Breaking news timeout:"
-msgstr ""
+msgstr "ব্রেকিং নিউজ টাইমআউট:"
 
 #: inc/customizer.php:607
 msgid "Select breaking news timeout."
-msgstr ""
+msgstr "ব্রেকিং নিউজ টাইমআউট নির্বাচন করুন"
 
 #: inc/customizer.php:622
 msgid "Copyright"
-msgstr ""
+msgstr "কপিরাইট"
 
 #: inc/customizer.php:642
 msgid "Copyright text:"
-msgstr ""
+msgstr "কপিরাইট পাঠ্য:"
 
 #: inc/customizer.php:643
 msgid "Add your copyright information on footer area"
-msgstr ""
+msgstr "পাদচরণ এলাকাতে আপনার কপিরাইট তথ্য জুড়ুন"
 
 #: inc/customizer.php:654
 msgid "Oh Shit!"
-msgstr ""
+msgstr "ওহ শিট!"
 
 #: inc/customizer.php:655
 msgid "WP_Customize_Panel class not exist. Contact with your admin"
-msgstr ""
+msgstr "WP_Customize_Panel অস্তিত্ব নেই আপনার প্রশাসকের সাথে যোগাযোগ করুন"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:139
 #: inc/libraries/notify/class-magazil-notify-system.php:147
 msgid "Install: Widget Importer Exporter Plugin"
-msgstr ""
+msgstr "ইনস্টল করুন: উইজেট আমদানিকারী এক্সপ্লোরার প্লাগইন"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:144
 msgid "Activate: Widget Importer Exporter Plugin"
-msgstr ""
+msgstr "সক্রিয়: উইজেট আমদানিকারী এক্সপ্লোরার প্লাগইন"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:153
 #: inc/libraries/notify/class-magazil-notify-system.php:161
 msgid "Install: WordPress Importer"
-msgstr ""
+msgstr "ইনস্টল করুন: ওয়ার্ডপ্রেস আমদানিকারী"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:158
 msgid "Activate: WordPress Importer"
-msgstr ""
+msgstr "সক্রিয়: ওয়ার্ডপ্রেস আমদানিকারী"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:170
 #: inc/libraries/notify/class-magazil-notify-system.php:178
 msgid "Please install the WordPress Importer to create the demo content."
-msgstr ""
+msgstr "ডেমো কন্টেন্ট তৈরি করতে ওয়ার্ডপ্রেস ইমপ্রেসার ইনস্টল করুন।"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:175
 msgid "Please activate the WordPress Importer to create the demo content."
-msgstr ""
+msgstr "ডেমো কন্টেন্ট তৈরি করতে ওয়ার্ডপ্রেস ইমপ্রেটার সক্রিয় করুন।"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:184
 #: inc/libraries/notify/class-magazil-notify-system.php:192
 msgid "Please install the WordPress widget importer to create the demo content"
-msgstr ""
+msgstr "ডেমো কন্টেন্ট তৈরি করতে ওয়ার্ডপ্রেস উইজেট আমদানিকারী ইনস্টল করুন"
 
 #: inc/libraries/notify/class-magazil-notify-system.php:189
 msgid ""
 "Please activate the WordPress Widget Importer to create the demo content."
-msgstr ""
+msgstr "ডেমো কন্টেন্ট তৈরি করতে ওয়ার্ডপ্রেস উইজেট ইমপ্রেটার সক্রিয় করুন।"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:70
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:72
 msgid "About Magazil"
-msgstr ""
+msgstr "Magazil সম্পর্কে"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:97
 #, php-format
@@ -612,125 +624,135 @@ msgid ""
 "Welcome! Thank you for choosing Magazil! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %swelcome page%s."
 msgstr ""
+"স্বাগত! Magazil নির্বাচন জন্য আপনাকে ধন্যবাদ! সেরা আমাদের থিমের সুবিধাটি সম্পূর্ণরূপে "
+"গ্রহণ করতে দয়া করে নিশ্চিত করুন যে আপনি আমাদের %s  স্বাক্ষর পৃষ্ঠা % s এ যান।"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:99
 msgid "Get started with Magazil"
-msgstr ""
+msgstr "Magazil দিয়ে শুরু করুন"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:117
 #: inc/libraries/welcome-screen/sections/actions-required.php:87
 msgid "Hooray! There are no required actions for you right now."
-msgstr ""
+msgstr "হুররে! এখন আপনার জন্য কোনও প্রয়োজনীয় পদক্ষেপ নেই।"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:346
 #, php-format
 msgid "Welcome to %1$s! - %2$s"
-msgstr ""
+msgstr "স্বাগতম %1$s! - %2$s"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:354
 msgid "Getting Started"
-msgstr ""
+msgstr "শুরু হচ্ছে"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:357
 msgid "Recommended Actions"
-msgstr ""
+msgstr "প্রস্তাবিত পদক্ষেপগুলি"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:361
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "প্রস্তাবিত প্লাগইন"
 
 #: inc/libraries/welcome-screen/class-magazil-welcome-screen.php:363
 msgid "Support"
-msgstr ""
+msgstr "হেল্প"
 
 #: inc/libraries/welcome-screen/sections/actions-required.php:59
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:43
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:58
 msgid "Install"
-msgstr ""
+msgstr "ইনস্টল করুন"
 
 #: inc/libraries/welcome-screen/sections/actions-required.php:63
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:47
 msgid "Activate"
-msgstr ""
+msgstr "সক্রিয়"
 
 #: inc/libraries/welcome-screen/sections/actions-required.php:67
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:51
 msgid "Deactivate"
-msgstr ""
+msgstr "নিষ্ক্রিয়"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:14
 msgid "Step 1 - Implement recommended actions"
-msgstr ""
+msgstr "ধাপ ১ - প্রস্তাবিত কর্ম বাস্তবায়ন "
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:15
 msgid ""
 "We've compiled a list of steps for you, to take make sure the experience "
 "you'll have using one of our products is very easy to follow."
 msgstr ""
+"আমরা আপনার জন্য ধাপগুলি একটি তালিকা সংকলন করেছি, আপনি আমাদের পণ্যটি ব্যবহার করে "
+"যে অভিজ্ঞতাটি অনুসরণ করা খুব সহজ হবে তা গ্রহণ করতে।"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:18
 msgid "No recommended actions left to perform"
-msgstr ""
+msgstr "কোনও প্রস্তাবিত কর্ম সঞ্চালনের জন্য বাকি নাই "
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:22
 msgid "Check recommended actions"
-msgstr ""
+msgstr "প্রস্তাবিত কর্ম পরীক্ষা করুন"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:28
 msgid "Step 2 - Check our documentation"
-msgstr ""
+msgstr "ধাপ ২ - আমাদের ডকুমেন্টেশন চেক করুন"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:29
 msgid ""
 "Even if you're a long-time WordPress user, we still believe you should give "
 "our documentation a very quick Read."
 msgstr ""
+"এমনকি যদি আপনি দীর্ঘদিন ধরে ওয়ার্ডপ্রেস ব্যবহারকারী হন তবে আমরা এখনও বিশ্বাস করি "
+"আপনি আমাদের ডকুমেন্টেশনটি খুব দ্রুত পড়ুন।"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:32
 msgid "Full documentation"
-msgstr ""
+msgstr "সম্পূর্ণ ডকুমেন্টেশন"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:37
 msgid "Step 3 - Customize everything"
-msgstr ""
+msgstr "ধাপ ৩ - সবকিছু কাস্টমাইজ করুন"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:38
 msgid ""
 "Using the WordPress Customizer you can easily customize every aspect of the "
 "theme."
 msgstr ""
+"ওয়ার্ডপ্রেস কাস্টমাইজার ব্যবহার করে আপনি সহজেই থিম এর প্রতিটি দিক কাস্টমাইজ করতে "
+"পারেন।"
 
 #: inc/libraries/welcome-screen/sections/getting-started.php:40
 msgid "Go to Customizer"
-msgstr ""
+msgstr "কাস্টমাইজারে যান"
 
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:30
 msgid "Check network connection"
-msgstr ""
+msgstr "নেটওয়ার্ক সংযোগ চেক করুন"
 
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:64
 msgid "Recommended"
-msgstr ""
+msgstr "প্রস্তাবিত"
 
 #: inc/libraries/welcome-screen/sections/recommended-plugins.php:68
 msgid "Version:"
-msgstr ""
+msgstr "সংস্করণ:"
 
 #: inc/libraries/welcome-screen/sections/support.php:9
 #: inc/libraries/welcome-screen/sections/support.php:14
 msgid "Contact Support"
-msgstr ""
+msgstr "যোগাযোগ সমর্থন"
 
 #: inc/libraries/welcome-screen/sections/support.php:11
 msgid ""
 "We offer excellent support through our advanced ticketing system. Make sure "
 "to register your purchase before contacting support!"
 msgstr ""
+"আমরা আমাদের উন্নত টিকিট সিস্টেমের মাধ্যমে চমৎকার সমর্থন প্রদান। সমর্থন ক্রয় আগে "
+"আপনার ক্রয় রেজিস্টার নিশ্চিত করুন!"
 
 #: inc/libraries/welcome-screen/sections/support.php:19
 msgid "Documentation"
-msgstr ""
+msgstr "নথিপত্র"
 
 #: inc/libraries/welcome-screen/sections/support.php:21
 msgid ""
@@ -738,14 +760,16 @@ msgid ""
 "online documentation is an incredible resource for learning the ins and outs "
 "of using magazil."
 msgstr ""
+"এই থিম এর বিভিন্ন দিক উল্লেখ করার জায়গা। আমাদের অনলাইন ডকুমেন্টেশনটি ম্যাগাজিল "
+"ব্যবহার করে ইনস এবং আউটসোর্স শেখার জন্য একটি অবিশ্বাস্য সম্পদ।"
 
 #: inc/libraries/welcome-screen/sections/support.php:25
 msgid "See our full documentation"
-msgstr ""
+msgstr "আমাদের সম্পূর্ণ ডকুমেন্টেশন দেখুন"
 
 #: inc/libraries/welcome-screen/sections/support.php:31
 msgid "How to speed up wordpress"
-msgstr ""
+msgstr "কিভাবে ওয়ার্ডপ্রেস দ্রুত গতিতে কাজ করবে"
 
 #: inc/libraries/welcome-screen/sections/support.php:33
 msgid ""
@@ -753,26 +777,31 @@ msgid ""
 "WordPress so that you can confidently say you hold your own amongst the "
 "billions of web pages!"
 msgstr ""
+"কেন ওয়েবসাইটের গতি অত্যন্ত গুরুত্বপূর্ণ এবং আপনি ওয়ার্ডপ্রেসকে গতিশীল করতে পারেন তা "
+"দেখে নিন যাতে আপনি আত্মবিশ্বাসীভাবে বলতে পারেন আপনি বিলিয়নের ওয়েব পেজগুলির মধ্যে "
+"আপনার নিজের ধারণ করেন!"
 
 #: inc/libraries/welcome-screen/sections/support.php:36
 #: inc/libraries/welcome-screen/sections/support.php:47
 #: inc/libraries/welcome-screen/sections/support.php:58
 msgid "Read more"
-msgstr ""
+msgstr "আরো পড়েন"
 
 #: inc/libraries/welcome-screen/sections/support.php:41
 msgid "Best security plugins"
-msgstr ""
+msgstr "সেরা নিরাপত্তা প্লাগইন"
 
 #: inc/libraries/welcome-screen/sections/support.php:43
 msgid ""
 "Thinking that the best WordPress security plugins are not going to come "
 "cheap, not to mention free? Luckily, that is not the case."
 msgstr ""
+"সেরা ওয়ার্ডপ্রেস নিরাপত্তা প্লাগইন সস্তা আসতে যাচ্ছে না যে চিন্তা, বিনামূল্যে উল্লেখ "
+"না? সৌভাগ্যবশত, এটা কোন ব্যাপার নয়।"
 
 #: inc/libraries/welcome-screen/sections/support.php:52
 msgid "Cheap WordPress hosting"
-msgstr ""
+msgstr "সুলভ ওয়ার্ডপ্রেস হোস্টিং"
 
 #: inc/libraries/welcome-screen/sections/support.php:54
 msgid ""
@@ -780,219 +809,225 @@ msgid ""
 "picking a winner can often seem like a game of chance. This article will "
 "hopefully allow you to make an informed decision, catered to your needs"
 msgstr ""
+"সেখানে অনেক জনপ্রিয় সফ্টওয়্যার অফার রয়েছে এমন ওয়ার্ডপ্রেসের মাধ্যমে হোস্টিংয়ের "
+"মাধ্যমে বিজয়ী বাছাই করতে পারে এমন সুযোগের একটি খেলা। এই নিবন্ধে আপনি একটি "
+"সুনির্দিষ্ট সিদ্ধান্ত করতে পারবেন আশা, আপনার প্রয়োজন"
 
 #: inc/template-functions.php:103
 msgid "(Edit)"
-msgstr ""
+msgstr "(সম্পাদনা করুন)"
 
 #: inc/template-functions.php:116
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "তোমার মতামত বিবেচনাধীন।"
 
 #: inc/template-functions.php:162
 msgid "Previous"
-msgstr ""
+msgstr "আগে"
 
 #: inc/template-functions.php:168
 msgid "Next"
-msgstr ""
+msgstr "পরবর্তী"
 
 #: inc/template-functions.php:272
 msgid "Blind"
-msgstr ""
+msgstr "অন্ধ"
 
 #: inc/template-functions.php:273
 msgid "Bounce"
-msgstr ""
+msgstr "বড়াই"
 
 #: inc/template-functions.php:274
 msgid "Clip"
-msgstr ""
+msgstr "ক্লিপ"
 
 #: inc/template-functions.php:275
 msgid "Drop"
-msgstr ""
+msgstr "ড্রপ"
 
 #: inc/template-functions.php:276
 msgid "Explode"
-msgstr ""
+msgstr "বিস্ফোরিত"
 
 #: inc/template-functions.php:277
 msgid "Fade"
-msgstr ""
+msgstr "বিলীন"
 
 #: inc/template-functions.php:278
 msgid "Fold"
-msgstr ""
+msgstr "ভাঁজ"
 
 #: inc/template-functions.php:279
 msgid "Highlight"
-msgstr ""
+msgstr "লক্ষণীয়"
 
 #: inc/template-functions.php:280
 msgid "Puff"
-msgstr ""
+msgstr "বহান"
 
 #: inc/template-functions.php:281
 msgid "Pulsate"
-msgstr ""
+msgstr "স্পন্দিত"
 
 #: inc/template-functions.php:282
 msgid "Scale"
-msgstr ""
+msgstr "স্কেল"
 
 #: inc/template-functions.php:283
 msgid "Shake"
-msgstr ""
+msgstr "ঝাঁকি"
 
 #: inc/template-functions.php:284
 msgid "Size"
-msgstr ""
+msgstr "আয়তন"
 
 #: inc/template-functions.php:285
 msgid "Slide"
-msgstr ""
+msgstr "স্লাইড"
 
 #: inc/template-functions.php:286
 msgid "Transfer"
-msgstr ""
+msgstr "হস্তান্তর"
 
 #: inc/template-functions.php:287
 msgid "Ticker"
-msgstr ""
+msgstr "টিকার"
 
 #: inc/template-functions.php:301
 msgid "Pages"
-msgstr ""
+msgstr "পেজ"
 
 #: inc/template-functions.php:302
 msgid "Categories"
-msgstr ""
+msgstr "ধরন"
 
 #: inc/template-functions.php:303
 msgid "Tags"
-msgstr ""
+msgstr "ট্যাগ"
 
 #: inc/template-functions.php:304
 msgid "Custom"
-msgstr ""
+msgstr "কাষ্টম"
 
 #: inc/template-functions.php:397
 msgid "No result found!"
-msgstr ""
+msgstr "কোন ফলাফল পাওয়া যায়নি!"
 
 #. translators: %s: post date.
 #: inc/template-tags.php:29
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "পোস্ট ডেট %s"
 
 #. translators: %s: post author.
 #: inc/template-tags.php:45
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "করেছেন %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:62
 msgid ", "
-msgstr ""
+msgstr ","
 
 #. translators: 1: list of categories.
 #: inc/template-tags.php:65
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "পোস্ট %1$s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:69 inc/template-tags.php:160
 msgctxt "list item separator"
 msgid ", "
-msgstr ""
+msgstr ","
 
 #. translators: 1: list of tags.
 #: inc/template-tags.php:72 inc/template-tags.php:163
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "ট্যাগ  %1$s"
 
 #: inc/template-tags.php:101
 msgid "<span class=\"lnr lnr-bubble\"></span>Leave a comment"
-msgstr ""
+msgstr "<span class=\"lnr lnr-bubble\"></span>মতামত দিন"
 
 #: inc/template-tags.php:101
 msgid "<span class=\"lnr lnr-bubble\"></span>1 Comment"
-msgstr ""
+msgstr "<span class=\"lnr lnr-bubble\"></span>একটি মন্তব্য"
 
 #: inc/template-tags.php:101
 msgid "<span class=\"lnr lnr-bubble\"></span>% Comments"
-msgstr ""
+msgstr "<span class=\"lnr lnr-bubble\"></span>% টি মন্তব্য"
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:113
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
+msgstr "সম্পাদন করা <span class=\"screen-reader-text\">%s</span>"
 
 #: inc/template-tags.php:198
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "অনুসন্ধান ফলাফল: %s"
 
 #: index.php:57
 msgid "Previous Page"
-msgstr ""
+msgstr "আগের পৃষ্ঠা"
 
 #: index.php:58
 msgid "Next Page"
-msgstr ""
+msgstr "পরবর্তী পৃষ্ঠা"
 
 #: template-parts/banner/banner-adsense.php:16
 msgid "Loading"
-msgstr ""
+msgstr "লোড হচ্ছে"
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr ""
+msgstr "কিছুই পাওয়া যায়নি"
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "আপনার প্রথম পোস্ট প্রকাশ করতে প্রস্তুত? <a href=\"%1$s\">এখানে শুরু করুন</a>।"
 
 #: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"দুঃখিত, কিন্তু কিছুই আপনার অনুসন্ধান শর্ত মেলেনি। কিছু ভিন্ন কীওয়ার্ড দিয়ে আবার চেষ্টা "
+"করুন।"
 
 #: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"মনে হচ্ছে আমরা যা খুঁজছি তা খুঁজে পাচ্ছি না। সম্ভবত অনুসন্ধান সাহায্য করতে পারেন।"
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content-single.php:25
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
+msgstr "পড়া চালিয়ে যান<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: template-parts/content-single.php:36
 msgid "Pages:"
-msgstr ""
+msgstr "পৃষ্ঠাসমূহ:"
 
 #. Theme Name of the plugin/theme
 msgid "magazil"
-msgstr ""
+msgstr "magazil"
 
 #. Theme URI of the plugin/theme
 msgid "http://wptester.cf/"
-msgstr ""
+msgstr "http://wptester.cf/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -1001,11 +1036,15 @@ msgid ""
 "Breadcrumbs, parent page navigation, and more. Personalize its asymmetrical "
 "grid with multiple styles and fit any devices."
 msgstr ""
+"Magazil আধুনিক ওয়েব প্রযুক্তির সাথে আপনার সাইটটি জীবন নিয়ে আসে। খবর সাইটের উপর "
+"একটি ফোকাস সঙ্গে, এটি সামনে পৃষ্ঠার জন্য একাধিক উইজেট বৈশিষ্ট্য। এটি ব্রেডক্রামস, "
+"পিতা বা মাতা পৃষ্ঠা নেভিগেশন, এবং আরো সমর্থন করে। একাধিক শৈলী সঙ্গে তার অষুধ গ্রীস "
+"ব্যক্তিগতকৃত এবং কোনো ডিভাইস মাপসই।"
 
 #. Author of the plugin/theme
 msgid "Rakib Hossain"
-msgstr ""
+msgstr "রকিব হোসেন"
 
 #. Author URI of the plugin/theme
 msgid "https://rakib.ooo/"
-msgstr ""
+msgstr "https://rakib.ooo/"

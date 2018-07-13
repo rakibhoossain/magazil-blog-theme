@@ -35,7 +35,7 @@ class Notify_System {
 	public static function _get_plugins() {
 
 		if ( ! function_exists( 'get_plugins' ) ) {
-			require ABSPATH . 'wp-admin/includes/plugin.php';
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
 		return get_plugins();

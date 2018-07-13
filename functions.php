@@ -301,7 +301,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Welcome additions.
  */
-require get_template_directory() . '/inc/components/welcome.php';
+require_once get_template_directory() . '/inc/components/welcome.php';
 
 
 /**

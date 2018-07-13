@@ -67,7 +67,7 @@ class Magazil_Welcome_Screen {
 	 */
 	public function magazil_welcome_register_menu() {
 		$action_count = $this->count_actions();
-		$title        = $action_count > 0 ? __( 'About Magazil', 'magazil' ) . '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : __( 'About Magazil', 'magazil' );
+		$title        = ($action_count > 0 )? __( 'About Magazil', 'magazil' ) . '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : __( 'About Magazil', 'magazil' );
 
 		add_theme_page( __( 'About Magazil', 'magazil' ), $title, 'edit_theme_options', 'magazil-welcome', array(
 			$this,
@@ -290,7 +290,11 @@ class Magazil_Welcome_Screen {
 	 *
 	 * @return string
 	 */
-	public function create_action_link( $state, $slug ,$plugin) {
+	public function create_action_link( $state, $slug ,$plugin = '') {
+
+		if ($plugin == '') {
+			$plugin = $slug;
+		}
 		switch ( $state ) {
 			case 'install':
 				return wp_nonce_url(
@@ -331,9 +335,9 @@ class Magazil_Welcome_Screen {
 	 * @since 1.8.2.4
 	 */
 	public function magazil_welcome_screen() {
-		require ABSPATH . 'wp-load.php';
-		require ABSPATH . 'wp-admin/admin.php';
-		require ABSPATH . 'wp-admin/admin-header.php';
+		require_once ABSPATH . 'wp-load.php';
+		require_once ABSPATH . 'wp-admin/admin.php';
+		require_once ABSPATH . 'wp-admin/admin-header.php';
 
 		$magazil      = wp_get_theme();
 		$active_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';

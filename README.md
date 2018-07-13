@@ -92,4 +92,4 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 == Changelog ==
 
 = 1.0.0 =
-* Released: December 6, 2016
+* Released: July 13, 2018

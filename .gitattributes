@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 readme.md export-ignore
+magazil-widgets.wie export-ignore

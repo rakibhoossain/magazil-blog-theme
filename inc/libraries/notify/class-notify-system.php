@@ -35,7 +35,7 @@ class Notify_System {
 	public static function _get_plugins() {
 
 		if ( ! function_exists( 'get_plugins' ) ) {
-			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+			require ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
 		return get_plugins();
@@ -85,7 +85,7 @@ class Notify_System {
 	public static function check_plugin_is_active( $slug ) {
 		$plugin_path = self::_get_plugin_basename_from_slug( $slug );
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $plugin_path ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 			return is_plugin_active( $plugin_path );
 		}

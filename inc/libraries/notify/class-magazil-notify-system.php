@@ -54,7 +54,7 @@ class Magazil_Notify_System extends Notify_System {
 	 */
 	public static function check_wordpress_importer() {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/wordpress-importer/wordpress-importer.php' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 			return is_plugin_active( 'wordpress-importer/wordpress-importer.php' );
 		}
@@ -78,7 +78,7 @@ class Magazil_Notify_System extends Notify_System {
 	 */
 	public static function check_plugin_is_active( $slug ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 			return is_plugin_active( $slug . '/' . $slug . '.php' );
 		}

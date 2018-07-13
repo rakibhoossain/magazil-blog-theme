@@ -221,7 +221,7 @@ class Magazil_Welcome_Screen {
 	 * @return array|mixed|object|WP_Error
 	 */
 	public function call_plugin_api( $slug ) {
-		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+		require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
 		if ( false === ( $call_api = get_transient( 'mgazil_plugin_information_transient_' . $slug ) ) ) {
 			$call_api = plugins_api( 'plugin_information', array(
@@ -258,7 +258,7 @@ class Magazil_Welcome_Screen {
 	
 	public function check_active( $slug) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			$needs = is_plugin_active( $slug ) ? 'deactivate' : 'activate';
 			return array( 'status' => is_plugin_active( $slug ), 'needs' => $needs );
 		}
@@ -331,9 +331,9 @@ class Magazil_Welcome_Screen {
 	 * @since 1.8.2.4
 	 */
 	public function magazil_welcome_screen() {
-		require_once( ABSPATH . 'wp-load.php' );
-		require_once( ABSPATH . 'wp-admin/admin.php' );
-		require_once( ABSPATH . 'wp-admin/admin-header.php' );
+		require ABSPATH . 'wp-load.php';
+		require ABSPATH . 'wp-admin/admin.php';
+		require ABSPATH . 'wp-admin/admin-header.php';
 
 		$magazil      = wp_get_theme();
 		$active_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';

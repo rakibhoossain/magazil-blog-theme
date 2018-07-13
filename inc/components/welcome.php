@@ -39,14 +39,14 @@
 				"title"       => esc_html__( 'Download theme sample data', 'magazil' ),
 				"description" => esc_html__( 'Head over to our website and download the sample content data.', 'magazil' ),
 				"help"        => '<a target="_blank"  href="https://raw.githubusercontent.com/WPTRT/theme-unit-test/master/themeunittestdata.wordpress.xml">' . __( 'Posts', 'magazil' ) . '</a>, 
-								   <a target="_blank"  href="https://github.com/WPTRT/theme-unit-test">' . __( 'Widgets', 'magazil' ) . '</a>',
+					<a target="_blank"  href="https://raw.githubusercontent.com/serakib/magazil-blog-theme/master/magazil-widgets.wie">' . __( 'Widgets', 'magazil' ) . '</a>',
 				"check"       => Magazil_Notify_System::has_content(),
 			),
 			array(
 				"id"    => 'magazil-req-ac-install-data',
 				"title" => esc_html__( 'Import Sample Data', 'magazil' ),
 				"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'magazil' ) . '</a> 
-								   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'magazil' ) . '</a>',
+					<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'magazil' ) . '</a>',
 				"check" => Magazil_Notify_System::has_import_plugins(),
 			),
 			array(

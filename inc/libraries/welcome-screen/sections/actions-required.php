@@ -24,15 +24,18 @@ wp_enqueue_script( 'updates' );
 		$hooray = true;
 
 		foreach ( $magazil_required_actions as $magazil_required_action_key => $magazil_required_action_value ):
-
-
+			
 			$hidden = false;
 			if ( array_key_exists( $magazil_required_action_value['id'], $magazil_show_required_actions ) ) {
-				$hidden = true;
+				if ( $magazil_show_required_actions[ $magazil_required_action_value['id'] ] === false ) {
+					$hidden = true;
+				}
 			}
+
 			if ( $magazil_required_action_value['check'] ) {
 				continue;
 			}
+
 			?>
 			<div class="magazil-action-required-box">
 				<?php if ( ! $hidden ): ?>
@@ -47,6 +50,8 @@ wp_enqueue_script( 'updates' );
 					<?php if ( ! empty( $magazil_required_action_value['description'] ) ): echo esc_html( $magazil_required_action_value['description'] ); endif; ?>
 					<?php if ( ! empty( $magazil_required_action_value['help'] ) ): echo '<br/>' . wp_kses_post( $magazil_required_action_value['help'] ); endif; ?>
 				</p>
+
+
 				<?php
 				if ( ! empty( $magazil_required_action_value['plugin_slug'] ) ) {
 					$active = $this->check_active( $magazil_required_action_value['plugin_slug'] );
@@ -76,6 +81,8 @@ wp_enqueue_script( 'updates' );
 					</p>
 					<?php
 				};
+
+
 				?>
 			</div>
 			<?php

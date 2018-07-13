@@ -21,11 +21,11 @@ class Magazil_Welcome_Screen {
 		add_action( 'admin_enqueue_scripts', array( $this, 'magazil_welcome_style_and_scripts' ) );
 
 		/* ajax callback for dismissable required actions */
-		add_action( 'wp_ajax_magazil_dismiss_required_action', array(
+		add_action( 'wp_ajax_magazil_dismiss_required_action_callback', array(
 			$this,
 			'magazil_dismiss_required_action_callback'
 		) );
-		add_action( 'wp_ajax_nopriv_magazil_dismiss_required_action', array(
+		add_action( 'wp_ajax_nopriv_magazil_dismiss_required_action_callback', array(
 			$this,
 			'magazil_dismiss_required_action_callback'
 		) );
@@ -130,15 +130,16 @@ class Magazil_Welcome_Screen {
 
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
 
-		echo esc_attr($action_id); /* this is needed and it's the id of the dismissable required action */
+		//echo esc_attr($action_id); /* this is needed and it's the id of the dismissable required action */
 
 		if ( ! empty( $action_id ) ):
+
 
 			/* if the option exists, update the record for the specified id */
 			if ( get_option( 'magazil_show_required_actions' ) ):
 
 				$magazil_show_required_actions = get_option( 'magazil_show_required_actions' );
-
+				
 				switch ( $_GET['todo'] ) {
 					case 'add';
 						$magazil_show_required_actions[ $action_id ] = true;
@@ -147,7 +148,6 @@ class Magazil_Welcome_Screen {
 						$magazil_show_required_actions[ $action_id ] = false;
 						break;
 				}
-
 				update_option( 'magazil_show_required_actions', $magazil_show_required_actions );
 
 			/* create the new option,with false for the specified id */

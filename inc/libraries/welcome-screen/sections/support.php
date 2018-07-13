@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'http://docs.rakib.ooo/' ); ?>"><?php esc_html_e( 'See our full documentation', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'https://www.rakib.ooo/magazil' ); ?>"><?php esc_html_e( 'See our full documentation', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
     </div>
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
                 <i><?php esc_html_e( 'Take a look at why website speed is crucial and ways you can speed up WordPress so that you can confidently say you hold your own amongst the billions of web pages!', 'magazil' ) ?></i>
             </p>
             <p><a target="_blank"
-                  href="<?php echo esc_url( 'https://www.rakib.ooo/blog/how-to-speed-up-wordpress/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                  href="<?php echo esc_url( 'http://www.rakib.ooo/speed-up-wordpress' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
 
@@ -44,7 +44,7 @@ if ( ! defined( 'WPINC' ) ) {
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'https://www.rakib.ooo/blog/best-wordpress-security-plugins/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'https://www.rakib.ooo/best-wordpress-security-plugins' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
 
@@ -55,7 +55,7 @@ if ( ! defined( 'WPINC' ) ) {
             </p>
             <p>
                 <a target="_blank"
-                   href="<?php echo esc_url( 'https://www.rakib.ooo/blog/cheap-wordpress-hosting/?utm_source=worg&utm_medium=customizer&utm_campaign=blog-links' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
+                   href="<?php echo esc_url( 'https://www.rakib.ooo/cheap-wordpress-hosting' ); ?>"><?php esc_html_e( 'Read more', 'magazil' ); ?></a>
             </p>
         </div><!--/.col-->
     </div>

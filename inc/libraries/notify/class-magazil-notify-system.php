@@ -23,7 +23,7 @@ class Magazil_Notify_System extends Notify_System {
 	 * @return bool
 	 */
 	public static function magazil_has_posts() {
-		$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
+		$args  = array( "s" => 'Edge Case: Many Categories' );
 		$query = get_posts( $args );
 
 		if ( ! empty( $query ) ) {

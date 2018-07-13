@@ -10,14 +10,18 @@ jQuery( document ).ready( function() {
     jQuery( 'li.magazil-w-red-tab a' ).append( '<span class="magazil-actions-count">' + magazil_nr_actions_required + '</span>' );
   }
 
-  /* Dismiss required actions */
-  jQuery( '.magazil-required-action-button' ).click( function() {
 
+
+
+  /* Dismiss required actions */
+  jQuery( '.magazil-required-action-button' ).click( function(e) {
+    e.stopPropagation();
     var id = jQuery( this ).attr( 'id' ),
         action = jQuery( this ).attr( 'data-action' );
+
     jQuery.ajax( {
       type: 'GET',
-      data: { action: 'magazil_dismiss_required_action', id: id, todo: action },
+      data: { action: 'magazil_dismiss_required_action_callback', id: id, todo: action },
       dataType: 'html',
       url: magazilWelcomeScreenObject.ajaxurl,
       beforeSend: function( data, settings ) {

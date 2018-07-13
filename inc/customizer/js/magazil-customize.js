@@ -16,8 +16,7 @@
 						/**
 						 * Deactivate the conditional control.
 						 */
-
-						wp.customize.control('magazil_breaking_news_page').activate();
+						wp.customize.control('magazil_breaking_news_limit').activate();
 						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
@@ -30,7 +29,6 @@
 						/**
 						 * Activate the conditional control.
 						 */
-						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_page').activate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
@@ -43,10 +41,10 @@
 						 * Activate the conditional control.
 						 */
 						wp.customize.control('magazil_breaking_news_page').deactivate();
-						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').activate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();
 						wp.customize.control('magazil_breaking_news_custom').deactivate();
+						wp.customize.control('magazil_breaking_news_limit').activate();
 						break;
 
 					case 'tag':
@@ -54,16 +52,15 @@
 						 * Activate the conditional control.
 						 */
 						wp.customize.control('magazil_breaking_news_page').deactivate();
-						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').activate();
 						wp.customize.control('magazil_breaking_news_custom').deactivate();
+						wp.customize.control('magazil_breaking_news_limit').activate();
 						break;
 					case 'custom':
 						/**
 						 * Activate the conditional control.
 						 */
-						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_page').deactivate();
 						wp.customize.control('magazil_breaking_news_category').deactivate();
 						wp.customize.control('magazil_breaking_news_tags').deactivate();

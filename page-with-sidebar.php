@@ -3,12 +3,9 @@
 //Template Name: Page template
 get_header();
 ?>
-
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-
+			
 			<div class="site-main-container">
 			<?php magazil_before_post(); ?>
 			<!-- Start latest-post Area -->

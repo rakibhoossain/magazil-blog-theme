@@ -370,9 +370,6 @@ function fetch(val){
         success: function(data) {
             jQuery('#datafetch').html( data );
         },
-        // beforeSend: function() {
-        //     jQuery('#datafetch').slideDown().html( '<div class="fa loading fa-spinner fa-spin"></div>' );
-        // }
     });
 
 }

@@ -2973,26 +2973,26 @@ ul.newsticker a {
   background: #fff;
 }
 
-.single-post-wrap .feature-img-thumb {
+.feature-img-thumb {
   overflow: hidden;
 
 }
 
-.single-post-wrap .feature-img-thumb img {
+.feature-img-thumb img {
   width: 100%;
   transition: all 0.2s ease;
 }
 
-.single-post-wrap .feature-img-thumb .overlay-bg {
+.feature-img-thumb .overlay-bg {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.single-post-wrap .content-wrap {
+.content-wrap {
   padding: 20px;
 }
 
 @media (max-width: 413px) {
-  .single-post-wrap .content-wrap {
+  .content-wrap {
     padding: 0px;
   }
 }
@@ -3023,7 +3023,7 @@ ul.newsticker a {
   color: #777777;
 }
 
-.single-post-wrap blockquote {
+.content-wrap blockquote {
   border-left: 2px solid #f6214b;
   padding-left: 20px;
   font-style: italic;

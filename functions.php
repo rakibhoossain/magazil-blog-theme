@@ -6,7 +6,6 @@
  *
  * @package magazil
  */
-
 if ( ! function_exists( 'magazil_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

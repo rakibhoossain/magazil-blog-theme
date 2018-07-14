@@ -80,19 +80,14 @@ function magazil_comment_field_to_bottom( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_fields', 'magazil_comment_field_to_bottom' );
-?>
 
-<?php
+
 /**
  *  Custom comments list
  */ 
 function magazil_comment($comment, $args, $depth) { ?>
-<li <?php comment_class("comment single-comment"); ?> id="comment-<?php comment_ID() ;?>">
-
-
-    
+<li <?php comment_class("comment single-comment"); ?> id="comment-<?php comment_ID() ; ?>">
     <div class="comment-top-area justify-content-between d-flex">
-
       <div class="user d-flex">
         <div class="thumb">
           <?php echo get_avatar($comment,'60','' ); ?>
@@ -118,10 +113,7 @@ function magazil_comment($comment, $args, $depth) { ?>
         <?php endif; ?>
         <?php comment_text() ;?>
       </div>
-
-
     </div>
-
 </li>
                                             
 <?php
@@ -355,7 +347,6 @@ function magazil_tag_list() {
 
 
 
-
 // add the ajax fetch js
 add_action( 'wp_footer', 'ajax_fetch' );
 function ajax_fetch() {
@@ -386,7 +377,7 @@ function data_fetch(){
     $the_query = new WP_Query( array( 'posts_per_page' => -1, 's' => esc_attr( $_POST['keyword'] ), array('post','page') ) );
     if( $the_query->have_posts() ) :
         while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title();?></a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
         <?php endwhile;
         wp_reset_postdata();  
     else: ?>

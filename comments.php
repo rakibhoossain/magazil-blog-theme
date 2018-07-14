@@ -103,6 +103,6 @@ $comments_args = array(
 ?>
 <?php comment_form($comments_args);?>
 
-<?php endif;  ?>
+<?php endif;?>
 </div>
-<?php endif;  ?>
+<?php endif;?>

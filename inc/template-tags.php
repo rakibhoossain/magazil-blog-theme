@@ -84,6 +84,10 @@ if ( ! function_exists( 'magazil_entry_meta' ) ) :
 		// Hide category and tag text for pages.
 ?>
 <ul class="meta <?php echo esc_attr( $extra_class ); ?>">
+
+
+<?php if( 'post' === get_post_type() ){ ?>
+
 	<li>
 		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
 			<span class="lnr lnr-user"></span><?php echo esc_html( get_the_author() )?>
@@ -101,9 +105,9 @@ if ( ! function_exists( 'magazil_entry_meta' ) ) :
 		<?php comments_popup_link( __( '<span class="lnr lnr-bubble"></span>Leave a comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>1 Comment', 'magazil' ), __( '<span class="lnr lnr-bubble"></span>% Comments', 'magazil' ) ); ?>
 
 	</li>
-<?php endif; ?>
-
-<?php
+	<?php endif;
+	}
+	
 if ($edit_link){
 
 		edit_post_link(

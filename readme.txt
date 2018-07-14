@@ -91,12 +91,14 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 
 == Changelog ==
 
-= 1.2.0 =
-* Post formate VIDEO added
-* Single page style update
+= 1.3.0 =
 * Sticky sidebar enable-disable option added
 * Smooth scrool enable-disable option added
 * Released: July 14, 2018
+
+= 1.2.0 =
+* Sticky sidebar enable-disable option added
+* Smooth scrool enable-disable option added
 
 = 1.1.0 =
 * Theme welcome screen options error fix

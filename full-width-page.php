@@ -1,6 +1,6 @@
 <?php
 
-//Template Name: Full Wide without banner
+//Template Name: Full width without banner
 get_header();
 ?>
 

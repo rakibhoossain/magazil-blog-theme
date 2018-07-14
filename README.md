@@ -1,31 +1,26 @@
-=== magazil ===
+# Magazil - Wordpress personal blog/magazineTheme #
 
-Contributors: serakib
-Requires at least: 4.5
-Tested up to:  4.9.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, grid-layout, flexible-header, blog, theme-options, footer-widgets
+Magazil brings your site to life with modern web technology. With a focus on *magazine*, *blog* and *news* sites, it features multiple widget for front page. It supports Breadcrumbs, parent page navigation, and more. Personalize its asymmetrical grid with multiple styles and fit any devices.
 
-== Description ==
+## Installation ##
 
-Magazil brings your site to life with modern web technology. With a focus on news sites, it features multiple widget for front page. It supports Breadcrumbs, parent page navigation, and more. Personalize its asymmetrical grid with multiple styles and fit any devices.
+1. [Download](https://github.com/serakib/magazil-blog-theme/releases) latest version and rename it to **magazil**.
+2. In your admin panel, go to Appearance > Themes and click the Add New button.
+3. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+4. Click Activate to use your new theme right away.
+5. Set front page to static. Go to Settings -> Reading , Front page displays and select "Static Page".
 
-== Installation ==
+## Templates ##
+This theme contains two page templates.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
+1. '**Full width**'  -  Full width page without sidebar but has page banner.
+2. '**Full width without banner**' -  Full width page layout without page banner and sidebar.
 
-= Does this theme support any plugins? =
 
-magazil includes support for Infinite Scroll in Jetpack.
+## Copyright ##
 
-== Copyright ==
-
-Magazil WordPress Theme, Copyright 2018 rakib.ooo
+**Magazil WordPress Theme**, Copyright 2018 [Rakib Hossain](http://rakib.ooo)
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
@@ -41,55 +36,41 @@ GNU General Public License for more details.
 
 Magazil bundles the following third-party resources:
 
-Bootstrap, Copyright 2011-2018 The Bootstrap Authors
+
+1. [Bootstrap](https://getbootstrap.com), Copyright 2011-2018 The Bootstrap Authors
 Licenses: MIT
-Source: https://getbootstrap.com
-
-popper, Copyright Federico Zivolo
+2. [popper](https://github.com/FezVrasta/popper.js), Copyright Federico Zivolo
 License: MIT
-Source: https://github.com/FezVrasta/popper.js
-
-hoverIntent, Copyright 2007-2014 Brian Cherne
+3. [hoverIntent](http://briancherne.github.io/jquery-hoverIntent), Copyright 2007-2014 Brian Cherne
 License: MIT
-Source: http://briancherne.github.io/jquery-hoverIntent
-
-jQuery Superfish Menu Plugin, Copyright 2016 Joel Birch
+4. [jQuery Superfish](https://github.com/joeldbirch/superfish) Menu Plugin, Copyright 2016 Joel Birch
 License: Dual licensed under the MIT and GPL licenses
-Source: https://github.com/joeldbirch/superfish
-
-animate.css, Copyright Daniel Eden
+5. [animate.css](http://daneden.me/animate), Copyright Daniel Eden
 License: MIT
-Source: http://daneden.me/animate
-
-Theia Sticky Sidebar , Copyright 2013-2014 WeCodePixels and other contributors
+6. [Theia Sticky Sidebar](https://github.com/WeCodePixels/theia-sticky-sidebar) , Copyright 2013-2014 WeCodePixels and other contributors
 License: MIT
-Source: https://github.com/WeCodePixels/theia-sticky-sidebar
-
-jQuery Owl Carousel, Copyright 2013-2016 David Deutsch
+7. [jQuery Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2), Copyright 2013-2016 David Deutsch
 License: MIT
-Source: https://github.com/OwlCarousel2/OwlCarousel2
-
-Linearicons, Copyright 2014-2015 Perxis.com
+8. [Linearicons](https://linearicons.com), Copyright 2014-2015 Perxis.com
 License: Creative Commons
-Source: https://linearicons.com
-
-Adsense loader, Copyright Osvaldas Valutis
+9. [Adsense loader](https://github.com/osvaldasvalutis/adsenseLoader.js), Copyright Osvaldas Valutis
 License: MIT
-Source: https://github.com/osvaldasvalutis/adsenseLoader.js
-
-jQuery UI, Copyright jQuery Foundation and other contributors
+10. [jQuery UI](http://jqueryui.com), Copyright jQuery Foundation and other contributors
 License: MIT
-Source: http://jqueryui.com
-
-Font Awesome icons, Copyright Dave Gandy
+11. [Font Awesome icons](http://fontawesome.io/), Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
-
-Bundled header image, Copyright Parker Byrd
+12. [Bundled header image](https://unsplash.com/photos/gxD8hCmi0IQ), Copyright Parker Byrd
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/photos/gxD8hCmi0IQ
 
-== Changelog ==
+## Changelog ##
 
-= 1.0.0 =
+## 1.2.0 ##
+* Post formate VIDEO added
+* Single page style update
+* Released: July 14, 2018
+
+## 1.1.0 ##
+* Theme welcome screen options error fix
+
+## 1.0.0 ##
 * Released: July 13, 2018

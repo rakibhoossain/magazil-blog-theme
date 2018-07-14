@@ -91,5 +91,13 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 
 == Changelog ==
 
+= 1.2.0 =
+* Post formate VIDEO added
+* Single page style update
+* Released: July 14, 2018
+
+= 1.1.0 =
+* Theme welcome screen options error fix
+
 = 1.0.0 =
 * Released: July 13, 2018

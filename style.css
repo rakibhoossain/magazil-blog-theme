@@ -2990,6 +2990,14 @@ ul.newsticker a {
 .content-wrap {
   padding: 20px;
 }
+.content-wrap h1,
+.content-wrap h2,
+.content-wrap h3,
+.content-wrap h4,
+.content-wrap h5,
+.content-wrap h6 {
+  margin-top: 20px;
+}
 
 @media (max-width: 413px) {
   .content-wrap {
@@ -3001,6 +3009,10 @@ ul.newsticker a {
   margin-top: 20px;
 }
 
+.post-area-wrapper .content-wrap .page-title{
+  margin: 0;
+  padding: 0;
+}
 .single-post-wrap .meta {
   margin: 10px 0px;
 }

@@ -76,7 +76,7 @@ get_header();
 
 						<div class="col-lg-<?php echo absint($row_size);?> post-list magazil__sticky_sidebar">	
 							<!-- Start latest-post Area -->
-							<div class="post-area-wrapper">
+							<div class="single-post-wrap">
 
 								<?php
 								while ( have_posts() ) :

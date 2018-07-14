@@ -27,7 +27,7 @@ get_header();
 					<div class="row">
 						<div class="col-lg-8 post-list magazil__sticky_sidebar">
 							<!-- Start latest-post Area -->
-							<div class="posts-list blog-page post-area-wrapper">
+							<div class="posts-list blog-page single-post-wrap">
 								<?php
 								if ( have_posts() ) :
 

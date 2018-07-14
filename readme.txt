@@ -94,6 +94,8 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 = 1.2.0 =
 * Post formate VIDEO added
 * Single page style update
+* Sticky sidebar enable-disable option added
+* Smooth scrool enable-disable option added
 * Released: July 14, 2018
 
 = 1.1.0 =

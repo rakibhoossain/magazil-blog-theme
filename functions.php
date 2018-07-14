@@ -138,7 +138,7 @@ function magazil_widgets_init() {
 		'name'          => esc_html__( 'Content Area', 'magazil' ),
 		'id'            => 'content-area',
 		'description'   => esc_html__( 'Add widgets to front page.', 'magazil' ),
-		'before_widget' => '<div id="%1$s" class="post-area-wrapper %2$s">',
+		'before_widget' => '<div id="%1$s" class="single-post-wrap %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h6 class="title">',
 		'after_title'   => '</h6>',
@@ -208,6 +208,11 @@ add_action( 'widgets_init', 'magazil_widgets_init' );
  */
 function magazil_scripts() {
 
+	$enable_sticky_sidebar			= get_theme_mod( 'magazil_enable_sticky_sidebar', true );
+	$active_adsense 				= get_theme_mod( 'magazil_banner_adsense_code', false );
+	$active_breaking_news			= get_theme_mod( 'magazil_show_breaking_news', true );
+	$active_smooth_mousewheel		= get_theme_mod( 'magazil_enable_smooth_mousewheel', true );
+
 	wp_enqueue_style( 'magazil-linearicons', get_stylesheet_directory_uri() . '/assets/css/linearicons.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-googleFonts', "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" );
@@ -233,19 +238,29 @@ function magazil_scripts() {
 
 	wp_enqueue_script( 'magazil-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
 
+	
+
 	// Sticky Sidebar
-	wp_enqueue_script( 'magazil-ResizeSensor', get_template_directory_uri() . '/assets/js/ResizeSensor.min.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script( 'magazil-sticky-sidebar', get_template_directory_uri() . '/assets/js/theia-sticky-sidebar.min.js', array('jquery', 'magazil-ResizeSensor'), '1.0.0', true);
+	if ($enable_sticky_sidebar) {
+		wp_enqueue_script( 'magazil-ResizeSensor', get_template_directory_uri() . '/assets/js/ResizeSensor.min.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_script( 'magazil-theia-sticky-sidebar', get_template_directory_uri() . '/assets/js/theia-sticky-sidebar.min.js', array('jquery', 'magazil-ResizeSensor'), '1.0.0', true);
+		wp_enqueue_script( 'magazil-sticky-sidebar', get_template_directory_uri() . '/assets/js/sticky-sidebar.js', array('jquery', 'magazil-theia-sticky-sidebar'), '1.0.0', true);
+	}
 
-	$active_adsense = get_theme_mod( 'magazil_banner_adsense_code', false );
-	$active_breaking_news			= get_theme_mod( 'magazil_show_breaking_news', true );
+	// Enable smooth mousewheel
+	if ($active_smooth_mousewheel) {
+		wp_enqueue_script( 'magazil-smooth-mousewheel', get_template_directory_uri() . '/assets/js/smooth-mousewheel.js', array('jquery'), '1.0.0', true);
+	}
 
+	// Breaking news
 	if ($active_breaking_news) {
 		wp_enqueue_script( 'magazil-innerfade', get_template_directory_uri() . '/assets/js/jquery.innerfade.min.js', array('jquery'), '1.0.0', true);
 	}
 
+	// adsence lazy loader
 	if ($active_adsense) {
 		wp_enqueue_script( 'magazil-adsenseloader', get_template_directory_uri() . '/assets/js/jquery.adsenseloader.min.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_script( 'magazil-adsense-loader', get_template_directory_uri() . '/assets/js/adsense-loader.js', array('jquery', 'magazil-adsenseloader'), '1.0.0', true);
 	}
 
 	wp_enqueue_script( 'magazil-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);

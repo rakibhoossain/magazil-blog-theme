@@ -15,7 +15,7 @@ get_header();
 					<div class="row">
 						<div class="col-lg-12 post-list">
 							<!-- Start latest-post Area -->
-							<div class="post-area-wrapper">
+							<div class="single-post-wrap">
 
 								<?php
 								if ( have_posts() ) :

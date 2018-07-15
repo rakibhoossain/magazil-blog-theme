@@ -54,9 +54,7 @@ if ($show_breaking_news) {
 		
 		<?php else: ?>
 			<?php if( !empty($breaking_custom) ){ ?>
-			<ul>
-				<?php echo wp_specialchars_decode($breaking_custom);  ?>	
-			</ul>
+				<?php echo wp_specialchars_decode($breaking_custom);  ?>
 			<?php }	?>
 		<?php endif; ?>
 

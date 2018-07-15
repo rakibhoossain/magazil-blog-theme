@@ -67,8 +67,6 @@
 
 			<?php 
 			$magazil_copyright_text = get_theme_mod( 'magazil_copyright_text' );
-			// $magazil_footer_widget_limit = get_theme_mod( 'magazil_footer_widget_limit', 3);
-
 			if($magazil_copyright_text):?>
 				<div class="copyright-text-area text-center">
 					<div class="copyright-text">

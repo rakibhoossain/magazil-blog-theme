@@ -20,14 +20,14 @@ wp_enqueue_script( 'updates' );
 	if ( ! empty( $magazil_required_actions ) ):
 
 		/* magazil_show_required_actions is an array of true/false for each required action that was dismissed */
-		$magazil_show_required_actions = get_option( "magazil_show_required_actions" );
+		$magazil_actions = get_option( "magazil_show_required_actions" );
 		$hooray = true;
 
-		foreach ( $magazil_required_actions as $magazil_required_action_key => $magazil_required_action_value ):
+		foreach ( $magazil_required_actions as $magazil_action_key => $magazil_required_action_value ):
 			
 			$hidden = false;
-			if ( array_key_exists( $magazil_required_action_value['id'], $magazil_show_required_actions ) ) {
-				if ( $magazil_show_required_actions[ $magazil_required_action_value['id'] ] === false ) {
+			if ( is_array($magazil_actions) && array_key_exists( $magazil_required_action_value['id'], $magazil_actions ) ) {
+				if ( $magazil_actions[ $magazil_required_action_value['id'] ] === false ) {
 					$hidden = true;
 				}
 			}

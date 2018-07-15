@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: magazil\n"
-"POT-Creation-Date: 2018-07-14 23:22+0600\n"
+"POT-Creation-Date: 2018-07-15 22:27+0600\n"
 "PO-Revision-Date: 2018-07-13 00:33+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:45
 #, php-format
 msgid "Theme: %1$s by %2$s"
 msgstr ""
@@ -95,52 +95,35 @@ msgstr ""
 msgid "Social Links Menu"
 msgstr ""
 
-#: functions.php:138
-msgid "Content Area"
+#: functions.php:150
+msgid "Front page area"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:152
 msgid "Add widgets to front page."
 msgstr ""
 
-#: functions.php:147 inc/customizer.php:621
+#: functions.php:159 inc/customizer.php:605
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:161
 msgid "Add widgets here to sidebar."
 msgstr ""
 
-#: functions.php:156
-msgid "Footer 1"
+#: functions.php:173
+msgid "Footer "
 msgstr ""
 
-#: functions.php:158 functions.php:168 functions.php:178 functions.php:188
-#: functions.php:197
+#: functions.php:175
 msgid "Add widgets here to appear in your footer."
-msgstr ""
-
-#: functions.php:166
-msgid "Footer 2"
-msgstr ""
-
-#: functions.php:176
-msgid "Footer 3"
-msgstr ""
-
-#: functions.php:186
-msgid "Footer 4"
-msgstr ""
-
-#: functions.php:195
-msgid "Footer 5"
 msgstr ""
 
 #: header.php:25
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:104
+#: header.php:106
 msgid "Search...."
 msgstr ""
 
@@ -284,57 +267,57 @@ msgstr ""
 msgid "Front page horizontal post layout"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:27
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:132
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:26
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:135
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:29
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:134
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:28
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:137
 msgid "Recent posts"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:38
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:30
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:37
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:40
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:32
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:39
 msgid "Title"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:45
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:44
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:47
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:46
 msgid "Category"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:50
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:49
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:52
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:51
 msgid "&ndash; Select a category &ndash;"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:60
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:59
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:62
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:61
 msgid "Order"
-msgstr ""
-
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:63
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:62
-msgid "Descending"
-msgstr ""
-
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:64
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:63
-msgid "Ascending"
 msgstr ""
 
 #: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:65
 #: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:64
+msgid "Descending"
+msgstr ""
+
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:66
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:65
+msgid "Ascending"
+msgstr ""
+
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:67
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:66
 msgid "Random"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:70
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:38
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:71
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:72
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:40
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:73
 msgid "Posts to Show"
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:149
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:151
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:151
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:153
 msgid "Please configure your widget"
 msgstr ""
 
@@ -346,8 +329,8 @@ msgstr ""
 msgid "Sidebar area Recent Posts."
 msgstr ""
 
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:24
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:64
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:26
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:66
 msgid "Recent Posts"
 msgstr ""
 
@@ -359,216 +342,226 @@ msgstr ""
 msgid "Front page vertical post layout."
 msgstr ""
 
-#: inc/customizer.php:125
+#: inc/customizer.php:108
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:109
 msgid "Magazil Theme settings"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:117
 msgid "Header settings"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:130
 msgid "Phone Number: "
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:144
 msgid "Email: "
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:155
 msgid "Banner settings"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:211
 msgid "Enable banner"
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:224
 msgid "Image"
 msgstr ""
 
-#: inc/customizer.php:242
+#: inc/customizer.php:225
 msgid "AdSense"
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:227
 msgid "The type of the banner"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:228
 msgid ""
 "Select what type of banner you want to use: normal image or adsense script"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:242
 msgid "Banner Image:"
 msgstr ""
 
-#: inc/customizer.php:260
+#: inc/customizer.php:243
 msgid "Recommended size: 728 x 90"
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:256
 msgid "Banner Link:"
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:257
 msgid "Add the link for banner image."
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:270
 msgid "AdSense Code:"
 msgstr ""
 
-#: inc/customizer.php:288
+#: inc/customizer.php:271
 msgid ""
 "Add the code you retrieved from your AdSense account. You only need to "
 "insert the <ins> tag."
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:284
 msgid "Home page settings"
 msgstr ""
 
-#: inc/customizer.php:332
+#: inc/customizer.php:315
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:333
+#: inc/customizer.php:316
 msgid "Five"
 msgstr ""
 
-#: inc/customizer.php:335
+#: inc/customizer.php:318
 msgid "Top post limit"
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:319
 msgid "Select either three or five"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:332
 msgid "Popular Post"
 msgstr ""
 
-#: inc/customizer.php:350 index.php:59
+#: inc/customizer.php:333 index.php:59
 msgid "Page"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:335
 msgid "Top post type"
 msgstr ""
 
-#: inc/customizer.php:353
+#: inc/customizer.php:336
 msgid "What do you want to show in top post area at front page."
 msgstr ""
 
-#: inc/customizer.php:371
+#: inc/customizer.php:354
 msgid "Front page top area page"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:366
 msgid "Breaking news settings"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:473
 msgid "Enable breaking news"
 msgstr ""
 
-#: inc/customizer.php:499
+#: inc/customizer.php:482
 msgid "Type of breaking news"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:483
 msgid "Select what type of post you want to use"
 msgstr ""
 
-#: inc/customizer.php:511
+#: inc/customizer.php:494
 msgid "Breaking news pages"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:506
 msgid "Breaking news category"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:518
 msgid "Breaking News Tags:"
 msgstr ""
 
-#: inc/customizer.php:549
+#: inc/customizer.php:533
 msgid "Custom text"
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:534
 msgid ""
-"Custom text to display as breaking news. Must use <li><a> tag to display "
+"Custom text to display as breaking news. Must use list element to display "
 "properly."
 msgstr ""
 
-#: inc/customizer.php:562
+#: inc/customizer.php:546
 msgid "Breaking news limit:"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:547
 msgid "How much post do you want to show."
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:563
 msgid "The effect of breaking news"
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:564
 msgid "Select what type of effect you want to use"
 msgstr ""
 
-#: inc/customizer.php:591
+#: inc/customizer.php:575
 msgid "Breaking news speed:"
 msgstr ""
 
-#: inc/customizer.php:592
+#: inc/customizer.php:576
 msgid "Select breaking news speed."
 msgstr ""
 
-#: inc/customizer.php:606
+#: inc/customizer.php:590
 msgid "Breaking news timeout:"
 msgstr ""
 
-#: inc/customizer.php:607
+#: inc/customizer.php:591
 msgid "Select breaking news timeout."
 msgstr ""
 
-#: inc/customizer.php:641
+#: inc/customizer.php:625
 msgid "Enable sticky sidebar"
 msgstr ""
 
-#: inc/customizer.php:642 inc/customizer.php:663
+#: inc/customizer.php:626 inc/customizer.php:647
 msgid "You can chose your option."
 msgstr ""
 
-#: inc/customizer.php:662
+#: inc/customizer.php:646
 msgid "Enable smooth scrolling"
 msgstr ""
 
-#: inc/customizer.php:674
-msgid "Copyright"
+#: inc/customizer.php:656
+msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:686
+msgid "Footer widget sizes: "
+msgstr ""
+
+#: inc/customizer.php:687
+msgid ""
+"Comma(,) seperated integer values respectly and their sum should be exactly "
+"12. Empty to disable footer widgets. Ex: (3,4,5)"
+msgstr ""
+
+#: inc/customizer.php:702
 msgid "Copyright text:"
 msgstr ""
 
-#: inc/customizer.php:695
-msgid "Add your copyright information on footer area"
+#: inc/customizer.php:703
+msgid "Add your copyright information on footer area."
 msgstr ""
 
-#: inc/customizer.php:706
+#: inc/customizer.php:713
 msgid "Oh Shit!"
 msgstr ""
 
-#: inc/customizer.php:707
+#: inc/customizer.php:714
 msgid "WP_Customize_Panel class not exist. Contact with your admin"
 msgstr ""
 

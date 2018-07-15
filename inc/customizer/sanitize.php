@@ -52,7 +52,9 @@ function magazil_footer_widget_class( $input ) {
 
   if (is_array($widget_val)) {
     foreach ($widget_val as $key => $value) {
+      if (empty($value)) return;
       if (! is_numeric($value)) return;
+      if ($value == 0) return;
       $sum += $value;
     }
     if ($sum<=12) return $input;

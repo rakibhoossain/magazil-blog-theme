@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: magazil\n"
-"POT-Creation-Date: 2018-07-14 23:22+0600\n"
-"PO-Revision-Date: 2018-07-14 23:27+0600\n"
+"POT-Creation-Date: 2018-07-15 22:27+0600\n"
+"PO-Revision-Date: 2018-07-15 23:16+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: bn_BD\n"
@@ -84,7 +84,7 @@ msgstr "ইমেইল"
 msgid "Website"
 msgstr "ওয়েবসাইট"
 
-#: footer.php:39
+#: footer.php:45
 #, php-format
 msgid "Theme: %1$s by %2$s"
 msgstr "থিম %1$s %2$s এর তৈরি"
@@ -97,52 +97,39 @@ msgstr "প্রধান নেভিগেশন"
 msgid "Social Links Menu"
 msgstr "সোশ্যাল লিংকের নেভিগেশন"
 
-#: functions.php:138
-msgid "Content Area"
-msgstr "কনটেন্ট অংশ"
+#: functions.php:150
+#, fuzzy
+#| msgid "Front page top area page"
+msgid "Front page area"
+msgstr "সম্মুখ পৃষ্ঠা শীর্ষ এলাকা পৃষ্ঠা"
 
-#: functions.php:140
+#: functions.php:152
 msgid "Add widgets to front page."
 msgstr "সামনে পৃষ্ঠায় উইজেট যোগ করুন।"
 
-#: functions.php:147 inc/customizer.php:621
+#: functions.php:159 inc/customizer.php:605
 msgid "Sidebar"
 msgstr "সাইডবার"
 
-#: functions.php:149
+#: functions.php:161
 msgid "Add widgets here to sidebar."
 msgstr "সাইডবারে এখানে উইজেট যুক্ত করুন।"
 
-#: functions.php:156
-msgid "Footer 1"
+#: functions.php:173
+#, fuzzy
+#| msgid "Footer 1"
+msgid "Footer "
 msgstr "পাদলেখ ১"
 
-#: functions.php:158 functions.php:168 functions.php:178 functions.php:188
-#: functions.php:197
+#: functions.php:175
 msgid "Add widgets here to appear in your footer."
 msgstr "আপনার পাদলেখ প্রদর্শিত এখানে উইজেট যুক্ত করুন।"
-
-#: functions.php:166
-msgid "Footer 2"
-msgstr "পাদলেখ ২"
-
-#: functions.php:176
-msgid "Footer 3"
-msgstr "পাদলেখ ৩"
-
-#: functions.php:186
-msgid "Footer 4"
-msgstr "পাদলেখ ৪"
-
-#: functions.php:195
-msgid "Footer 5"
-msgstr "পাদলেখ ৫"
 
 #: header.php:25
 msgid "Skip to content"
 msgstr "এড়িয়ে যাও কন্টেন্ট"
 
-#: header.php:104
+#: header.php:106
 msgid "Search...."
 msgstr "অনুসন্ধান ...."
 
@@ -287,57 +274,57 @@ msgstr "Magazil - অনুভূমিক পোস্ট তালিকা"
 msgid "Front page horizontal post layout"
 msgstr "সামনে পৃষ্ঠা অনুভূমিক পোস্ট বিন্যাস"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:27
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:132
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:26
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:135
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:29
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:134
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:28
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:137
 msgid "Recent posts"
 msgstr "সাম্প্রতিক পোস্ট"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:38
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:30
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:37
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:40
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:32
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:39
 msgid "Title"
 msgstr "শিরনাম"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:45
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:44
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:47
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:46
 msgid "Category"
 msgstr "বিভাগ"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:50
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:49
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:52
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:51
 msgid "&ndash; Select a category &ndash;"
 msgstr "একটি বিভাগ নির্বাচন করুন"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:60
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:59
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:62
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:61
 msgid "Order"
 msgstr "ক্রম"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:63
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:62
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:65
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:64
 msgid "Descending"
 msgstr "নিম্নক্রম"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:64
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:63
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:66
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:65
 msgid "Ascending"
 msgstr "ঊর্ধ্বগামী"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:65
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:64
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:67
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:66
 msgid "Random"
 msgstr "এলোমেলো"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:70
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:38
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:71
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:72
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:40
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:73
 msgid "Posts to Show"
 msgstr "শো পোস্ট"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:149
-#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:151
+#: inc/components/widgets/class-widget-magazil-posts-list-horizontal.php:151
+#: inc/components/widgets/class-widget-magazil-posts-list-vertical.php:153
 msgid "Please configure your widget"
 msgstr "আপনার উইজেটটি কনফিগার করুন"
 
@@ -349,8 +336,8 @@ msgstr "Magazil: সাম্প্রতিক পোস্ট"
 msgid "Sidebar area Recent Posts."
 msgstr "সাইডবার এলাকা সাম্প্রতিক পোস্ট।"
 
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:24
-#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:64
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:26
+#: inc/components/widgets/class-widget-magazil-posts-list-sidebar.php:66
 msgid "Recent Posts"
 msgstr " সাম্প্রতিক পোস্ট"
 
@@ -362,215 +349,234 @@ msgstr "Magazil - উল্লম্ব পোস্ট তালিকা"
 msgid "Front page vertical post layout."
 msgstr "সামনে পৃষ্ঠা উল্লম্ব পোস্ট বিন্যাস।"
 
-#: inc/customizer.php:125
+#: inc/customizer.php:108
 msgid "Theme Settings"
 msgstr "থিম সেটিং"
 
-#: inc/customizer.php:126
+#: inc/customizer.php:109
 msgid "Magazil Theme settings"
 msgstr "Magazil থিম সেটিং"
 
-#: inc/customizer.php:134
+#: inc/customizer.php:117
 msgid "Header settings"
 msgstr "শিরোলেখ সেটিংস"
 
-#: inc/customizer.php:147
+#: inc/customizer.php:130
 msgid "Phone Number: "
 msgstr "ফোন নম্বর:"
 
-#: inc/customizer.php:161
+#: inc/customizer.php:144
 msgid "Email: "
 msgstr "ইমেইল:"
 
-#: inc/customizer.php:172
+#: inc/customizer.php:155
 msgid "Banner settings"
 msgstr "ব্যানার সেটিংস"
 
-#: inc/customizer.php:228
+#: inc/customizer.php:211
 msgid "Enable banner"
 msgstr "ব্যানার একটিভ করুন "
 
-#: inc/customizer.php:241
+#: inc/customizer.php:224
 msgid "Image"
 msgstr "প্রতিমা"
 
-#: inc/customizer.php:242
+#: inc/customizer.php:225
 msgid "AdSense"
 msgstr "অ্যাডসেন্স"
 
-#: inc/customizer.php:244
+#: inc/customizer.php:227
 msgid "The type of the banner"
 msgstr "ব্যানার ধরন"
 
-#: inc/customizer.php:245
+#: inc/customizer.php:228
 msgid "Select what type of banner you want to use: normal image or adsense script"
 msgstr "আপনি কি ধরনের ব্যানার ব্যবহার করতে চান নির্বাচন করুন: সাধারণ চিত্র বা অ্যাডসেন্স স্ক্রিপ্ট"
 
-#: inc/customizer.php:259
+#: inc/customizer.php:242
 msgid "Banner Image:"
 msgstr "ব্যানার চিত্র:"
 
-#: inc/customizer.php:260
+#: inc/customizer.php:243
 msgid "Recommended size: 728 x 90"
 msgstr "প্রস্তাবিত আকার: ৭২৮ x ৯০"
 
-#: inc/customizer.php:273
+#: inc/customizer.php:256
 msgid "Banner Link:"
 msgstr "ব্যানার লিংক:"
 
-#: inc/customizer.php:274
+#: inc/customizer.php:257
 msgid "Add the link for banner image."
 msgstr "ব্যানার ইমেজের জন্য লিঙ্ক যোগ করুন।"
 
-#: inc/customizer.php:287
+#: inc/customizer.php:270
 msgid "AdSense Code:"
 msgstr "অ্যাডসেন্স স্ক্রিপ্ট:"
 
-#: inc/customizer.php:288
+#: inc/customizer.php:271
 msgid ""
 "Add the code you retrieved from your AdSense account. You only need to insert the <ins> "
 "tag."
 msgstr ""
 "আপনার অ্যাডসেন্স অ্যাকাউন্ট থেকে প্রাপ্ত কোড যোগ করুন আপনি শুধুমাত্র <ins> ট্যাগ সন্নিবেশ করা প্রয়োজন"
 
-#: inc/customizer.php:301
+#: inc/customizer.php:284
 msgid "Home page settings"
 msgstr "হোম পেজ সেটিংস"
 
-#: inc/customizer.php:332
+#: inc/customizer.php:315
 msgid "Three"
 msgstr "তিন"
 
-#: inc/customizer.php:333
+#: inc/customizer.php:316
 msgid "Five"
 msgstr "পাঁচ"
 
-#: inc/customizer.php:335
+#: inc/customizer.php:318
 msgid "Top post limit"
 msgstr "শীর্ষ পোস্ট সীমা"
 
-#: inc/customizer.php:336
+#: inc/customizer.php:319
 msgid "Select either three or five"
 msgstr "তিন বা পাঁচটি নির্বাচন করুন"
 
-#: inc/customizer.php:349
+#: inc/customizer.php:332
 msgid "Popular Post"
 msgstr "জনপ্রিয় পোস্ট"
 
-#: inc/customizer.php:350 index.php:59
+#: inc/customizer.php:333 index.php:59
 msgid "Page"
 msgstr "পৃষ্ঠা"
 
-#: inc/customizer.php:352
+#: inc/customizer.php:335
 msgid "Top post type"
 msgstr "শীর্ষ পোস্ট টাইপ"
 
-#: inc/customizer.php:353
+#: inc/customizer.php:336
 msgid "What do you want to show in top post area at front page."
 msgstr "আপনি সামনে পৃষ্ঠার শীর্ষ পোস্ট এলাকায় প্রদর্শন করতে চান কি।"
 
-#: inc/customizer.php:371
+#: inc/customizer.php:354
 msgid "Front page top area page"
 msgstr "সম্মুখ পৃষ্ঠা শীর্ষ এলাকা পৃষ্ঠা"
 
-#: inc/customizer.php:383
+#: inc/customizer.php:366
 msgid "Breaking news settings"
 msgstr "ব্রেকিং নিউজ সেটিংস"
 
-#: inc/customizer.php:490
+#: inc/customizer.php:473
 msgid "Enable breaking news"
 msgstr "ব্রেকিং নিউজ সক্ষম করুন"
 
-#: inc/customizer.php:499
+#: inc/customizer.php:482
 msgid "Type of breaking news"
 msgstr "ব্রেকিং নিউজ এর প্রকার"
 
-#: inc/customizer.php:500
+#: inc/customizer.php:483
 msgid "Select what type of post you want to use"
 msgstr "আপনি কোন পোস্টটি ব্যবহার করতে চান তা নির্বাচন করুন"
 
-#: inc/customizer.php:511
+#: inc/customizer.php:494
 msgid "Breaking news pages"
 msgstr "ব্রেকিং নিউজ পৃষ্ঠাগুলি"
 
-#: inc/customizer.php:523
+#: inc/customizer.php:506
 msgid "Breaking news category"
 msgstr "ব্রেকিং নিউজ ক্যাটাগরি"
 
-#: inc/customizer.php:535
+#: inc/customizer.php:518
 msgid "Breaking News Tags:"
 msgstr "ব্রেকিং নিউজ ট্যাগ:"
 
-#: inc/customizer.php:549
+#: inc/customizer.php:533
 msgid "Custom text"
 msgstr "কাস্টম ভাবে "
 
-#: inc/customizer.php:550
-msgid "Custom text to display as breaking news. Must use <li><a> tag to display properly."
+#: inc/customizer.php:534
+#, fuzzy
+#| msgid ""
+#| "Custom text to display as breaking news. Must use <li><a> tag to display properly."
+msgid "Custom text to display as breaking news. Must use list element to display properly."
 msgstr ""
 "ব্রেকিং নিউজ হিসাবে প্রদর্শিত কাস্টম পাঠ্য সঠিকভাবে প্রদর্শন করতে <li> <a> ট্যাগ ব্যবহার করতে হবে।"
 
-#: inc/customizer.php:562
+#: inc/customizer.php:546
 msgid "Breaking news limit:"
 msgstr "ব্রেকিং নিউজ সীমা:"
 
-#: inc/customizer.php:563
+#: inc/customizer.php:547
 msgid "How much post do you want to show."
 msgstr "কত পোস্ট আপনি প্রদর্শন করতে চান।"
 
-#: inc/customizer.php:579
+#: inc/customizer.php:563
 msgid "The effect of breaking news"
 msgstr "ব্রেকিং নিউজ এর প্রভাব"
 
-#: inc/customizer.php:580
+#: inc/customizer.php:564
 msgid "Select what type of effect you want to use"
 msgstr "আপনি কি ধরনের প্রভাব ব্যবহার করতে চান নির্বাচন করুন"
 
-#: inc/customizer.php:591
+#: inc/customizer.php:575
 msgid "Breaking news speed:"
 msgstr "ব্রেকিং নিউজ স্পিড:"
 
-#: inc/customizer.php:592
+#: inc/customizer.php:576
 msgid "Select breaking news speed."
 msgstr "ব্রেকিং নিউজ স্পিড নির্বাচন করুন"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:590
 msgid "Breaking news timeout:"
 msgstr "ব্রেকিং নিউজ টাইমআউট:"
 
-#: inc/customizer.php:607
+#: inc/customizer.php:591
 msgid "Select breaking news timeout."
 msgstr "ব্রেকিং নিউজ টাইমআউট নির্বাচন করুন"
 
-#: inc/customizer.php:641
+#: inc/customizer.php:625
 msgid "Enable sticky sidebar"
 msgstr "স্টিকি সাইডবার সক্ষম করুন"
 
-#: inc/customizer.php:642 inc/customizer.php:663
+#: inc/customizer.php:626 inc/customizer.php:647
 msgid "You can chose your option."
 msgstr "আপনি আপনার বিকল্পটি চয়ন করতে পারেন।"
 
-#: inc/customizer.php:662
+#: inc/customizer.php:646
 msgid "Enable smooth scrolling"
 msgstr "মসৃণ স্ক্রোলিং সক্ষম করুন"
 
-#: inc/customizer.php:674
-msgid "Copyright"
-msgstr "কপিরাইট"
+#: inc/customizer.php:656
+#, fuzzy
+#| msgid "Footer 1"
+msgid "Footer"
+msgstr "পাদলেখ ১"
 
-#: inc/customizer.php:694
+#: inc/customizer.php:686
+msgid "Footer widget sizes: "
+msgstr "পাদটীকা উইজেট মাপ:"
+
+#: inc/customizer.php:687
+msgid ""
+"Comma(,) seperated integer values respectly and their sum should be exactly 12. Empty to "
+"disable footer widgets. Ex: (3,4,5)"
+msgstr ""
+"কমা (,) পৃথক পৃথক মান এবং তাদের সমষ্টি ঠিক 12 হওয়া উচিত। পাদচরণ উইজেট নিষ্ক্রিয় করা। প্রাক্তন: "
+"(3,4,5)"
+
+#: inc/customizer.php:702
 msgid "Copyright text:"
 msgstr "কপিরাইট পাঠ্য:"
 
-#: inc/customizer.php:695
-msgid "Add your copyright information on footer area"
+#: inc/customizer.php:703
+#, fuzzy
+#| msgid "Add your copyright information on footer area"
+msgid "Add your copyright information on footer area."
 msgstr "পাদচরণ এলাকাতে আপনার কপিরাইট তথ্য জুড়ুন"
 
-#: inc/customizer.php:706
+#: inc/customizer.php:713
 msgid "Oh Shit!"
 msgstr "ওহ শিট!"
 
-#: inc/customizer.php:707
+#: inc/customizer.php:714
 msgid "WP_Customize_Panel class not exist. Contact with your admin"
 msgstr "WP_Customize_Panel অস্তিত্ব নেই আপনার প্রশাসকের সাথে যোগাযোগ করুন"
 
@@ -1044,6 +1050,24 @@ msgstr "ব্যানার ছাড়া সম্পূর্ণ প্র
 #, fuzzy
 msgid "Full width"
 msgstr "সম্পূর্ণ প্রস্থ"
+
+#~ msgid "Content Area"
+#~ msgstr "কনটেন্ট অংশ"
+
+#~ msgid "Footer 2"
+#~ msgstr "পাদলেখ ২"
+
+#~ msgid "Footer 3"
+#~ msgstr "পাদলেখ ৩"
+
+#~ msgid "Footer 4"
+#~ msgstr "পাদলেখ ৪"
+
+#~ msgid "Footer 5"
+#~ msgstr "পাদলেখ ৫"
+
+#~ msgid "Copyright"
+#~ msgstr "কপিরাইট"
 
 #~ msgid "Language Links Menu"
 #~ msgstr "ল্যাংগুয়েজ লিংকের নেভিগেশন"

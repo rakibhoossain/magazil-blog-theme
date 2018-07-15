@@ -24,6 +24,9 @@ function magazil_customize_register( $wp_customize ) {
     /** Range slider additions **/
     require_once get_template_directory() . '/inc/customizer/class/class-customizer-range-control.php';
 
+    /** Textarea control additions **/
+    require_once get_template_directory() . '/inc/customizer/class/class-customizer-text-editor-control.php';
+
     /** International phone picker additions **/
     require_once get_template_directory() . '/inc/customizer/class/calss-customizer-phone-control.php';
     
@@ -79,28 +82,7 @@ function magazil_customize_register( $wp_customize ) {
 
 		// Top post Breaking news
 		$wp_customize->selective_refresh->add_partial( 'magazil_show_breaking_news', array(
-		            'selector' => '#breaking-news'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_type', array(
-		            'selector' => '#breaking-news'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_page', array(
-		            'selector' => '#breaking-news ul'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_category', array(
-		            'selector' => '#breaking-news ul'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_tags', array(
-		            'selector' => '#breaking-news ul'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_effect', array(
-		            'selector' => '#breaking-news ul'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_speed', array(
-		            'selector' => '#breaking-news ul'
-		));
-		$wp_customize->selective_refresh->add_partial( 'magazil_breaking_news_timeout', array(
-		            'selector' => '#breaking-news ul'
+		            'selector' => '#breaking-news .breaking-news-title'
 		));
 
 		// Sidebar
@@ -111,6 +93,9 @@ function magazil_customize_register( $wp_customize ) {
 		// Footer
 		$wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
 		            'selector' => '.copyright-text-area .copyright-text'
+		));
+		$wp_customize->selective_refresh->add_partial( 'magazil_footer_widget_size', array(
+		            'footer.footer-area .row'
 		));
 		
 
@@ -433,7 +418,7 @@ function magazil_customize_register( $wp_customize ) {
 		 * Display Breaking custom
 		 */
         $wp_customize->add_setting( 'magazil_breaking_news_custom', array(
-        	'sanitize_callback' => 'esc_html',
+        	'sanitize_callback' => 'wp_kses_post',
             // 'default'        => 0,
             'transport'  => 'postMessage'
         ) );
@@ -541,17 +526,18 @@ function magazil_customize_register( $wp_customize ) {
         /**
 		 * Breaking news custom
 		 */
-		$wp_customize->add_control(
+		$wp_customize->add_control( new Customizer_Text_Editor_Control(
+			$wp_customize,
 			'magazil_breaking_news_custom',
 			array(
 				'label'           => esc_html__( 'Custom text', 'magazil' ),
-				'description'     => esc_html__( 'Custom text to display as breaking news. Must use <li><a> tag to display properly.', 'magazil' ),
+				'description'     => esc_html__( 'Custom text to display as breaking news. Must use list element to display properly.', 'magazil' ),
 				'section'         => 'magazil_breaking_news_controls',
 				'settings'        => 'magazil_breaking_news_custom',
-				'type'            => 'textarea',
+				'type'            => 'editor-news',
 				'active_callback' => 'breaking_custom_callback'
 			)
-		);
+		));
 
 		/**
 		 * Breaking news limit
@@ -663,8 +649,6 @@ function magazil_customize_register( $wp_customize ) {
 			)
 		));
 
-
-
         //  ===================================
         //  ====        Footer          ====
         //  ===================================
@@ -688,8 +672,9 @@ function magazil_customize_register( $wp_customize ) {
 		 */
 		$wp_customize->add_setting( 'magazil_copyright_text', array(
 			'default'           => '',
-			'sanitize_callback' => 'esc_html',
-			'transport'  => 'postMessage'
+			'sanitize_callback' => 'wp_kses_post',
+			'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
 		));
 
         /**
@@ -699,30 +684,28 @@ function magazil_customize_register( $wp_customize ) {
 			'magazil_footer_widget_size',
 			array(
 				'label'           => esc_html__( 'Footer widget sizes: ', 'magazil' ),
-				'description'     => esc_html__( 'Comma(,) seperated integer values and thir sum should be exactly 12. Must be in English. Ex: (3,4,5)', 'magazil' ),
+				'description'     => esc_html__( 'Comma(,) seperated integer values respectly and their sum should be exactly 12. Empty to disable footer widgets. Ex: (3,4,5)', 'magazil' ),
 				'section'         => 'magazil_footer_controls',
 				'settings'        => 'magazil_footer_widget_size',
 				'type'            => 'text',
-				// 'active_callback' => 'breaking_custom_callback'
 			)
 		);
-
 
 
 		/**
 		 * Copyright text
 		 */
-		$wp_customize->add_control(
+		$wp_customize->add_control( new Customizer_Text_Editor_Control(
+			$wp_customize,
 			'magazil_copyright_text',
 			array(
 				'label'           => esc_html__( 'Copyright text:', 'magazil' ),
-				'description'     => esc_html__( 'Add your copyright information on footer area', 'magazil' ),
+				'description'     => esc_html__( 'Add your copyright information on footer area.', 'magazil' ),
 				'section'         => 'magazil_footer_controls',
 				'settings'        => 'magazil_copyright_text',
-				'type'            => 'textarea'
+				'type'            => 'editor'
 			)
-		);
-
+		));
 
     else:
         $wp_customize->add_section('oh_shit', array(
@@ -731,9 +714,6 @@ function magazil_customize_register( $wp_customize ) {
             'description' => __('WP_Customize_Panel class not exist. Contact with your admin', 'magazil')
         ));
     endif;
-
-
-
 
 }
 add_action( 'customize_register', 'magazil_customize_register' );

@@ -147,7 +147,7 @@ function magazil_footer_widget_size() {
  */
 function magazil_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Content Area', 'magazil' ),
+		'name'          => esc_html__( 'Front page area', 'magazil' ),
 		'id'            => 'content-area',
 		'description'   => esc_html__( 'Add widgets to front page.', 'magazil' ),
 		'before_widget' => '<div id="%1$s" class="single-post-wrap %2$s">',
@@ -170,7 +170,7 @@ function magazil_widgets_init() {
 
 		foreach ($footer_widget as $key => $value) {
 			register_sidebar( array(
-				'name'          => esc_attr__( 'Footer '.($key+1), 'magazil' ),
+				'name'          => esc_attr__( 'Footer ', 'magazil' ).($key+1),
 				'id'            => 'footer-'.($key+1),
 				'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
 				'before_widget' => '<section id="%1$s" class="widget-box %2$s">',

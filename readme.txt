@@ -101,6 +101,7 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 
 = 1.3.1 =
 * hash link jquery error fix
+* tinimc editor support on customizer
 
 = 1.3.0 =
 * Sticky sidebar enable-disable option added

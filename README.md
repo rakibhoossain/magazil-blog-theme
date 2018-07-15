@@ -71,6 +71,7 @@ License: CC0 1.0 Universal (CC0 1.0)
 ## 1.3.1 ##
 * hash link jquery error fix
 * Released: July 15, 2018
+* tinimc editor support on customizer
 
 ## 1.3.0 ##
 * Sticky sidebar enable-disable option added

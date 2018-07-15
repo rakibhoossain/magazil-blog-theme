@@ -12,8 +12,7 @@ $(document).ready(function($) {
     $(".fullscreen").css("height", window_height)
     $(".fitscreen").css("height", fitscreen);
 
-    //------- Superfist nav menu  js --------//  
-
+    //------- Superfist nav menu  js --------//
     $('.nav-menu').superfish({
         animation: {
             opacity: 'show'
@@ -44,8 +43,7 @@ $(document).ready(function($) {
         }
     });
 
-    //------- Search Form  js --------//  
-
+    //------- Search Form  js --------//
     $(document).ready(function(){
 
         var prev_search = '',
@@ -102,7 +100,7 @@ $(document).ready(function($) {
         }));
     })
 
-    //------- Mobile Nav  js --------//  
+    //------- Mobile Nav  js --------//
     if ($('#nav-menu-container').length) {
         var mobile_menu_active = false;
         var $mobile_nav = $('#nav-menu-container').clone().prop({
@@ -155,9 +153,7 @@ $(document).ready(function($) {
     }
 
 
-    //------- Sticky Main Menu js --------//  
-
-
+    //------- Sticky Main Menu js --------//
     window.onscroll = function() {stickFunction()};
 
     var navbar = document.getElementById("main-menu");
@@ -171,7 +167,7 @@ $(document).ready(function($) {
     }
 
 
-    //------- Sidebar Nav  js --------//  
+    //------- Sidebar Nav  js --------//
     $(document).ready(function() {
         if ($('#side-menu').length) {
 
@@ -186,7 +182,7 @@ $(document).ready(function($) {
         }
     });
 
-    //------- Smooth Scroll  js --------//  
+    //------- Smooth Scroll  js --------//
     $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -220,11 +216,19 @@ $(document).ready(function($) {
         }
     });
 
+    //------- UI Top --------//
+    $().UItoTop({ easingType: 'easeOutQuart' });
+
+    //------- Hash link scroll --------//
     $(document).ready(function() {
 
         $('html, body').hide();
 
-        if (window.location.hash) {
+        // Store hash
+        var hash = window.location.hash;
+        var length = $(hash).length;
+
+        if (hash && length ) {
 
             setTimeout(function() {
 
@@ -232,9 +236,9 @@ $(document).ready(function($) {
 
                 $('html, body').animate({
 
-                    scrollTop: $(window.location.hash).offset().top - 108
+                    scrollTop: $(hash).offset().top - 150
 
-                }, 1000)
+                }, {duration:1000, easing:'easeOutQuart'})
 
             }, 0);
 
@@ -244,13 +248,14 @@ $(document).ready(function($) {
 
         }
 
-    });  
+    });
+
+
 });
 
 }(jQuery));
 
-
-// Breaking News
+//------- Breaking News --------//
 function createTicker(){
     var tickerLIs   = jQuery("#breaking-news ul").children();
     tickerItems     = new Array();

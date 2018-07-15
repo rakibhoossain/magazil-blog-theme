@@ -85,6 +85,14 @@ Font Awesome icons, Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
 Source: http://fontawesome.io/
 
+UItoTop jQuery Plugin, Copyright Matt Varone
+License: GNU General Public License
+Source: http://www.mattvarone.com/web-design/uitotop-jquery-plugin
+
+jQuery Easing, Copyright McGinley Smith
+License: BSD
+Source: https://github.com/gdsmith/jquery.easing
+
 Bundled header image, Copyright Parker Byrd
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://unsplash.com/photos/gxD8hCmi0IQ

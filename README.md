@@ -59,7 +59,11 @@ License: MIT
 License: MIT
 11. [Font Awesome icons](http://fontawesome.io/), Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
-12. [Bundled header image](https://unsplash.com/photos/gxD8hCmi0IQ), Copyright Parker Byrd
+12. [UItoTop jQuery Plugin](http://www.mattvarone.com/web-design/uitotop-jquery-plugin), Copyright Matt Varone
+License: GNU General Public License
+13. [jQuery Easing](https://github.com/gdsmith/jquery.easing), Copyright McGinley Smith
+License: BSD
+14. [Bundled header image](https://unsplash.com/photos/gxD8hCmi0IQ), Copyright Parker Byrd
 License: CC0 1.0 Universal (CC0 1.0)
 
 ## Changelog ##

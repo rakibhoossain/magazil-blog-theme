@@ -66,7 +66,8 @@
 	</footer>
 		<!-- End footer Area -->
 </div><!-- #page -->
-
+<!-- To top -->
+<a href="#top" id="toTop" style="display: block;"><i class="fa fa-angle-up"></i><span id="toTopHover" style="opacity: 1;"></span></a>
 <?php wp_footer(); ?>
 
 </body>

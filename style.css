@@ -2073,6 +2073,38 @@ justify-content: space-between ;
   background: #fff;
   color: #f6214b;
 }
+
+/* To top Button */
+#toTop {
+  display: none;
+  background: rgba(72, 103, 102, 0.81);
+  border-radius: 3px;
+  bottom: 70px;
+  color: #04091e;
+  padding: 6px 0;
+  opacity: 0.67;
+  position: fixed;
+  right: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  transition: all 0.5s ease 0s;
+  width: 45px;
+  z-index: 999999;
+}
+#toTop:hover{
+  background: #f6214b;
+  color: #fff;
+}
+#toTopHover {
+  height: 40px;
+  display: block;
+  overflow: hidden;
+  float: right;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0);
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/

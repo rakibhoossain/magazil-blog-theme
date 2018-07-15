@@ -217,26 +217,27 @@ function magazil_scripts() {
 	wp_enqueue_style( 'magazil-font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '1.0' );
 	wp_enqueue_style( 'magazil-googleFonts', "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" );
 
-	wp_enqueue_style( 'magazil-bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', array(), '1.0' );
-	wp_enqueue_style( 'magazil-animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css', array(), '1.0' );
-	wp_enqueue_style( 'magazil-owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );
-	wp_enqueue_style( 'magazil-jquery-ui', get_stylesheet_directory_uri() . '/assets/css/jquery-ui.css', array(), '1.0' );
+	wp_enqueue_style( 'magazil-bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', array(), '4.0.0' );
+	wp_enqueue_style( 'magazil-animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css', array(), '3.5.1' );
+	wp_enqueue_style( 'magazil-owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.css', array(), '2.2.0' );
+	wp_enqueue_style( 'magazil-jquery-ui', get_stylesheet_directory_uri() . '/assets/css/jquery-ui.css', array(), '1.12.1' );
 	
 	
 	wp_enqueue_style( 'magazil-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'magazil-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script( 'magazil-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script( 'magazil-easing', get_template_directory_uri() . '/assets/js/easing.min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0', true);
+	wp_enqueue_script( 'magazil-easing', get_template_directory_uri() . '/assets/js/jquery.easing.min.js', array('jquery'), '1.3.0', true);
 
 	// navigation menu
-	wp_enqueue_script( 'magazil-hoverIntent', get_template_directory_uri() . '/assets/js/hoverIntent.js', array('jquery'), '1.0.0', true);
-	wp_enqueue_script( 'magazil-superfish', get_template_directory_uri() . '/assets/js/superfish.min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-hoverIntent', get_template_directory_uri() . '/assets/js/hoverIntent.js', array('jquery'), '1.8.1', true);
+	wp_enqueue_script( 'magazil-superfish', get_template_directory_uri() . '/assets/js/superfish.min.js', array('jquery'), '1.7.9', true);
 
-	wp_enqueue_script( 'magazil-jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array('jquery'), '1.12.1', true);
 
-	wp_enqueue_script( 'magazil-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'magazil-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '2.2.0', true);
+	wp_enqueue_script( 'magazil-to-top', get_template_directory_uri() . '/assets/js/move-top.js', array('jquery'), '1.2.0', true);
 
 	
 

@@ -140,7 +140,7 @@ function magazil_widgets_init() {
 		'description'   => esc_html__( 'Add widgets to front page.', 'magazil' ),
 		'before_widget' => '<div id="%1$s" class="single-post-wrap %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="title">',
+		'before_title'  => '<h6 class="title widget_title">',
 		'after_title'   => '</h6>',
 	) );
 	register_sidebar( array(
@@ -149,7 +149,7 @@ function magazil_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here to sidebar.', 'magazil' ),
 		'before_widget' => '<div id="%1$s" class="single-sidebar-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="title">',
+		'before_title'  => '<h6 class="title widget_title">',
 		'after_title'   => '</h6>',
 	) );
 	register_sidebar( array(
@@ -239,8 +239,6 @@ function magazil_scripts() {
 	wp_enqueue_script( 'magazil-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '2.2.0', true);
 	wp_enqueue_script( 'magazil-to-top', get_template_directory_uri() . '/assets/js/move-top.js', array('jquery'), '1.2.0', true);
 
-	
-
 	// Sticky Sidebar
 	if ($enable_sticky_sidebar) {
 		wp_enqueue_script( 'magazil-ResizeSensor', get_template_directory_uri() . '/assets/js/ResizeSensor.min.js', array('jquery'), '1.0.0', true);
@@ -281,6 +279,15 @@ function magazil_admin_scripts() {
 	wp_enqueue_style( 'magazil-googleFonts', "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" );
 }
 add_action( 'admin_enqueue_scripts', 'magazil_admin_scripts' );
+
+/**
+* Register scripts
+*/
+function magazil_register_scripts() {
+    wp_register_style( 'magazil-widget-range', get_stylesheet_directory_uri() . '/inc/components/widgets/assets/range-slider.css', array(), '1.0.0' );
+	wp_register_script( 'magazil-widget-range', get_template_directory_uri() . '/inc/components/widgets/assets/range-slider.js', array('jquery' ), '1.0.0', true);
+}
+add_action( 'wp_loaded', 'magazil_register_scripts' );
 
 /**
  * Implement the Custom Header feature.

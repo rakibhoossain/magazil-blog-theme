@@ -99,6 +99,9 @@ Source: https://unsplash.com/photos/gxD8hCmi0IQ
 
 == Changelog ==
 
+= 1.3.1 =
+* hash link jquery error fix
+
 = 1.3.0 =
 * Sticky sidebar enable-disable option added
 * Smooth scrool enable-disable option added

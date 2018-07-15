@@ -18,8 +18,10 @@ class Widget_Magazil_Posts_List_Horizontal extends WP_Widget {
 	}
 
 	public function enqueue() {
-		wp_enqueue_script( 'jquery-ui' );
-		wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_script( 'jquery-ui' );
+			wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_style( 'magazil-widget-range' );
+			wp_enqueue_script( 'magazil-widget-range' );
 	}
 
 	public function form( $instance ) {
@@ -76,7 +78,7 @@ class Widget_Magazil_Posts_List_Horizontal extends WP_Widget {
 	               value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
 	        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="4"
-	             data-attr-max="12" data-attr-step="4" class="ss-slider"></div>
+	             data-attr-max="12" data-attr-step="2" class="ss-slider"></div>
 		</div>
 	<?php }
 

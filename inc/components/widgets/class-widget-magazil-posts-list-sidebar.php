@@ -16,8 +16,10 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 	}
 
 	public function enqueue() {
-		wp_enqueue_script( 'jquery-ui' );
-		wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_script( 'jquery-ui' );
+			wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_style( 'magazil-widget-range' );
+			wp_enqueue_script( 'magazil-widget-range' );
 	}	
 	
  	function form( $instance ) {
@@ -43,7 +45,7 @@ if(!class_exists('Widget_Magazil_Posts_List_Sidebar')){
 	           id="input_<?php echo esc_attr( $this->get_field_id( 'list_num' ) ); ?>"
 	           value="<?php echo esc_attr( $instance['list_num'] ); ?>"/>
 	    <div id="slider_<?php echo esc_attr( $this->get_field_id( 'list_num' ) ) ?>" data-attr-min="4"
-	         data-attr-max="12" data-attr-step="4" class="ss-slider"></div>
+	         data-attr-max="12" data-attr-step="1" class="ss-slider"></div>
 	</div>
 </p>
 <?php

@@ -17,14 +17,16 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 	}
 
 	public function enqueue() {
-		wp_enqueue_script( 'jquery-ui' );
-		wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_script( 'jquery-ui' );
+			wp_enqueue_script( 'jquery-ui-slider' );
+			wp_enqueue_style( 'magazil-widget-range' );
+			wp_enqueue_script( 'magazil-widget-range' );
 	}
 
 	public function form( $instance ) {
 		$defaults = array(
 			'title'            => __( 'Recent posts', 'magazil' ),
-			'show_post'        => 4,
+			'show_post'        => 3,
 			'magazil_category' => 'uncategorized',
 			'order' 		   => 'desc',
 			'ignore_sticky_posts' => true
@@ -77,8 +79,8 @@ class Widget_Magazil_Posts_List_Vertical extends WP_Widget {
 	               id="input_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ); ?>"
 	               value="<?php echo esc_attr( $instance['show_post'] ); ?>"/>
 
-	        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="1"
-	             data-attr-max="10" data-attr-step="1" class="ss-slider"></div>
+	        <div id="slider_<?php echo esc_attr( $this->get_field_id( 'show_post' ) ) ?>" data-attr-min="3"
+	             data-attr-max="12" data-attr-step="3" class="ss-slider"></div>
 		</div>
 	<?php }
 

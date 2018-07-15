@@ -18,16 +18,22 @@
 		<div class="container">
 			<div class="row">
 
-				<?php $footer_wigdet_class = array('3', '2', '2', '2', '3');
-				foreach ($footer_wigdet_class as $key => $value) {
+			<?php
+
+			$magazil_wdgc = magazil_footer_widget_size();
+
+			if (is_array($magazil_wdgc) && !empty($magazil_wdgc)) {
+	
+				foreach ($magazil_wdgc as $key => $value) {
 					if (is_active_sidebar("footer-".($key+1))) :
 						echo '<div class="col-lg-'.$value.' col-md-6 single-footer-widget">';
 						dynamic_sidebar("footer-".($key+1));
 						echo '</div>';
-
 					endif;
 				}
-				?>
+			}
+
+			?>
 
 			</div>
 			<div class="footer-bottom row align-items-center">
@@ -38,7 +44,11 @@
 				$theme_author_url = 'https://rakib.ooo';
 				printf( esc_html__( 'Theme: %1$s by %2$s', 'magazil' ), 'magazil', '<a href="'. esc_url($theme_author_url).'">'.esc_html($theme_author).'</a>' );
 			?>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</p>
+
+				<?php
+				if ( has_nav_menu( 'social' ) ) {
+					?>
 					<div class="col-lg-4 col-md-12 footer-social">
 						<?php
 						wp_nav_menu( array(
@@ -51,17 +61,21 @@
 						) );
 						?>
 					</div>
-				</div>
+				<?php } ?>
 
-				<?php 
-				$magazil_copyright_text = get_theme_mod( 'magazil_copyright_text' );
-				if($magazil_copyright_text):?>
-					<div class="copyright-text-area text-center">
-						<div class="copyright-text">
-							<?php echo wp_specialchars_decode($magazil_copyright_text); ?>
-						</div>
-					</div>	
-				<?php endif; ?>
+			</div>
+
+			<?php 
+			$magazil_copyright_text = get_theme_mod( 'magazil_copyright_text' );
+			// $magazil_footer_widget_limit = get_theme_mod( 'magazil_footer_widget_limit', 3);
+
+			if($magazil_copyright_text):?>
+				<div class="copyright-text-area text-center">
+					<div class="copyright-text">
+						<?php echo wp_specialchars_decode($magazil_copyright_text); ?>
+					</div>
+				</div>	
+			<?php endif; ?>
 		</div>
 	</footer>
 		<!-- End footer Area -->

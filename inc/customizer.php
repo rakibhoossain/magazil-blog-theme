@@ -108,7 +108,7 @@ function magazil_customize_register( $wp_customize ) {
 		            'selector' => '.row .magazil__sticky_sidebar'
 		));
 
-		// Copyright
+		// Footer
 		$wp_customize->selective_refresh->add_partial( 'magazil_copyright_text', array(
 		            'selector' => '.copyright-text-area .copyright-text'
 		));
@@ -666,13 +666,22 @@ function magazil_customize_register( $wp_customize ) {
 
 
         //  ===================================
-        //  ====        Copyright          ====
+        //  ====        Footer          ====
         //  ===================================
-        $wp_customize->add_section('magazil_copyright_controls', array(
-            'title' => __('Copyright', 'magazil'),
+        $wp_customize->add_section('magazil_footer_controls', array(
+            'title' => __('Footer', 'magazil'),
             'panel' => 'magazil_panel',
             'priority' => 9,
         ));
+
+		/**
+		 * Foolter Widget size
+		 */
+		$wp_customize->add_setting( 'magazil_footer_widget_size', array(
+			'sanitize_callback' => 'magazil_footer_widget_class',
+			'default'           => '3,4,5',
+			'transport'  => 'postMessage'
+		));
 
         /**
 		 * Copyright text
@@ -683,6 +692,23 @@ function magazil_customize_register( $wp_customize ) {
 			'transport'  => 'postMessage'
 		));
 
+        /**
+		 * Footer widget sizes
+		 */
+		$wp_customize->add_control(
+			'magazil_footer_widget_size',
+			array(
+				'label'           => esc_html__( 'Footer widget sizes: ', 'magazil' ),
+				'description'     => esc_html__( 'Comma(,) seperated integer values and thir sum should be exactly 12. Must be in English. Ex: (3,4,5)', 'magazil' ),
+				'section'         => 'magazil_footer_controls',
+				'settings'        => 'magazil_footer_widget_size',
+				'type'            => 'text',
+				// 'active_callback' => 'breaking_custom_callback'
+			)
+		);
+
+
+
 		/**
 		 * Copyright text
 		 */
@@ -691,7 +717,7 @@ function magazil_customize_register( $wp_customize ) {
 			array(
 				'label'           => esc_html__( 'Copyright text:', 'magazil' ),
 				'description'     => esc_html__( 'Add your copyright information on footer area', 'magazil' ),
-				'section'         => 'magazil_copyright_controls',
+				'section'         => 'magazil_footer_controls',
 				'settings'        => 'magazil_copyright_text',
 				'type'            => 'textarea'
 			)

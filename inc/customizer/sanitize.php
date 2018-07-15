@@ -42,6 +42,25 @@ function magazil_sanitize_textarea( $input ) {
 }
 
 /**
+ * Sanitization for footer widget class
+ */
+function magazil_footer_widget_class( $input ) {
+  if ( empty($input)) return $input;
+
+  $widget_val = explode(',', $input);
+  $sum = 0;
+
+  if (is_array($widget_val)) {
+    foreach ($widget_val as $key => $value) {
+      if (! is_numeric($value)) return;
+      $sum += $value;
+    }
+    if ($sum<=12) return $input;
+  }
+  return;
+}
+
+/**
  * Validate the options against the breaking news types
  *
  * @param  string[] $input

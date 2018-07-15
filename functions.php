@@ -129,6 +129,18 @@ function magazil_content_width() {
 add_action( 'after_setup_theme', 'magazil_content_width', 0 );
 
 /**
+ * Footer widget size implement.
+ * Return []
+ */
+function magazil_footer_widget_size() {
+	$widget_size = get_theme_mod( 'magazil_footer_widget_size', '3,4,5');
+	if (empty($widget_size)) return;
+	$widget_size_array = explode(',', $widget_size);
+	if (empty($widget_size_array)) return;
+	return $widget_size_array;
+}
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -152,54 +164,23 @@ function magazil_widgets_init() {
 		'before_title'  => '<h6 class="title widget_title">',
 		'after_title'   => '</h6>',
 	) );
-	register_sidebar( array(
-		'name'          => esc_attr__( 'Footer 1', 'magazil' ),
-		'id'            => 'footer-1',
-		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
-		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
+	
+	$footer_widget = magazil_footer_widget_size();
+	if (is_array($footer_widget) && !empty($footer_widget)) {
 
-	register_sidebar( array(
-		'name'          => esc_attr__( 'Footer 2', 'magazil' ),
-		'id'            => 'footer-2',
-		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
-		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_attr__( 'Footer 3', 'magazil' ),
-		'id'            => 'footer-3',
-		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
-		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_attr__( 'Footer 4', 'magazil' ),
-		'id'            => 'footer-4',
-		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
-		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_attr__( 'Footer 5', 'magazil' ),
-		'id'            => 'footer-5',
-		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
-		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
+		foreach ($footer_widget as $key => $value) {
+			register_sidebar( array(
+				'name'          => esc_attr__( 'Footer '.($key+1), 'magazil' ),
+				'id'            => 'footer-'.($key+1),
+				'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'magazil' ),
+				'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
+			) );
+		}
+	}
+
 }
 add_action( 'widgets_init', 'magazil_widgets_init' );
 

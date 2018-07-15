@@ -29,14 +29,16 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
 					<?php
-					wp_nav_menu( array(
-						'theme_location'    => 'social',
-						'menu_class'        => 'social-menu',
-						'container'         => false,
-						'depth'          => 1,
-						'link_before'    => '<span class="screen-reader-text">',
-						'link_after'     => '</span><i class="fa fa-chain"></i>',
-					) );
+					if ( has_nav_menu( 'social' ) ) {
+						wp_nav_menu( array(
+							'theme_location'    => 'social',
+							'menu_class'        => 'social-menu',
+							'container'         => false,
+							'depth'          => 1,
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span><i class="fa fa-chain"></i>',
+						) );
+					}
 					?>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">

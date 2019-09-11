@@ -41,7 +41,7 @@
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				$theme_author = 'Rakib Hossain' ;
-				$theme_author_url = 'https://rakib.ooo';
+				$theme_author_url = 'https://github.com/rakibhoossain';
 				printf( esc_html__( 'Theme: %1$s by %2$s', 'magazil' ), 'magazil', '<a href="'. esc_url($theme_author_url).'">'.esc_html($theme_author).'</a>' );
 			?>
 				</p>
